@@ -103,9 +103,16 @@
 
 /* nav.menu-list */
 nav {
-    width: var(--gnb-width);
+	display: none;
+}
+
+@media (min-width: 1600px) {
+	nav {
+		display: block;
+		width: var(--gnb-width);
+		height: calc(100vh - var(--gnb-width) - var(--header-height));
     background-color: var(--bg-brand-darkest);
-    overflow-y: auto;
+	}
 }
 
 nav ul.depth-1 > li {
@@ -114,9 +121,12 @@ nav ul.depth-1 > li {
 }
 
 .left-box.expand nav {
+		display: block;
     width: var(--gnb-width-active);
-    height: calc(100% - var(--gnb-width));
+	height: calc(100vh - var(--gnb-width) - var(--header-height));
+    background-color: var(--bg-brand-darkest);
     overflow: visible;
+    overflow-y: auto;
 }
 
 .left-box.expand nav ul.depth-1 > li {
