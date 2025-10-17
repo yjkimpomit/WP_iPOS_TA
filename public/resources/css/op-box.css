@@ -1,0 +1,353 @@
+@charset "UTF-8";
+
+/* 
+ * 포미트 - 서부 iPOS 공통 스타일시트
+ * 작성자 : 김윤지
+ * 작성일 : 2025.03.17
+ * 운전정보 박스 추가
+ */
+ 
+/* overlay
+.op-box::after {
+	content: '';
+	
+	position: absolute;
+	top: -48px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	
+	display: block;
+	
+	background: rgba(0, 0, 0, 0.4);
+	z-index: -1;
+}
+
+@media(min-width: 768px) {
+	.op-box::after {
+		display: none;
+		z-index: -1;
+	}
+} */
+
+/* 아이콘 - 임시 */
+.op-icon {
+   position: absolute;
+   right: 1rem;
+   top: calc(var(--header-height-md) + 1rem);
+   
+   background: red url('/resources/images/icons/icon-lighting-white.svg') no-repeat center;
+   display: block;
+   width: 24px;
+   height: 24px;
+   
+   cursor: pointer;
+   z-index: 3;
+   
+   display: none;
+}
+
+@media(min-width: 1400px) { 
+	.op-icon {
+	   right: 12rem;
+	   top: calc(var(--header-height) + 96px + .75rem);
+	}
+}
+
+/* 운전정보 박스 */
+.op-box {
+	display: none;
+	
+	position: absolute;
+	top: calc(48px + .5rem);
+	left: .5rem;
+	right: .5rem;
+
+	z-index: 4;
+	
+	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.4);
+	
+	height: calc(100% - 184px);
+	bottom: auto;
+	
+    border-radius: .25rem;
+    
+    background: rgba(196, 207, 229, 0.8);
+    border: solid 1px #92a5cb80;
+    
+    backdrop-filter: blur(4px);
+    box-shadow: none;
+    
+    cursor: default;
+}
+
+.op-box.folded {
+	display: block;
+	
+	top: 0;
+	left: 48px;
+	
+	width: 48px;
+	height: 48px;
+	border-radius: 0;
+	overflow: hidden;
+	
+	border: 0;
+	background-color: var(--blue-600);
+}
+
+.op-box.folded .op-box-header {
+	padding: 0;
+}
+.op-box.folded .op-box-header h3 {
+	display: none;
+}
+
+.op-box-header {
+	height: 48px;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.op-box-body {
+	padding: 0 .5rem .5rem;
+	height: calc(100% - 48px);
+	overflow: hidden;
+}
+
+@media(min-width: 768px) {
+	.op-box {
+		left: .25rem;
+   		top: calc(var(--header-height-md) + 56px);
+	    width: 320px;
+	    height: auto;
+		max-height: calc(100vh - 10rem);
+	    
+	    bottom: inherit;
+	}
+	/* 
+	.op-box.folded {
+        top: inherit;
+        bottom: 10rem;
+        width: 160px;
+	}
+	.op-box.folded .op-box-header h3 {
+	    display: -webkit-box;
+	    -webkit-line-clamp: 1;
+	    -webkit-box-orient: vertical;
+	    overflow: hidden;
+	} */
+}
+
+@media(min-width: 1600px) {
+	.op-box {
+		left: .25rem;
+   		top: calc(var(--header-height) + 116px);
+	    width: 360px;
+	}
+	.op-box.folded {
+		top: calc(8.5rem + 48px + 48px);
+		left: 0;
+	}
+}
+
+/* 모달 헤더 스타일
+.op-box-header {
+	height: 64px;
+	padding: 1rem;
+    border-bottom: solid 1px var(--bs-border-color);
+	
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+*/
+
+/*  */
+.op-box-header h3 {
+    font-size: 17px;
+    color: var(--text-neutral-default);
+    font-weight: 700;
+	margin-bottom: 0;
+}
+
+.op-box-header .btn-box {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin: 0;
+}
+
+.op-box-header .btn {
+	display: block;
+	
+    width: 48px;
+    height: 48px;
+    
+    margin: 0;
+    padding: 0;
+    
+    /* background-color: var(--bg-brand-default); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+    
+    border-radius: 50%;
+}
+	
+.op-box-header .btn.minimize {
+    background-image: url(/resources/images/icons/icon-remove-gray.svg);
+}
+.op-box-header .btn.maximize {
+    /* background-image: url(/resources/images/icons/icon-meter-gray.svg); */
+    background-image: url(/resources/images/icons/icon-meter-white.svg);
+}
+/*
+.op-box-header .btn.close {
+	background-color: transparent;
+    background-image: url(/resources/images/icons/icon-close-gray.svg);
+}
+.op-box-header .btn.close:hover {
+	background-color: transparent;
+    animation: none;
+}
+
+.op-box-header .btn.close {
+    background-color: var(--bg-brand-darkhover);
+    background-image: url(/images/icons/icon-close-white.svg);
+}
+
+.op-box-header .btn.close:hover {
+    background-color: var(--bg-brand-default);
+    animation: rotate .5s linear 1;
+}
+*/
+	
+@media(min-width: 768px) {
+	.op-box.folded .op-box-header .btn,
+	.op-box.folded .op-box-header .btn:hover {
+	   	width: 48px;
+	   	height: 48px;
+		background-size: 24px;
+	}
+	
+	.op-box-header .btn,
+	.op-box-header .btn:hover {
+	   	width: 24px;
+	   	height: 24px;
+		background-size: 20px;
+	}
+
+	.op-box-header .btn:hover {
+	    opacity: .8;
+	}
+}
+
+.op-box .table-responsive {
+	height: 100%;
+	overflow-y: scroll;
+	
+	margin-bottom: 0;
+	background: transparent;
+	
+	/* accordion related */
+    border: none;
+    border-radius: 0;
+}
+
+.op-box .table thead th {
+	background-color: var(--bg-brand-defaulthover);
+	font-weight: 700;
+	color: var(--text-default-white);
+	border-color: var(--border-brand-dark);
+}
+
+.op-box .table tbody [data-field="그룹"],
+.op-box .table tbody [data-field="구분"] {
+	font-weight: 700;
+}
+.op-box .table tbody [data-field="호기"] {
+	min-width: 5rem;
+}
+
+@media (min-width: 768px) {
+	.op-box .table-responsive {
+		height: 540px;
+	}
+	
+	.op-box .table th,
+	.op-box .table td {
+		font-size: .875rem;
+		line-height: 1.2;
+		padding: .375rem .5rem;
+	
+		border-bottom: solid 1px var(--border-neutral-secondary);
+	}
+	
+}
+
+.op-box .table tr > th:only-child,
+.op-box .table tr > td:only-child,
+.op-box .table tr > td:last-child {
+	border-right: none;
+}
+
+.op-box .table tr > *[data-bs-toggle="collapse"] {
+	background-color: var(--bg-brand-default);
+	color: var(--text-default-white);
+	font-weight: 700;
+	border-top: solid 1px var(--border-default-white);
+	
+	cursor: pointer;
+}
+
+/* accordion */
+.op-box .table tr > *[data-bs-toggle="collapse"] {
+	background-image: url('/resources/images/icons/icon-chevron-up-white.svg');
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 20px;
+	   
+	padding-left: 1.5rem;
+	text-align: left;
+}
+
+.op-box .table tr > *[data-bs-toggle="collapse"].collapsed {
+	background-image: url('/resources/images/icons/icon-chevron-down-white.svg');
+}
+
+/* 일일안전작업현황 */
+.op-box:has([aria-label="안전작업허가서-주요-위험작업"]).folded {
+	left: auto;
+	right: 48px;
+	background-color: transparent;
+}
+.op-box:has([aria-label="안전작업허가서-주요-위험작업"]) .op-box-header .btn.maximize {
+	background-color: transparent;
+    background-image: url(/resources/images/icons/icon-safety.svg);
+    background-size: 32px;
+}
+
+.op-box:has([aria-label="안전작업허가서-주요-위험작업"]):not(.folded) {
+	display: block;
+    width: 240px;
+}
+.op-box:has([aria-label="안전작업허가서-주요-위험작업"]):not(.folded),
+.op-box:not(.folded) .op-box-body:has([aria-label="안전작업허가서-주요-위험작업"]),
+.op-box:not(.folded) .table-responsive:has([aria-label="안전작업허가서-주요-위험작업"]) {
+	height: auto;
+}
+@media(min-width: 1600px) {
+	.op-box:has([aria-label="안전작업허가서-주요-위험작업"]).folded {
+		background-color: var(--black-200);
+		top: calc(8.5rem + 48px);
+		left: 0;
+		right: auto;
+	}
+}
+
+

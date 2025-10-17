@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+/*
+ * 포미트 - 서부 iPOS 추가스타일
+ * 작성자 : 김윤지
+ * 작성일 : 2025.09.19
+ * WINBOX 탭UI 커스텀 스타일
+ *
+ */
+
+.winbox {
+    background-color: var(--bg-default-default);
+}
+
+.wb-header {
+    background-color: var(--bg-default-default);
+    background-color: var(--bg-neutral-secondary);
+    color: var(--text-neutral-default);
+}
+.wb-body {
+    top: calc(35px + .5rem);
+    left: .5rem;
+    right: .5rem;
+}

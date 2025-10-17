@@ -1,0 +1,267 @@
+@charset "utf-8";
+
+/* 
+ * 포미트 - 서부 iPOS 공통 스타일시트
+ * 작성자 : 김윤지
+ * 작성일 : 2025.03.14
+ * 임포트 파일 : 리셋, 부트스트랩, 폰트
+ * 
+ */
+
+@import url(/resources/css/bootstrap/dist/css/bootstrap.min.css);
+@import url(/resources/css/reset.css);
+
+/*#################### 폰트 ####################*/
+@import url(/resources/fonts/NotoSansKR/NotoSansKR.css);
+@import url(/resources/fonts/Roboto/Roboto.css);
+
+@import url(/resources/css/variables.css);
+
+body {
+	font-family: var(--font-family);
+	color: var(--text-neutral-default);
+	width:100vw;
+	height: 100vh;
+
+	position: relative;
+}
+.bg-box1 {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(0deg, rgba(0,13,45,1) 0%, rgba(0,48,83,0.3) 80%);
+	z-index: -1;
+}
+
+.bg-box2 {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: url('/resources/images/group/group-bg.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: -2;
+}
+
+/* logo */
+.logo {
+	display: inline-block;
+	background: url('/resources/images/logo.svg');
+	background-repeat: no-repeat;
+	background-position: left 1rem center;
+	background-size: auto 32px;
+	
+	padding: 1rem 1rem 1rem 88px;
+}
+
+.logo > div {
+	display: block;
+	line-height: 1;
+	font-family: var(--font-family);
+	font-size: .875rem;
+	text-align: left;
+	letter-spacing: -.025rem;
+	margin-top: .375rem;
+	color: var(--white-900);
+}
+
+.logo .branch,
+.logo .desc {
+	display: block;
+	margin-bottom: .25rem;
+}
+
+.logo .branch .system {
+	font-family: var(--font-family-en);
+	position: relative;
+	padding-left: .5rem;
+	margin-left: .25rem;
+}
+.logo .branch .system::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	display: inline-block;
+	width: 1px;
+	height: 14px;
+	background-color: var(--border-neutral-default);
+}
+
+/* .header-title */
+.header-title {
+	display: block;
+	text-align: center;
+
+	padding: 1rem 0	;
+	position: relative;
+}
+.header-title h1 {
+	font-size: 20px;
+	color: white;
+	line-height: 1.4;
+}
+@media(min-width: 768px) {
+	.header-title {
+		margin: 1rem auto 2rem;
+	}
+	.header-title h1 > br {
+		display: none;
+	}
+}
+@media(min-width: 1024px) {
+	.header-title {
+		margin: 1rem auto 4rem;
+	}
+	.header-title h1 {
+		font-size: 30px;
+	}	
+}
+
+/* container */
+.container {
+	padding: 0;
+}
+
+/* select-group */
+.select-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+    margin: 0 auto;
+}
+
+.select-group > [class*='bg0'] {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+    padding: 0;
+	transition: all .5s ease-in-out;
+}
+.select-group > [class*='bg0'] > a {
+	display: block;
+    width: 280px;
+    height: 280px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 164%;
+    position: relative;
+}
+
+.select-group .bg01 a {
+	background-image: url('/resources/images/group/Login_img_Fin2.png');
+}
+.select-group .bg02 a {
+	background-image: url('/resources/images/group/Login_Coal_img_Fin.png');
+	filter: grayscale(50%);
+	cursor: default;
+}
+
+@media(min-width: 1280px) {
+	.select-group > .bg01:hover {
+		transform: translateY(-1rem);
+	}
+	.select-group > .bg01:hover a h2 {
+		background: #1c52d596;
+		backdrop-filter: blur(8px);
+	}
+
+}
+
+h2 {
+	font-size: 18px;
+	font-weight: 700;
+	text-align: center;
+	color: white;
+
+	position: absolute;
+    top: 80%;
+    left: 80%;
+    transform: translate(-50%, -60%);
+	
+	width: 7rem;
+	height: 7rem;
+	border-radius: 10rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	border: solid 1px #1c52d5;
+	background: #1c52d590;
+	backdrop-filter: blur(2px);
+}
+
+h2 span {
+	margin-top: .5rem;
+	font-weight: 400;
+	font-size: 65%;
+}
+
+
+@media(min-width: 576px) {
+	.header {
+		margin-bottom: 6rem;
+	}
+}
+
+@media(min-width: 768px) {
+	.select-group {
+		flex-direction: row;
+		justify-content: center;
+    }
+	.select-group > [class*='bg0'] > a {
+		width: 320px;
+		height: 320px;
+	}
+}
+
+@media(min-width: 992px) {
+	.select-group > [class*='bg0'] > a {
+		width: 400px;
+		height: 400px;
+    	background-size: 136%;
+	}
+	h2 {
+		transform: translate(-50%, -100%);
+    }
+}
+
+@media(min-width: 1400px) {
+	.select-group > [class*='bg0'] > a {
+		width: 480px;
+		height: 480px;
+	}
+	h2 {
+		font-size: 24px;
+		width: 10rem;
+		height: 10rem;
+	}
+}
+
+/* mobile test
+.mobile-test {
+	background: red url(/images/mobile-test.jpg) no-repeat 0 0; 
+	background-size: 100% auto; 
+    background-position: 0 -30px; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    z-index: 9999; 
+    opacity: .5;
+}
+ */

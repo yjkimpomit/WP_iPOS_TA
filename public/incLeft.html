@@ -1,0 +1,37 @@
+
+<button id="toggle-button" class="menu-icon collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#menuList" aria-expanded="false" aria-controls="menuList">
+	<img src="/images/icons/icon-menu.svg" alt="메뉴 열기">
+</button>
+
+<nav id="menuList" class="menu-list collapse">
+	<ul>
+		<li>
+			<button type="button" onclick="openPopup('modal09-dailySafety.html', $(this));" class="menu-link" data-class="daily-safety" data-title="일일안전현황"><span>일일안전현황</span></button>
+		</li>
+		<li>
+			<a href="#" onclick="openPopup('modal01-facility.html', $(this));" class="menu-link" data-class="facility folded with-tree" data-title="설비정보"><span>설비정보</span></a>
+		</li>
+		<li>
+			<a href="#" onclick="openPopup('modal02-tm.html', $(this));" class="menu-link" data-class="tm" data-title="TM 현황"><span>TM 현황</span></a>
+		</li>
+		<li>
+			<a href="#" onclick="openPopup('modal03-redTag.html', $(this));" class="menu-link" data-class="red-tag" data-title="작업현황"><span>작업현황</span><small>Red TAG</small></a>
+		</li>
+		<li>
+			<a href="#" onclick="openPopup('modal06-dashboard.html', $(this));" class="menu-link" data-class="dashboard" data-title="대시보드"><span>대시보드</span></a>
+		</li>
+		<li>
+			<a href="#" onclick="openPopup('modal04-prevention.html', $(this));" class="menu-link" data-class="prevention" data-title="예방점검현황"><span>예방점검현황</span></a>
+		</li>
+		<li>
+			<a href="#" onclick="openPopup('modal05-apc.html', $(this));" class="menu-link" data-class="apc" data-title="APC"><span>APC</span></a>
+		</li>
+		<!-- <li>
+			<a href="#" onclick="openPopup('modal07-iPlis.html', $(this));" class="menu-link" data-class="i-plis" data-title="i-PLIS"><span>i-PLIS</span></a>
+		</li> -->
+		<li>
+			<a href="#" onclick="openPopup('modal08-cctv.html', $(this));" class="menu-link" data-class="cctv" data-title="CCTV"><span>CCTV</span></a>
+		</li>
+		<li><a href="#" onclick="openModelInfoPopup('12298270');" class="menu-link" data-title="3D"><span>3D Model</span><small>temp</small></a></li>
+	</ul>
+</nav>

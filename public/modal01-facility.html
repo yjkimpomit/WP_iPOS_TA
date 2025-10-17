@@ -1,0 +1,89 @@
+
+<div class="facility-box">
+	
+	<div class="side-panel left" id="side-panel">
+		<div class="panel-header">
+			<!-- 검색영역 -->
+			<div class="search-input-box w-100">
+				<label for="search-input" class="visually-hidden">설비명 입력</label>
+				<input class="form-control w-100" list="datalistOptions" id="search-input" placeholder="설비명 입력">
+				<button type="button" class="btn btn-primary" title="설비 검색">
+					<img src="/images/icons/icon-search-white.svg" alt="검색">
+				</button>
+			</div>
+			<button type="button" class="btn toggle-side icon-panel-open" id="toggle-side" title="설비정보 열기">
+				<!-- <span class="material-symbols-rounded">
+					arrow_menu_open
+				</span> -->
+			</button>
+			<datalist id="datalistOptions">
+				<option value="Gas Turbine">
+				<option value="Steam Turbine">
+				<option value="HRSG 1">
+				<option value="ACC">
+			</datalist>
+		</div>
+
+		<!-- 트리메뉴 -->
+		<div class="panel-body jstree-box">
+			<div id="facTree"></div>
+		</div>
+	</div>
+
+	<!-- 우측 콘텐츠 -->
+	<div class="contents-panel" id="contentsPanel">
+		<!-- 설비탭 영역 로드 : modal01-facility-info.html -->
+
+	</div>
+</div>
+
+<script>
+$(document).ready(function() {
+
+	//설비정보 페이지 로드
+	$.ajax({
+		method: 'GET',
+		url: '/modal01-facility-info.html',
+		async: false,
+		dataType: 'html'
+	}).done(function(html) {
+		// 설비정보 콘텐츠 로드
+		$('.facility-box #contentsPanel').append(html);
+	});
+	
+	//사이드 패널 열고 닫기
+	initSidePanel('.modal.facility #toggle-side', '.modal.facility', '.modal.facility .contents-panel');
+
+	// 하위 노드가 없는 .jstree-anchor 클릭 시 openSidePanel() 호출
+	$('#facTree').on('click', '.jstree-anchor', function(e) {
+
+		// 트리메뉴 클릭시 메인화면에 종속된 모달 이외의 모든 팝업 제거
+		closeOtherPopups();
+
+		const treeInstance = $('#facTree').jstree(true); // jstree 인스턴스 가져오기
+		const nodeId = $(this).closest('li').attr('id'); // 클릭된 노드의 ID 가져오기
+		const node = treeInstance.get_node(nodeId); // 노드 객체 가져오기
+
+		if (treeInstance.is_leaf(node)) { // 하위 노드가 없는지 확인
+			console.log('Leaf node clicked:', node.text); // 디버깅용 로그
+			openSidePanel(); // 사이드패널 열기
+
+			//열고닫기 버튼 추가
+			$('.modal.facility .side-panel.left .form-control.search-icon').removeClass('w-100');
+			$('.modal.facility .toggle-side').addClass('show');
+		} else {
+			console.log('Non-leaf node clicked:', node.text); // 디버깅용 로그
+		}
+	});
+
+	//트리메뉴 아이템 클릭시 패널 열기
+	/* $('#facTree').on('click', '.jstree-anchor', function() {
+		console.log('jstree-anchor clicked');  // 클릭된 항목 로그 확인
+		openSidePanel();  // 사이드패널 열기
+	}); 
+	*/
+
+});
+</script>
+
+<script src="/js/facility/facility-treeMenu.js"></script>

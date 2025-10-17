@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="theme-color" content="#FFFFFF">
+	<title>서부발전 iPOS RWD</title>
+
+	<meta name="description" content="서부발전 평택2복합 i-POS 서비스 제공">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- favicon -->
+	<link rel="icon" href="/favicon.ico" sizes="any">
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+	<!-- slick & jstree -->
+	<link rel="stylesheet" href="/js/slick-1.8.1/slick/slick.css">
+	<link rel="stylesheet" href="/js/slick-1.8.1/slick/slick-theme.css">
+
+	<!-- WP stylesheet -->
+	<link rel="stylesheet" href="/css/login.css">
+	<script src="/js/device-info.js" defer></script>
+
+</head>
+
+<body>
+	<div id="viewport-info"></div>
+
+	<div class="login">
+		<div class="login-wrap">
+			<div class="visual-box">
+				<div class="slider-box">
+					<!-- 슬라이더 1 -->
+					 <div class="slider-container">
+						<div id="loginSlider">
+							<div class="slide01">
+								<div class="text-box">
+									<h2>평택2복합 <span>i-POS</span></h2>
+									<p>지능형 발전 운영시스템</p>
+								</div>
+							</div>
+							<div class="slide02">
+								<div class="text-box">
+									<h2>평택2복합 <span>i-POS</span></h2>
+									<p>지능형 발전 운영시스템</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- 재생/정지, 1번/2번 슬라이드 이돈 버튼 -->
+					<div class="controls">
+						<button id="playPause" class="pause">정지</button>
+						<button id="slide1" class="slide-btn">1번 슬라이드</button>
+						<button id="slide2" class="slide-btn">2번 슬라이드</button>
+					</div>
+				</div>
+			</div>
+			<div class="login-panel">
+				<div class="login-box">
+
+					<div class="logo">
+						<div class="bi">
+							<span class="visually-hidden-focusable">서부발전</span>
+							<strong class="branch">평택2복합 <span class="system">i-POS</span> </strong>
+							<span class="desc">지능형 발전 운영시스템</span>
+						</div>
+					</div>
+
+					<h2 class="title">로그인</h2>
+
+					<form id="frmLogin">
+						<div>
+							<span class="icon-account"></span>
+							<label class="visually-hidden-focusable" for="txtUserId">아이디</label>
+							<input class="form-control" type="text" id="txtUserId" name="iui_user_id" autocomplete="off" placeholder="아이디를 입력하여 주십시요." aria-describedby="IdHelp">
+						</div>
+						<div>
+							<span class="icon-lock"></span>
+							<label class="visually-hidden-focusable" for="txtUserPwd">비밀번호</label>
+							<input class="form-control" type="text" id="txtUserPwd" name="iui_user_pwd" autocomplete="off" placeholder="비밀번호를 입력하여 주십시요." aria-describedby="IdHelp">
+						</div>
+
+						<div id="errTxt" class="err-box"></div>
+
+						<div class="form-check mb-3">
+							<input class="form-check-input" type="checkbox" id="idKeep" value="1" />
+							<label class="form-check-label" for="idKeep">아이디 저장</label>
+						</div>
+						<button class="btn btn-primary" type="button" onclick="loginProcess();" title="로그인">로그인</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>

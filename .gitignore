@@ -1,1 +1,11 @@
-#
+#fonts
+public/resources/fonts/
+
+#bootstrap
+public/resources/css/bootstrap/
+
+#js
+public/resources/js/pdfviewer/
+public/resources/js/slick-1.8.1/
+public/resources/js/svgviewer/
+public/resources/js/pano/
