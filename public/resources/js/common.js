@@ -248,9 +248,10 @@ function fnOpenPopupFacilityMenu(url, target) {
  * @param target
  */
 function fnOpenPopupModal(url, target) {
-    $('#menuList').removeClass('show');
-    $("#toggle-button").attr('aria-expanded', 'false');
-    $('#toggle-button img').attr('src', '/images/icons/icon-menu.svg').attr('alt', '메뉴 열기');
+    $('#toggle-button').text('메뉴 열기');
+    //$('#menuList').removeClass('show');
+    //$("#toggle-button").attr('aria-expanded', 'false');
+    //$('#toggle-button img').attr('src', '/images/icons/icon-menu.svg').attr('alt', '메뉴 열기');
 
     var classString = target.data("class") || "";
     var title = target.data("title");
@@ -326,26 +327,27 @@ function openControlGuide() {
 
 // 글로벌메뉴
 function globalMenu() {
+    var $leftBox = $('.left-box');
+    var $toggleBtn = $('#toggle-button');
+
+    $leftBox.toggleClass('expand');
+
+    if ($leftBox.hasClass('expand')) {
+        $toggleBtn.find('span').text('메뉴 닫기');
+    } else {
+        $toggleBtn.find('span').text('메뉴 열기');
+    }
+
     //다른 버튼 초기화
     $('.operation-status').removeClass('visible');
     $('#operationStatus img').attr('src', '/resources/images/icons/icon-power.svg').attr('alt', '기타정보 열기');
-
-    //클릭시 실행
-    if ($('#toggle-button').attr('aria-expanded') === 'true') {
-        //console.log('opened');
-        // #toggle-button에서 img의 src와 alt 속성 변경
-        $('#toggle-button img').attr('src', '/resources/images/icons/icon-menu-close.svg').attr('alt', '메뉴 닫기');
-    } else {
-        //console.log('closed');
-        // #toggle-button에서 img의 src와 alt 속성 초기화
-        $('#toggle-button img').attr('src', '/resources/images/icons/icon-menu.svg').attr('alt', '메뉴 열기');
-    }
 }
 
 // 모바일: 헤더 > 운전정보 클릭시 실행
 function operationInfo() {
-    $('#menuList').removeClass('show');
-    $('#toggle-button img').attr('src', '/resources/images/icons/icon-menu.svg').attr('alt', '메뉴 열기');
+    $('.left-box').removeClass('expand');
+    //$('#menuList').removeClass('show');
+    //$('#toggle-button img').attr('src', '/resources/images/icons/icon-menu.svg').attr('alt', '메뉴 열기');
 
     if ($('.operation-status').hasClass('visible')) {
         // .operation-status에서 'visible' 클래스 제거
