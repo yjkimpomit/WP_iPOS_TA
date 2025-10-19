@@ -46,13 +46,13 @@ function fnOpenPopup(url, target) {
 
     if (checkMobile === "999") {
         winbox = new WinBox(title, {
-            class: ["no-full"], top: 50, left: 0, border: 1, url: url, onCreate: function (options) {
+            class: ["no-full"], top: 48, left: 0, border: 1, url: url, onCreate: function (options) {
                 options.autoResize = true;
             }
         });
     } else {
         winbox = new WinBox(title, {
-            class: ["no-full"], top: 88, left: 48, border: 1, url: url, onCreate: function (options) {
+            class: ["no-full"], top: 88, left: 56, border: 1, url: url, onCreate: function (options) {
                 options.autoResize = true;
             }
         });
@@ -201,7 +201,7 @@ function fnOpenPopupFacilityMenu(url, target) {
     if (checkMobile === "999") {
         // mobile
         winbox = new WinBox(title, {
-            id: "facilityMenu", class: ["no-full", "no-max"], top: 50, left: 0, border: 1, url: url
+            id: "facilityMenu", class: ["no-full", "no-max"], top: 48, left: 0, border: 1, url: url
             , onCreate: function (options) {
                 options.autoResize = true;
             }
@@ -209,7 +209,7 @@ function fnOpenPopupFacilityMenu(url, target) {
     } else {
         // pc
         winbox = new WinBox(title, {
-            id: "facilityMenu", class: ["no-full", "no-max"], top: 88, left: 48, border: 1, width: "50%", height: "100%", url: url
+            id: "facilityMenu", class: ["no-full", "no-max"], top: 88, left: 56, border: 1, width: "50%", height: "100%", url: url
             , onCreate: function (options) {
                 options.autoResize = true;
             }
