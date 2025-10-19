@@ -15,9 +15,9 @@
 	position: absolute;
 	right: 0;
 
-	height: var(--header-height);
 	width: 100%;
-	background-color: var(--text-brand-default);
+	height: var(--header-height);
+	background-color: var(--bg-brand-darkest);
 	z-index: 0;
 }
 .header-box::after {
@@ -32,7 +32,7 @@
 }
 
 .header {
-	width: 100%;
+	width: 1920px;
 	height: var(--header-height-md);
 
 	display: flex;
@@ -364,7 +364,7 @@
 	background-repeat: no-repeat;
 	background-position: 0 center;
 	background-size: 32px;
-	flex: 1 0 16.667%;
+	flex: 1 0 auto;
 	justify-content: center;
 	background-position-x: .5rem;
 	padding-left: 3rem;
@@ -569,13 +569,6 @@
 	font-size: .75rem;
 	font-weight: 400;
 }
-
-/* runtime 
- * 2025.07.03 yjkim 사용안하고 일일안전현황으로 대체
-.header .runtime {
-	background-color: var(--text-brand-tertiary);
-}
-*/
 
 /* output */
 .header .output {

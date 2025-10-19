@@ -7,7 +7,7 @@
  */
  
 button[type='button'] {
-	border-width: none;
+	border-width: 0;
 }
 
 ul,
