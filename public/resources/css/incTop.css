@@ -6,7 +6,7 @@
 	width: 100%;
 	position: relative;
 	height: var(--header-height-md);
-	overflow: hidden;
+	line-height: 1.125;
 }
 .header-box::before {
 	content: '';
@@ -17,9 +17,10 @@
 
 	width: 100%;
 	height: var(--header-height);
-	background-color: var(--bg-brand-darkest);
+	background-color: var(--bg-brand-darkhover);
 	z-index: 0;
 }
+/* 
 .header-box::after {
 	content: '';
 	display: block;
@@ -30,13 +31,13 @@
 	height: 1px;
 	border-bottom: solid 1px var(--border-neutral-tertiary);
 }
-
+ */
 .header {
-	width: 1920px;
+	width: 100%;
 	height: var(--header-height-md);
 
 	display: flex;
-	align-items: center;
+	align-items: stretch;
 	justify-content: center;
 
 	background: var(--bg-default-default);
@@ -45,9 +46,6 @@
 
 .header>.inner-box {
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100%;
 }
 
 .header .btn-status {
@@ -146,29 +144,6 @@
 	margin-bottom: 0;
 }
 
-/* runtime, output */
-.operation-status.visible .info-box.output {
-	max-width: 70%;
-	display: inline-flex;
-}
-/* .operation-status.visible .info-box.runtime ul, */
-.operation-status.visible .info-box.output ul {
-	width: 100%;
-}
-/* .operation-status.visible .info-box.runtime ul > li, */
-.operation-status.visible .info-box.output ul > li {
-	flex: 1 0 25%;
-}
-
-/* efficiency */
-.operation-status.visible .info-box.efficiency {
-    max-width: 30%;
-    display: inline-flex;
-}
-.operation-status.visible .info-box.efficiency ul {
-	justify-content: flex-start;
-}
-
 /* tm */
 .operation-status.visible .safety,
 .operation-status.visible .apc,
@@ -179,15 +154,101 @@
 /* logo */
 .logo {
 	display: block;
-	width: 80px;
+	width: 200px;
 	height: 48px;
-
-	background: url('/resources/images/logo.svg');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: auto 32px;
 	
-	font-size: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-image: url('/resources/images/logo.svg');
+	background-repeat: no-repeat;
+	background-position: left 8px;
+	background-size: auto 32px;
+	padding-top: .25rem;
+	padding-left: 68px;
+}
+.logo .bi {
+	display: flex;
+	align-items: center;
+	gap: .5rem;
+}
+.logo .bi > * {
+	font-size: 1rem;
+	flex: 1 0 auto;
+	gap: .5rem;
+}
+
+.logo .bi .branch {
+	position: relative;
+	padding-left: .75rem;
+	color: var(--text-default-default);
+}
+.logo .bi .branch::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	
+	display: block;
+	width: 1px;
+	height: 14px;
+	border: solid 1px var(--border-neutral-tertiary);
+}
+
+.logo .bi .select-plant {
+	position: relative;
+	padding-right: 1.75rem;
+	cursor: pointer;
+}
+.logo .bi .select-plant::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	margin-top: -2px;
+
+	display: block;
+	width: 1.5rem;
+	height: 1.5rem;
+	background: url(/resources/images/icons/arrow_drop_down.svg) no-repeat center;
+}
+
+.logo .bi:has(.plant-group.active) .select-plant::after {
+	background-image: url(/resources/images/icons/arrow_drop_up.svg);
+}
+
+.plant-group {
+	display: none;
+	position: absolute;
+	top: auto;
+	margin-top: .5rem;
+    z-index: 2;
+
+	width: auto;
+	flex-direction: column;
+
+	background-color: var(--bg-default-default);
+	border: 1px solid var(--border-neutral-secondary);
+	border-radius: .25rem;
+	padding: .25rem;
+}
+
+.plant-group.active {
+	display: flex;
+}
+.plant-group span {
+	white-space: nowrap;
+	cursor: pointer;
+
+	display: block;
+	padding: .5rem .75rem .375rem;
+}
+.plant-group span:hover {
+	background-color: var(--bg-brand-tertiaryhover);
+	border-radius: .25rem;
 }
 
 /* 웹용 스타일 */
@@ -196,35 +257,27 @@
 		height: var(--header-height);
 	}
 	.header {
-		width: 100%;
+		width: 1912px;
 		height: var(--header-height);
 		justify-content: space-between;
 	}
 	
 	.logo {
-		width: 80px;
+		width: 200px;
 		height: 100%;
-		overflow: hidden;
 		
+		display: flex;
+		align-items: center;
 		justify-content: flex-start;
 		background-position: left 16px;
 		background-size: auto 32px;
-		padding-top: 56px;
+		padding-top: .25rem;
+		padding-left: 84px;
 		
 		margin-left: 1rem;
 
 		background-position: left center;
 		background-size: auto 40px;
-		
-		padding-top: .25rem;
-		padding-left: 84px;
-		
-		display: flex;
-		align-items: center;
-	}
-	
-	.logo > div {
-		display: none;
 	}
 
 	.header>.inner-box:last-child > .btn-status {
@@ -237,57 +290,12 @@
 	}
 }
 
-/* 1824px 이상에서 로고 추가정보 활성 */
-@media (min-width: 1824px) {
-	.logo {
-		width: auto;
-	}	
-	.logo > div {
-		display: block;
-		line-height: 1;
-		font-family: var(--font-family);
-		font-size: .875rem;
-		color: var(--text-default-default);
-		letter-spacing: -.025rem;
-		margin-top: .375rem;
-	}
-	
-	.logo .branch,
-	.logo .desc {
-		display: block;
-		margin-bottom: .25rem;
-	}
-	
-	.logo .desc {
-		font-size: .75rem;
-		padding-left: 2px;
-	}
-	
-	/* 
-	.logo .branch .system {
-		font-family: var(--font-family-en);
-		position: relative;
-		padding-left: .5rem;
-		margin-left: .25rem;
-	}
-	.logo .branch .system::before {
-		content: '';
-		position: absolute;
-		top: 50%;
-		left: 0;
-		transform: translateY(-50%);
-		display: inline-block;
-		width: 1px;
-		height: 14px;
-		background-color: var(--border-neutral-default);
-	} 
-	*/
-}
-
 /* header common */
 .header .info-box {
-	display: flex;
+    flex: 1 0 auto;
 	height: 100%;
+
+	display: flex;
 	align-items: flex-start;
 	flex-direction: column;
 	justify-content: center;
@@ -320,9 +328,9 @@
 	flex-direction: column;
 	justify-items: center;
 	justify-content: space-between;
+	gap: 0;
 	font-family: var(--font-family-en);
 	padding: 0 .5rem;
-	min-height: 36px;
 }
 
 .header .info-box > ul > li:first-child {
@@ -339,7 +347,6 @@
 .header .info-box span {
 	font-family: var(--font-family-en);
 	font-size: 12px;
-	line-height: 1.2;
     white-space: nowrap;
 }
 
@@ -502,7 +509,7 @@
 }
 
 /* 화면이 좁은 경우, 아이콘 가림처리 */
-@media (min-width: 1600px) and (max-width: 1720px) {
+/* @media (min-width: 1600px) and (max-width: 1720px) {
 	.header .tm.info-box > ul > li {
 		padding-left: 0;
 	}
@@ -513,14 +520,11 @@
 	.header .tm.info-box > ul > li.icon02 {
 		padding-left: .5rem;
 	}
-}
+} */
 
 /* air */
 .header .air {
-	background-color: var(--text-brand-tertiary);
-}
-.header .air.info-box > ul {
-	width: 100%;
+	background-color: var(--bg-brand-defaulthover);
 }
 .header .air.info-box > ul li {
 	padding-left: 2.5rem;
@@ -548,7 +552,7 @@
 }
 
 /* 화면이 좁은 경우, 아이콘 가림처리 */
-@media (min-width: 1600px) and (max-width: 1780px) {	
+/* @media (min-width: 1600px) and (max-width: 1780px) {	
 	.header .air.info-box > ul > li {
 		padding-left: 0;
 	}
@@ -561,7 +565,7 @@
 	.header .air.info-box > ul > li.icon03 {
 		padding-left: .5rem;
 	}
-}	
+}	 */
  
 .header .air > ul > li p {
 	margin-bottom: 0;
@@ -570,19 +574,28 @@
 	font-weight: 400;
 }
 
-/* output */
-.header .output {
-	/* background-color: var(--text-brand-secondary); */
-	background-color: var(--text-brand-default);
-}
-
 /* efficiency */
-.header .efficiency {
-	background-color: var(--text-brand-default);
-	/* background-color: var(--text-brand-secondary); */
-	position: relative;
+.header .efficiency-9 {
+	background-color: var(--bg-brand-dark);
+}
+.header .efficiency-9 > ul {
+	padding-left: 3rem;
+	background-image: url("/resources/images/icons/efficiency-icon02.svg");
+	background-repeat: no-repeat;
+	background-position: left center;
 }
 
+.header .efficiency-10 {
+	background-color: var(--bg-brand-darkhover);
+}
+.header .efficiency-10 > ul {
+	padding-left: 3rem;
+	background-image: url("/resources/images/icons/efficiency-icon03.svg");
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+/* 
 .header .efficiency::before {
 	content: '';
 	display: inline-block;
@@ -596,22 +609,7 @@
 	height: 72%;
 	border-left: solid 1px var(--white-300);
 }
-
-.header .efficiency.info-box > ul > li {
-	height: 100%;
-}
-
-/* 화면이 좁은 경우, 아이콘 가림처리 */
-@media (min-width: 1600px) and (max-width: 1720px) {
-	.header .efficiency.info-box > ul > li {
-		padding-left: 0;
-	}
-	.header .efficiency.info-box > ul > li.icon01,
-	.header .efficiency.info-box > ul > li.icon02 {
-		background-image: none;
-		padding-left: 0;
-	}
-}
+*/
 
 /* account */
 .header .account {

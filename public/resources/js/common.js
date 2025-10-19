@@ -979,3 +979,45 @@ $(document).ready(function () {
         $('.header .btn-status').fadeIn(500).css('display', 'flex');
     }, 500);
 });
+
+// 헤더 > 발전소 선택
+function initPlantSelect() {
+	const $plantGroup = $('.plant-group');
+	const $selectBtn = $('.select-plant');
+
+	// 1️⃣ 발전소 선택 버튼 클릭 시 (토글 방식)
+	$selectBtn.on('click', function (e) {
+		e.stopPropagation();
+		$plantGroup.toggleClass('active');
+	});
+
+	// 2️⃣ 발전소 목록(span) 클릭 시
+	$plantGroup.on('click', 'span', function (e) {
+		e.stopPropagation();
+		const plantName = $(this).text().trim();
+		console.log(`이동: ${plantName} 발전소`);
+		// window.location.href = `/plant/${plantName.toLowerCase()}`;
+	});
+
+	// 3️⃣ 외부 클릭 시 active 제거
+	$(document).on('click', function (e) {
+		if (
+			!$plantGroup.is(e.target) &&
+			$plantGroup.has(e.target).length === 0 &&
+			!$selectBtn.is(e.target)
+		) {
+			$plantGroup.removeClass('active');
+		}
+	});
+}
+
+// 페이지 로드 후 실행
+$(document).ready(function () {
+	initPlantSelect();
+});
+
+
+
+
+
+

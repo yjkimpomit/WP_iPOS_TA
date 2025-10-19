@@ -1,12 +1,19 @@
 <div class="header">
 	<div class="inner-box">
-		<a href="/index.html" class="logo">
+		<div class="logo">
 			<div class="bi">
-				<span class="visually-hidden-focusable">서부발전</span>
-				<strong class="branch">평택2복합 <span class="system">i-POS</span></strong>
-				<span class="desc">지능형 발전 운영시스템</span>
+				<div class="visually-hidden">서부발전</div>
+				<div class="system">i-POS</div>
+				<!-- 개발참고 -->
+				<div class="branch">
+					<div class="select-plant">평택</div>
+					<div class="plant-group">
+						<span>평택 2복합</span>
+						<span>태안 9, 10호기</span>
+					</div>
+				</div>
 			</div>
-		</a>
+		</div>
 	</div>
 	<div class="inner-box">
 		<span class="btn-status" id="operationStatus">
@@ -54,38 +61,25 @@
 						<strong>602<small>건</small></strong>
 					</li>
 				</ul>
-			</div><!-- 
-			<div class="info-box apc">
-				<h3 class="title">APC 인원현황</h3>
-				<ul>
-					<li id="_APC_ALERT" class="danger">
-						<strong id="_APC_IN">10</strong> <em class="flashing"><span class="visually-hidden">알림</span></em>
-						<span>입</span>
-					</li>
-					<li>
-						<strong id="_APC_OUT">2</strong>
-						<span>출</span>
-					</li>
-				</ul>
-			</div> -->
+			</div>
 			<div class="info-box air">
 				<h3 class="title">대기정보</h3>
 				<ul>
 					<li class="icon01">
-						<p>기온</p>
+						<span>기온</span>
 						<strong>30.5<small>°C</small></strong>
 					</li>
 					<li class="icon02">
-						<p>압력</p>
+						<span>압력</span>
 						<strong>1,005.8<small>mbara</small></strong>
 					</li>
 					<li class="icon03">
-						<p>습도</p>
+						<span>습도</span>
 						<strong>72.25<small>%</small></strong>
 					</li>
 				</ul>
 			</div>
-			<div class="info-box output">
+			<div class="info-box efficiency-9">
 				<h3 class="title">9호기 실시간 정보</h3>
 				<ul>
 					<li>
@@ -98,29 +92,18 @@
 					</li>
 				</ul>
 			</div>
-			<div class="info-box efficiency">
-				<h3 class="title">발전효율</h3>
+			<div class="info-box efficiency-10">
+				<h3 class="title">10호기 실시간 정보</h3>
 				<ul>
-					<li class="icon01">
-						<span>실시간</span>
-						<span>
-							<strong id="_PGE_RT">40</strong>
-							<small>%</small>
-						</span>
+					<li>
+						<span>출력</span>
+						<strong>181 <small>MW</small></strong>
+					</li>
+					<li>
+						<span>발전효율</span>
+						<strong>42.51 <small>%</small></strong>
 					</li>
 				</ul>
-			</div>
-			<div class="info-box account">
-				<h3 class="title">
-					<strong>TODAY</strong>
-					<span id="viewYearDate" class="date">2025-03-05 수 09:10</span>
-				</h3>
-				<div class="text-box">
-					<span><strong>포미트님</strong>환영합니다.</span>
-					<a href="/logout.do" title="로그아웃" class="logout d-none">
-						<span class="visually-hidden">로그아웃</span>
-					</a>
-				</div>
 			</div>
 		</div>
 	</div>
