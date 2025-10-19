@@ -36,7 +36,8 @@
 @import url(/resources/css/print.css);
 
 /*#################### bootstrap overriding ####################*/
-html, body {
+html,
+body {
 	margin: 0;
 	padding: 0;
 	height: 100vh;
@@ -54,7 +55,9 @@ body {
 
 /* 맥스 너비 설정 */
 @media only screen and (min-width: 1920px) {
-	.modal, .b-modal {
+
+	.modal,
+	.b-modal {
 		max-width: 1920px;
 	}
 }
@@ -142,22 +145,23 @@ h6,
 }
 
 /*#################### Typography ####################*/
-.title-box {	
+.title-box {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
 }
 
-.title-box > * {
-	margin-bottom: 1rem;    
-    display: flex;
-    align-items: center;
+.title-box>* {
+	margin-bottom: 1rem;
+	display: flex;
+	align-items: center;
 }
 
-.title-box > *:not(:only-child) {
+.title-box>*:not(:only-child) {
 	margin-bottom: .5rem;
 }
+
 /* 
 .title-box > div:not(:only-child) > [class*='title']:only-child,
 .title-box [class*='title']:not(:only-child) {
@@ -169,14 +173,16 @@ h6,
 .title-box .page-move {
 	margin-right: .25rem;
 }
-.title-box .page-move + .btn-box {
+
+.title-box .page-move+.btn-box {
 	margin-bottom: 0;
 }
+
 .title-box .btn-box {
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
-	flex-wrap: wrap;	
+	flex-wrap: wrap;
 	margin-top: 0;
 }
 
@@ -184,12 +190,12 @@ h6,
 	.title-box .btn-box {
 		justify-content: space-between;
 	}
-} 
+}
 
 .message-box {
 	display: block;
 	margin: .25rem 0;
-	
+
 	color: var(--text-brand-tertiary);
 	border-radius: var(--bs-border-radius);
 	background-color: var(--bs-info-bg-subtle);
@@ -240,7 +246,7 @@ h6,
 }
 
 .title03:first-child,
-input[id="facilityRefList"] + .title03 {
+input[id="facilityRefList"]+.title03 {
 	margin-top: 0;
 }
 
@@ -308,7 +314,7 @@ input[id="facilityRefList"] + .title03 {
 	top: 11px;
 }
 
-[class*="title"] > small {
+[class*="title"]>small {
 	font-weight: 400;
 	font-size: 14px;
 	margin-left: 4px;
@@ -320,7 +326,7 @@ input[id="facilityRefList"] + .title03 {
 	position: relative;
 	padding-left: .75rem;
 	color: var(--text-default-default);
-	
+
 	margin-top: 1rem;
 }
 
@@ -345,6 +351,7 @@ input[id="facilityRefList"] + .title03 {
 	position: relative;
 	display: inline-block;
 }
+
 .title06::after {
 	content: '';
 	position: absolute;
@@ -430,12 +437,29 @@ input[id="facilityRefList"] + .title03 {
 }
 
 /* font-size */
-.fs-14 { font-size: 14px !important; }
-.fs-15 { font-size: 15px !important; }
-.fs-16 { font-size: 16px !important; }
-.fs-18 { font-size: 18px !important; }
-.fs-20 { font-size: 20px !important; }
-.fs-24 { font-size: 24px !important; }
+.fs-14 {
+	font-size: 14px !important;
+}
+
+.fs-15 {
+	font-size: 15px !important;
+}
+
+.fs-16 {
+	font-size: 16px !important;
+}
+
+.fs-18 {
+	font-size: 18px !important;
+}
+
+.fs-20 {
+	font-size: 20px !important;
+}
+
+.fs-24 {
+	font-size: 24px !important;
+}
 
 /* cursor: pointer */
 .cursor-hand,
@@ -445,7 +469,7 @@ input[id="facilityRefList"] + .title03 {
 
 /* 테이블 셀 내 줄바꿈 */
 .ws-reset {
-	white-space: unset !important;	
+	white-space: unset !important;
 }
 
 /*#################### Buttons ####################*/
@@ -453,6 +477,7 @@ input[id="facilityRefList"] + .title03 {
 	border-radius: .25rem;
 	white-space: nowrap;
 }
+
 /*
 .btn:has([class*='material-']) {
 	display: flex;
@@ -468,6 +493,7 @@ input[id="facilityRefList"] + .title03 {
 .btn.btn-sm {
 	font-size: .9375rem;
 }
+
 /*
 .btn.btn-sm > [class*='material-symbols-'] {
 	font-size: 20px;
@@ -502,6 +528,7 @@ input[id="facilityRefList"] + .title03 {
 	margin: 0;
 	padding: 0;
 }
+
 .modal-header .btn.close:hover {
 	background-color: var(--bg-brand-default);
 	animation: rotate .5s linear 1;
@@ -532,7 +559,7 @@ input[id="facilityRefList"] + .title03 {
 }
 
 .btn.btn-tm-add>[class*='material-symbols-'],
-.table td > .btn.btn-sm>[class*='material-symbols-'],
+.table td>.btn.btn-sm>[class*='material-symbols-'],
 .btn.move-to-3D>[class*='material-symbols-'],
 .search-box .btn.btn-primary>[class*='material-symbols-'] {
 	/* margin-right: .25rem; */
@@ -548,16 +575,17 @@ input[id="facilityRefList"] + .title03 {
 	padding-left: 32px;
 }
 
-.table[aria-label="설비정보"] td > .btn.btn-sm > span {
+.table[aria-label="설비정보"] td>.btn.btn-sm>span {
 	position: absolute;
 	top: -9999em;
 	left: -9999em;
 	text-indent: -9999em;
-	
+
 	width: 0;
 	height: 0;
 }
-.table[aria-label="설비정보"] td > .btn.btn-sm.move-to-3D {
+
+.table[aria-label="설비정보"] td>.btn.btn-sm.move-to-3D {
 	background-image: url('/resources/images/icons/icon-view_in_ar-white.svg');
 	background-repeat: no-repeat;
 	background-size: 20px;
@@ -566,13 +594,13 @@ input[id="facilityRefList"] + .title03 {
 	height: 24px;
 }
 
-.table[aria-label="설비정보"] td > .btn.btn-sm.move-to-pano {
+.table[aria-label="설비정보"] td>.btn.btn-sm.move-to-pano {
 	background-image: url('/resources/images/icons/icon-vrpano-white.svg');
 	background-repeat: no-repeat;
 	background-size: 20px;
 	background-position: center;
 	width: 24px;
-	height: 24px;	
+	height: 24px;
 }
 
 /* container-cctv > move-to-3D */
@@ -581,8 +609,9 @@ input[id="facilityRefList"] + .title03 {
 	background-repeat: no-repeat;
 	background-size: 20px;
 	background-position: left 6px center;
-	padding-left: 32px;	
+	padding-left: 32px;
 }
+
 .btn.btn-outline-primary.move-to-3D:hover {
 	background-image: url("/resources/images/icons/icon-view_in_ar-white.svg");
 }
@@ -595,6 +624,7 @@ input[id="facilityRefList"] + .title03 {
 	background-position: left 6px center;
 	padding-left: 32px;
 }
+
 .btn.btn-outline-primary.btn-cctv:hover {
 	background-image: url('/resources/images/icons/icon-cctv-hover.svg');
 }
@@ -607,6 +637,7 @@ input[id="facilityRefList"] + .title03 {
 	background-position: left 8px center;
 	padding-left: 28px;
 }
+
 .btn.btn-outline-primary.btn-install {
 	background-image: url('/resources/images/icons/icon-download-white.svg');
 }
@@ -636,6 +667,7 @@ input[id="facilityRefList"] + .title03 {
 	background-position: left 8px center;
 	padding-left: 28px;
 }
+
 .btn-chart:hover {
 	background-image: url('/resources/images/icons/icon-ssid_chart-white.svg');
 }
@@ -645,16 +677,18 @@ input[id="facilityRefList"] + .title03 {
 	font-size: 0;
 	text-indent: -9999em;
 }
+
 .icon-attach {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    
+	width: 24px;
+	height: 24px;
+	display: flex;
+
 	background-image: url('/resources/images/icons/icon-attachment-blue.svg');
 	background-size: 24px;
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
 .icon-attach[disabled] {
 	opacity: .4;
 	background-image: url('/resources/images/icons/icon-attachment-gray.svg');
@@ -662,10 +696,10 @@ input[id="facilityRefList"] + .title03 {
 
 .icon-chevron-right {
 	background-image: url(/images/icons/icon-arrow-right-gray.svg);
-    background-size: 20px;
-    background-repeat: no-repeat;
-    background-position: left center;
-    padding-left: 1.25rem;
+	background-size: 20px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 1.25rem;
 }
 
 
@@ -692,6 +726,7 @@ input[id="facilityRefList"] + .title03 {
 		padding: 1rem;
 	}
 }
+
 .tab-pane:has(.panel-box.multiple-tm),
 .tab-pane:has(.panel-box.daily-safety) {
 	padding: 0;
@@ -704,20 +739,22 @@ input[id="facilityRefList"] + .title03 {
 	overflow: hidden;
 	margin-bottom: .5rem;
 }
+
 .nav-pills .nav-link {
 	border-radius: 0;
 	background-color: var(--bg-default-default);
 }
+
 .nav-pills .nav-link:hover {
 	background-color: var(--bs-link-hover-color);
 	color: var(--text-default-white);
 }
 
-.nav-pills + .tab-content {
+.nav-pills+.tab-content {
 	height: calc(100% - 2.75rem);
 }
 
-.nav-pills + .tab-content .tab-pane {
+.nav-pills+.tab-content .tab-pane {
 	padding: 0;
 	height: 100%;
 }
@@ -731,7 +768,7 @@ input[id="facilityRefList"] + .title03 {
 /* 알림박스 - 작은크기 추가 */
 .alert.alert-sm {
 	font-size: .875rem;
-	padding: .5rem .75rem; 
+	padding: .5rem .75rem;
 }
 
 /* table-responsive */
@@ -744,12 +781,13 @@ input[id="facilityRefList"] + .title03 {
 .table {
 	margin-bottom: 0;
 }
+
 .table th {
 	font-weight: 500;
 	position: relative;
 }
 
-.table th, 
+.table th,
 .table td {
 	vertical-align: middle;
 	white-space: nowrap;
@@ -802,48 +840,52 @@ input[id="facilityRefList"] + .title03 {
 }
 
 /*#################### jsTree Overriding ####################*/
-.jstree-box > .jstree {
+.jstree-box>.jstree {
 	width: 100%;
 }
-.jstree-loading > ul {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    margin-top: 1rem;
+
+.jstree-loading>ul {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	margin-top: 1rem;
 }
+
 .jstree-default>.jstree-container-ul .jstree-loading>.jstree-ocl {
-    background-image: url(/resources/images/icons/bouncing-circles.svg) !important;
-    background-size: auto 32px;
-    background-position: left top;
-    width: 48px;
-    height: 32px;
+	background-image: url(/resources/images/icons/bouncing-circles.svg) !important;
+	background-size: auto 32px;
+	background-position: left top;
+	width: 48px;
+	height: 32px;
 }
 
 /*#################### 모델링 사용가이드 ####################*/
 /* 터치기반 구분 */
 .unity-guide {
 	display: none;
-	
+
 	position: absolute;
 	z-index: 100;
 
 	border: solid 1px var(--border-brand-secondary);
 	background-color: var(--bg-default-default);
-    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* 터치 아닌 경우 */
 .unity-guide {
 	width: 360px;
-    top: 248px;
-    right: 0;
+	top: 248px;
+	right: 0;
 }
+
 .finger-control {
 	display: none;
 }
+
 .mouse-control {
 	display: block;
-}	
+}
 
 /* 터치 기반인 경우 */
 body.touch-device .unity-guide {
@@ -851,9 +893,11 @@ body.touch-device .unity-guide {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
 body.touch-device .mouse-control {
 	display: none;
 }
+
 body.touch-device .finger-control {
 	display: block;
 }
@@ -867,11 +911,13 @@ body.touch-device .finger-control {
 	align-items: center;
 	justify-content: space-between;
 }
-.unity-guide-header > * {
+
+.unity-guide-header>* {
 	min-height: 40px;
 	display: inline-flex;
 	align-items: center;
 }
+
 .unity-guide-header .title {
 	font-size: 16px;
 	font-weight: 500;
@@ -881,6 +927,7 @@ body.touch-device .finger-control {
 	background-size: 32px;
 	padding-left: 40px;
 }
+
 .unity-guide-header .btn.close-guide {
 	background: url('/resources/images/icons/icon-close-white.svg') no-repeat center;
 	background-size: 24px;
@@ -902,14 +949,14 @@ body.touch-device .finger-control {
 	width: 24px;
 	height: 24px;
 	border-radius: 40px;
-	
+
 	background-color: var(--black-700);
 	background-image: url('/resources/images/icons/icon-help-white.svg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 16px;
-	
-	text-indent: -9999em;	
+
+	text-indent: -9999em;
 }
 
 /* 콘텐츠 구분 */
@@ -921,12 +968,15 @@ body.touch-device .finger-control {
 	padding: 4px 0 0 64px;
 	font-size: 15px;
 }
+
 .unity-guide .finger-control .item01 {
 	background-image: url('/resources/images/icons/icon-finger1.svg');
 }
+
 .unity-guide .finger-control .item02 {
 	background-image: url('/resources/images/icons/icon-finger2.svg');
 }
+
 .unity-guide .finger-control .item03 {
 	background-image: url('/resources/images/icons/icon-finger3.svg');
 }
@@ -934,14 +984,16 @@ body.touch-device .finger-control {
 .unity-guide .mouse-control .item01 {
 	background-image: url('/resources/images/icons/icon-mouse1.svg');
 }
+
 .unity-guide .mouse-control .item02 {
 	background-image: url('/resources/images/icons/icon-mouse2.svg');
 }
+
 .unity-guide .mouse-control .item03 {
 	background-image: url('/resources/images/icons/icon-mouse3.svg');
 }
 
-.unity-guide .item03 > p {
+.unity-guide .item03>p {
 	margin-bottom: 0;
 }
 
@@ -950,7 +1002,7 @@ body.touch-device .finger-control {
 	position: fixed;
 	width: 100%;
 	height: calc(100% - var(--header-height-md));
-	
+
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-use-select: none;
@@ -976,5 +1028,3 @@ body.touch-device .finger-control {
 .container-log {
 	padding: 2rem 0 0;
 }
-
-

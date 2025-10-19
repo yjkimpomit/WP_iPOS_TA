@@ -340,11 +340,11 @@ function globalMenu() {
 
     //다른 버튼 초기화
     $('.operation-status').removeClass('visible');
-    $('#operationStatus img').attr('src', '/resources/images/icons/icon-power.svg').attr('alt', '기타정보 열기');
+    $('.btn-status img').attr('src', '/resources/images/icons/icon-power.svg').attr('alt', '기타정보 열기');
 }
 
 // 모바일: 헤더 > 운전정보 클릭시 실행
-function operationInfo() {
+function showOperationInfo() {
     $('.left-box').removeClass('expand');
     //$('#menuList').removeClass('show');
     //$('#toggle-button img').attr('src', '/resources/images/icons/icon-menu.svg').attr('alt', '메뉴 열기');
@@ -352,17 +352,17 @@ function operationInfo() {
     if ($('.operation-status').hasClass('visible')) {
         // .operation-status에서 'visible' 클래스 제거
         $('.operation-status').removeClass('visible');
-        // #operationStatus에서 img의 src와 alt 속성 초기화
-        $('#operationStatus img').attr('src', '/resources/images/icons/icon-power.svg').attr('alt', '기타정보 열기');
+        // .btn-status에서 img의 src와 alt 속성 초기화
+        $('.btn-status img').attr('src', '/resources/images/icons/icon-power.svg').attr('alt', '기타정보 열기');
     } else {
         $('.operation-status').addClass('visible');
-        $('#operationStatus img').attr('src', '/resources/images/icons/icon-menu-close-brand.svg').attr('alt', '기타정보 닫기');
+        $('.btn-status img').attr('src', '/resources/images/icons/icon-menu-close-brand.svg').attr('alt', '기타정보 닫기');
     }
 }
 
 // 모바일: 윈도우 리사이징 메뉴와 운전정보 버튼 초기화
 $(window).on('resize', function () {
-    $('#operationStatus img').attr('src', '/resources/images/icons/icon-power.svg').attr('alt', '기타정보 열기');
+    $('.btn-status img').attr('src', '/resources/images/icons/icon-power.svg').attr('alt', '기타정보 열기');
     $('#toggle-button img').attr('src', '/resources/images/icons/icon-menu.svg').attr('alt', '메뉴 열기');
     $('.operation-status').removeClass('visible');
     $('#toggle-button').attr('aria-expanded', 'false');
