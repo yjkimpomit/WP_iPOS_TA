@@ -1017,21 +1017,6 @@ $(document).ready(function () {
 });
 
 
-// 좌측메뉴 > 하위메뉴 토글
-function toggleMenuBox($icon) {
-  var $menuItem = $icon.closest('.menu-item'); // 클릭한 버튼의 상위 .menu-item
-  var $menuBox = $menuItem.next('.menu-box'); // 바로 다음에 있는 .menu-box
-
-if ($menuBox.hasClass('show')) {
-    // 이미 열려있으면 닫기
-    $menuBox.removeClass('show');
-  } else {
-    // 닫혀있으면 열기
-    $menuBox.addClass('show');
-  }
-}
-
-
 
 
 

@@ -30,9 +30,9 @@
 				<button type="button" onclick="fnOpenPopup('modal09-dailySafety.html', $(this));" class="menu-link d1" data-class="daily-safety" data-title="일일안전현황"><span class="menu-text">일일안전현황</span></button>
 				
 				<!-- open-icon 요소 클릭시, menu-box에 active 클래스를 on/off 되게 해 주세요. -->
-				<span class="open-icon" onclick="toggleMenuBox($(this));"></span>
+				<span class="open-icon"></span>
 			</div>
-			<div class="menu-box">
+			<div class="menu-box show">
 				<strong>일일안전현황</strong>
 				<ul class="depth-2">
 					<li>
@@ -53,7 +53,7 @@
 		<li>
 			<div class="menu-item">
 				<button type="button" onclick="fnOpenPopup('', $(this));" class="menu-link d1" data-class="geni" data-title="GENi"><span class="menu-text">GENi</span></button>
-				<span class="open-icon" onclick="toggleMenuBox($(this));"></span>
+				<span class="open-icon"></span>
 			</div>
 			<div class="menu-box">
 				<strong>GENi</strong>
@@ -166,7 +166,7 @@
 		</li>
 		<li>
 			<div class="menu-link d1" data-class="visitors" data-title="방문자정보">
-				<div class="menu-box active">
+				<div class="menu-box">
 					<div class="menu-item">방문자정보 <button class="btn-sm btn-log" onclick="">조회</button></div>
 					<div class="counter-box">
 						<div class="cb-total">

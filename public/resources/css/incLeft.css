@@ -163,11 +163,14 @@ nav [type="button"] {
 }
 
 .left-box.expand .menu-item > .menu-link.d1 {
-	flex: 1 0 calc(100% - 40px);
-	max-width: calc(100% - 40px);
-	
+	flex: 1 0 100%;
+	max-width: 100%;
 	display: flex;
     align-items: center;
+}
+.left-box.expand .menu-item:has(.open-icon) > .menu-link.d1 {
+	flex: 1 0 calc(100% - 40px);
+	max-width: calc(100% - 40px);
 }
 
 .left-box.expand .open-icon {
@@ -510,7 +513,7 @@ nav [type="button"] {
 	}
 
 	.left-box:not(.expand) li:not(:has(.menu-box)) .menu-link.d1:hover > .menu-text,
-	.left-box:not(.expand) .menu-box.active {
+	.left-box:not(.expand) .menu-box.show {
 		position: absolute;
 		top: .5rem;
 		left: 3rem;
@@ -518,7 +521,7 @@ nav [type="button"] {
 
 		display: block;
 		width: auto;
-		padding: .75rem 1rem;
+		padding: .5rem 1rem;
 		white-space: nowrap;
 
 		background-color: var(--bg-default-default);
@@ -526,7 +529,7 @@ nav [type="button"] {
 		box-shadow: var(--box-shadow-1);
 	}
 	.left-box:not(.expand) li:not(:has(.menu-box)) .menu-link.d1:hover > .menu-text::before,
-	.left-box:not(.expand) .menu-box.active::before {
+	.left-box:not(.expand) .menu-box.show::before {
 		content: '';
 		position: absolute;
 		top: auto;
@@ -541,30 +544,30 @@ nav [type="button"] {
 		border-bottom: 7px solid transparent;
 		border-right: 7px solid var(--white);
 	}
-	.left-box:not(.expand) .menu-box.active > strong {
+	.left-box:not(.expand) .menu-box.show > strong {
 		margin-bottom: .5rem;
 		font-size: .875rem;
 	}
-	.left-box:not(.expand) .menu-box.active .depth-2 {
+	.left-box:not(.expand) .menu-box.show .depth-2 {
 		display: block;
 		font-size: .8125rem;
 		padding: .5rem 0;
 	}
-	.left-box:not(.expand) .menu-box.active .depth-3 {
+	.left-box:not(.expand) .menu-box.show .depth-3 {
 		display: none;
 	}
 
-	.left-box:not(.expand) .menu-box.active .menu-link {
+	.left-box:not(.expand) .menu-box.show .menu-link {
 		height: auto;
 	}
 	
-	.left-box:not(.expand) .menu-box.active:has(.counter-box) {
+	.left-box:not(.expand) .menu-box.show:has(.counter-box) {
 		display: block;
 		top: inherit;
 		bottom: 0;
 		margin-bottom: .5rem;
 	}
-	.left-box:not(.expand) .menu-box.active:has(.counter-box)::before {
+	.left-box:not(.expand) .menu-box.show:has(.counter-box)::before {
 		top: 60%;
 	}
 	.left-box:not(.expand) .menu-box .menu-item {
@@ -572,7 +575,7 @@ nav [type="button"] {
 		font-weight: 700;
 		margin-bottom: .5rem;
 	}
-	.left-box:not(.expand) .menu-box.active .menu-link.d2 > span sub {
+	.left-box:not(.expand) .menu-box.show .menu-link.d2 > span sub {
 		color: var(--red-500);
 	}
 }
