@@ -14,7 +14,7 @@
 	
 	--gnb-top: var(--header-height);
 	--gnb-width: 56px;
-    --gnb-width-active: 176px;
+    --gnb-width-active: 240px;
 
     --gnb-font-weight-normal: 400;
     --gnb-font-weight-bold: 500;
@@ -396,7 +396,7 @@ a[onclick] {
 .hangul_fallback {
 	font-family: var(--font-family), sans-serif;
 }
-
+/* 
 .text-primary {
 	color: var(--text-brand-tertiary) !important;
 }
@@ -411,7 +411,7 @@ a[onclick] {
 
 .text-warning {
 	color: var(--text-warning-tertiary) !important;
-}
+} */
 
 
 /* scroll */
@@ -432,6 +432,21 @@ a[onclick] {
 ::-webkit-scrollbar-button {
 	width: 0;
 	height: 0;
+}
+
+/* another scroll style */
+.scroll-hide ::-webkit-scrollbar-track,
+.scroll-hide ::-webkit-scrollbar-corner,
+.scroll-hide ::-webkit-scrollbar-thumb {
+	background-color: transparent;
+}
+
+.scroll-hide:hover ::-webkit-scrollbar-track,
+.scroll-hide:hover ::-webkit-scrollbar-corner {
+	background-color: var(--blue-900);
+}
+.scroll-hide:hover ::-webkit-scrollbar-thumb {
+	background-color: var(--white-200);
 }
 
 /* date, time picker icon */

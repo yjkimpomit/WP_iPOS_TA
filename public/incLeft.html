@@ -1,68 +1,196 @@
 <script>
-    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
-    jQuery(document).ready(function ($) {
-        // 모바일인 경우 cctv를 숨김
-        if (isMobile) {
-            //console.log("모바일");
-            $('[data-class="cctv"]').closest('li').hide();
-            $('[data-class="qrcode"]').closest('li').show();
-        } else {
-            //console.log("웹 페이지");
-            $('[data-class="cctv"]').closest('li').show();
-            $('[data-class="qrcode"]').closest('li').hide();
-        }
-    });
+	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+	jQuery(document).ready(function ($) {
+		// 모바일인 경우 cctv를 숨김
+		if (isMobile) {
+			//console.log("모바일");
+			$('[data-class="cctv"]').closest('li').hide();
+			$('[data-class="qrcode"]').closest('li').show();
+		} else {
+			//console.log("웹 페이지");
+			$('[data-class="cctv"]').closest('li').show();
+			$('[data-class="qrcode"]').closest('li').hide();
+		}
+	});
 </script>
 
 <button id="toggle-button" class="menu-icon" type="button" onclick="globalMenu();">
-    <span>메뉴열기</span>
+	<span>메뉴열기</span>
 </button>
 
 <nav id="menuList" class="menu-list">
 	<ul class="depth-1">
 		<li>
-			<a href="#" onclick="fnOpenPopup('modal06-dashboard.html', $(this));" class="menu-link" data-class="dashboard" data-title="대시보드"><span>대시보드</span></a>
+			<div class="menu-item">
+				<button type="button" onclick="fnOpenPopup('modal06-dashboard.html', $(this));" class="menu-link d1" data-class="dashboard" data-title="대시보드"><span class="menu-text">대시보드</span></button>
+			</div>
 		</li>
 		<li>
-			<button type="button" onclick="fnOpenPopup('modal09-dailySafety.html', $(this));" class="menu-link" data-class="daily-safety" data-title="일일안전현황"><span>일일안전현황</span></button>
+			<div class="menu-item">
+				<button type="button" onclick="fnOpenPopup('modal09-dailySafety.html', $(this));" class="menu-link d1" data-class="daily-safety" data-title="일일안전현황"><span class="menu-text">일일안전현황</span></button>
+				
+				<!-- open-icon 요소 클릭시, menu-box에 active 클래스를 on/off 되게 해 주세요. -->
+				<span class="open-icon" onclick="toggleMenuBox($(this));"></span>
+			</div>
+			<div class="menu-box">
+				<strong>일일안전현황</strong>
+				<ul class="depth-2">
+					<li>
+						<button type="button" class="menu-link d2" data-title="일일안전작업현황" id="tab01_safety" data-bs-target="#tab01-pane-safety" aria-controls="tab01-pane-safety"><span>일일안전작업현황</span></a>
+					</li>
+					<li>
+						<button type="button" class="menu-link d2" data-title="경상오더"><span>경상오더</span></a>
+					</li>
+					<li>
+						<button type="button" class="menu-link d2" data-title="공사오더"><span>공사오더</span></a>
+					</li>
+					<li>
+						<button type="button" class="menu-link d2" data-title="공사오더-OH"><span>공사오더(OH)</span></a>
+					</li>
+				</ul>
+			</div>
 		</li>
 		<li>
-			<button type="button" onclick="fnOpenPopup('', $(this));" class="menu-link" data-class="geni" data-title="GENi"><span>GENi</span></button>
-			<ul class="depth-2">
-				<li>
-					<a href="#" onclick="fnOpenPopup('modal01-facility.html', $(this));" class="menu-link" data-class="facility folded with-tree" data-title="설비정보"><span>설비정보</span></a>
-				</li>
-				<li>
-					<a href="#" onclick="fnOpenPopup('modal02-tm.html', $(this));" class="menu-link" data-class="tm" data-title="TM 현황"><span>TM 현황</span></a>
-					<ul class="depth-3">
-                        <li class="menu-link"><span>작업요청 확정</span></li>
-                        <li class="menu-link"><span>다발 TM현황</span></li>
-                        <li class="menu-link"><span>미결 TM현황</span></li>
-                        <li class="menu-link"><span>작업요청 건수</span></li>
-                        <li class="menu-link"><span>작업요청 처리현황</span></li>
-                    </ul>
-				</li>
-				<li>
-					<a href="#" onclick="fnOpenPopup('modal03-redTag.html', $(this));" class="menu-link" data-class="red-tag" data-title="작업현황"><span>작업현황</span><small>Red TAG</small></a>
-				</li>
-				<li>
-					<a href="#" onclick="fnOpenPopup('modal04-prevention.html', $(this));" class="menu-link" data-class="prevention" data-title="예방점검현황"><span>예방점검현황</span></a>
-				</li>
-			</ul>
+			<div class="menu-item">
+				<button type="button" onclick="fnOpenPopup('', $(this));" class="menu-link d1" data-class="geni" data-title="GENi"><span class="menu-text">GENi</span></button>
+				<span class="open-icon" onclick="toggleMenuBox($(this));"></span>
+			</div>
+			<div class="menu-box">
+				<strong>GENi</strong>
+				<ul class="depth-2">
+					<li>
+						<button type="button" onclick="fnOpenPopup('modal01-facility.html', $(this));" class="menu-link d2" data-class="facility folded with-tree" data-title="설비정보"><span>설비정보</span></button>
+					</li>
+					<li>
+						<button type="button" onclick="fnOpenPopup('modal02-tm.html', $(this));" class="menu-link d2" data-class="tm" data-title="TM 현황"><span>TM 현황</span></a>
+						<ul class="depth-3">
+							<li>
+								<div class="menu-link d3"><span>작업요청 확정</span></div>
+							</li>
+							<li>
+								<div class="menu-link d3"><span>다발 TM현황</span></div>
+							</li>
+							<li>
+								<div class="menu-link d3"><span>미결 TM현황</span></div>
+							</li>
+							<li>
+								<div class="menu-link d3"><span>작업요청 건수</span></div>
+							</li>
+							<li>
+								<div class="menu-link d3"><span>작업요청 처리현황</span></div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<button type="button" onclick="fnOpenPopup('modal03-redTag.html', $(this));" class="menu-link d2" data-class="red-tag" data-title="작업현황"><span>작업현황<sub>Red TAG</sub></span></button>
+						<ul class="depth-3">
+							<li>
+								<div class="menu-link d3"><span>작업요청 확정</span></div>
+							</li>
+							<li>
+								<div class="menu-link d3"><span>다발 TM현황</span></div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<button type="button" onclick="fnOpenPopup('modal04-prevention.html', $(this));" class="menu-link d2" data-class="prevention" data-title="예방점검현황"><span>예방점검현황</span></button>
+						<ul class="depth-3">
+							<li>
+								<div class="menu-link d3"><span>정비비용 고장경향 분석</span></div>
+							</li>
+							<li>
+								<div class="menu-link d3"><span>점검 보고서</span></div>
+							</li>
+							<li>
+								<div class="menu-link d3"><span>점검 결과</span></div>
+							</li>
+							<li>
+								<div class="menu-link d3"><span>점검 결과(chart)</span></div>
+							</li>
+							<li>
+								<div class="menu-link d3"><span>이상 점검 결과</span></div>
+							</li>
+							<li>
+								<div class="menu-link d3"><span>미점검 일정</span></div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<div class="menu-item">
+				<button type="button" onclick="fnOpenPopup('', $(this));" class="menu-link d1" data-class="idms" data-title="IDMS"><span class="menu-text">IDMS</span></button>
+			</div>
+		</li>
+		<li>
+			<div class="menu-item">
+				<button type="button" onclick="fnOpenPopup('', $(this));" class="menu-link d1" data-class="panorama" data-title="파노라마"><span class="menu-text">파노라마</span></button>
+			</div>
+		</li>
+		<li>
+			<div class="menu-item">
+				<button type="button" onclick="fnOpenPopup('', $(this));" class="menu-link d1" data-class="alarm" data-title="조기경보"><span class="menu-text">조기경보</span></button>
+			</div>
+		</li>
+		<li>
+			<div class="menu-item">
+				<button type="button" onclick="fnOpenPopup('', $(this));" class="menu-link d1" data-class="qrcode" data-title="QR CODE"><span class="menu-text">QR CODE</span></button>
+			</div>
+		</li>
+		<li>
+			<div class="menu-item">
+				<button type="button" onclick="fnOpenPopup('modal08-cctv.html', $(this));" class="menu-link d1" data-class="cctv" data-title="CCTV"><span class="menu-text">CCTV</span></button>
+			</div>
+		</li>
+		<li class="full">
+			<div class="menu-item">
+				<button type="button" onclick="fnOpenPopup('modal08-cctv.html', $(this));" class="menu-link d1" data-class="outbound" data-title="WA"><span class="menu-text">WA</span></button>
+			</div>
 		</li>
 		
-		<!-- <li>
-			<a href="#" onclick="openPopup('modal05-apc.html', $(this));" class="menu-link" data-class="apc" data-title="APC"><span>APC</span></a>
-		</li> -->
-		<!-- <li>
-			<a href="#" onclick="openPopup('modal07-iPlis.html', $(this));" class="menu-link" data-class="i-plis" data-title="i-PLIS"><span>i-PLIS</span></a>
-		</li> -->
 		<li>
-			<a href="#" onclick="fnOpenPopup('', $(this));" class="menu-link" data-class="qrcode" data-title="QR CODE"><span>QR CODE</span></a>
+			<div class="menu-item">
+				<button type="button" onclick="" class="menu-link d1" data-class="operation-info" data-title="운전정보 열기"><span class="menu-text">운전정보 열기</span></button>
+			</div>
 		</li>
 		<li>
-			<a href="#" onclick="fnOpenPopup('modal08-cctv.html', $(this));" class="menu-link" data-class="cctv" data-title="CCTV"><span>CCTV</span></a>
+			<div class="menu-item">
+				<button type="button" onclick="" class="menu-link d1" data-class="close-tabs" data-title="모든 탭 닫기"><span class="menu-text">모든 탭 닫기</span></button>
+			</div>
 		</li>
-		<li><a href="#" onclick="openModelInfoPopup('12298270');" class="menu-link" data-title="3D"><span>3D Model</span><small>temp</small></a></li>
+		<li>
+			<div class="menu-item">
+				<button type="button" onclick="" class="menu-link d1" data-class="minimize-tabs" data-title="모든 탭 최소"><span class="menu-text">모든 탭 최소</span></button>
+			</div>
+		</li>
+		<li>
+			<div class="menu-link d1" data-class="visitors" data-title="방문자정보">
+				<div class="menu-box active">
+					<div class="menu-item">방문자정보 <button class="btn-sm btn-log" onclick="">조회</button></div>
+					<div class="counter-box">
+						<div class="cb-total">
+							<strong>전체 방문자수</strong>
+							<span>24,481명</span>
+						</div>
+						<div class="cb-today">
+							<strong>오늘 방문자수</strong>
+							<span>50명</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
 	</ul>
+
+	<!-- 	
+	<ul>
+		<li>
+			<a href="#" onclick="openPopup('modal05-apc.html', $(this));" class="menu-link" data-class="apc" data-title="APC"><span>APC</span></a>
+		</li>
+		<li>
+			<a href="#" onclick="openPopup('modal07-iPlis.html', $(this));" class="menu-link" data-class="i-plis" data-title="i-PLIS"><span>i-PLIS</span></a>
+		</li>
+	</ul>
+	-->
 </nav>

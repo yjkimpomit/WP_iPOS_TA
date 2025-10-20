@@ -6,8 +6,9 @@
  * 부트스트랩 이전에 적용되어야 하는 스타일만 정의하고 나머지 스타일은 common.css 에 정의한다
  */
  
-button[type='button'] {
+button {
 	border-width: 0;
+	padding: 0;
 }
 
 ul,
