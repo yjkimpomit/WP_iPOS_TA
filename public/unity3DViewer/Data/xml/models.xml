@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<models startModel="Site" clearOldBeforeLoad="false" mobileDelayTime="3" mobileDelayPercent="0.8" showMemoryState="false" showSearchOutline="false">
+  <item num="0" id="Site" assets="site.ab" categoryId="Site" zoomMin="1" view="224,25" fixedDistance="150" viewOrthographic="80" invisibleHideButton="true">
+    <tag id="GT" name="GT" tagType="bd" type="" x="325.39" y="41.75" z="317.09"/>
+    <tag id="HRSG" name="HRSG" tagType="bd" type="" x="326.42" y="52.74" z="263.75"/>
+    <tag id="ST" name="ST" tagType="bd" type="" x="248.49" y="50.89" z="341.37"/>
+    <item num="0" id="GT" assets="gt.ab" categoryId="GTBD" zoomMin="1" view="224,25" fixedDistance="100" viewOrthographic="50" visibleModelLinkButton="true" invisibleLinkBtnLevel="4">
+			<tag id="CCTV_0007" name="CCTV_0007" tagType="cctv" type="cctv" x="297.1" y="16.21" z="358.37" />
+			<tag id="CCTV_0010" name="CCTV_0010" tagType="cctv" type="cctv" x="307.25" y="25.26" z="363.7" />
+      <tag id="CCTV_0015" name="CCTV_0015" tagType="cctv" type="cctv" x="351.670013" y="14.6300001" z="333.339996" />
+      <tag id="CCTV_0016" name="CCTV_0016" tagType="cctv" type="cctv" x="310.399994" y="14.6300001" z="333.339996" />
+      <tag id="CCTV_0021" name="CCTV_0021" tagType="cctv" type="cctv" x="326.390015" y="14.6300001" z="326.320007" />
+      <tag id="CCTV_0022" name="CCTV_0022" tagType="cctv" type="cctv" x="289.26001" y="14.6300001" z="324.540009" />
+    </item>
+    <item num="1" id="ST" assets="st.ab" categoryId="STBD" zoomMin="1" view="270,5" fixedDistance="100" viewOrthographic="30">
+      <item num="0" id="ST_Ground" name="Ground" assets="st.ab" categoryId="STBD_1" zoomMin="1" view="270,5" fixedDistance="100" viewOrthographic="30" visibleModelLinkButton="true" invisibleLinkBtnLevel="5">
+        <tag id="CCTV_0041" name="CCTV_0041" tagType="cctv" type="cctv" x="264.200012" y="16" z="340.100006" />
+        <tag id="CCTV_0042" name="CCTV_0042" tagType="cctv" type="cctv" x="279.299988" y="16" z="325" />
+        <tag id="CCTV_0043" name="CCTV_0043" tagType="cctv" type="cctv" x="237.5" y="16" z="333.299988" />
+        <tag id="CCTV_0046" name="CCTV_0046" tagType="cctv" type="cctv" x="251" y="16" z="349.100006" />
+        <tag id="CCTV_0050" name="CCTV_0050" tagType="cctv" type="cctv" x="258.299988" y="16" z="319.700012" />
+        <tag id="CCTV_1001" name="CCTV_1001" tagType="cctv" type="cctv" x="268.700012" y="16" z="329.700012" />
+        <tag id="CCTV_1002" name="CCTV_1002" tagType="cctv" type="cctv" x="268" y="16" z="340" />
+        <tag id="CCTV_1003" name="CCTV_1003" tagType="cctv" type="cctv" x="279.899994" y="16" z="339.399994" />
+        <tag id="CCTV_1004" name="CCTV_1004" tagType="cctv" type="cctv" x="252" y="16" z="342.399994" />
+      </item>
+      <item num="1" id="ST_2Floor" name="2Floor" assets="st.ab" categoryId="STBD_2" zoomMin="1" view="270,5" fixedDistance="100" viewOrthographic="30" visibleModelLinkButton="true" invisibleLinkBtnLevel="5">
+      </item>
+      <item num="2" id="ST_3Floor" name="3Floor" assets="st.ab" categoryId="STBD_3" zoomMin="1" view="270,5" fixedDistance="100" viewOrthographic="30" visibleModelLinkButton="true" invisibleLinkBtnLevel="5">
+        <tag id="CCTV_0038" name="CCTV_0038" tagType="cctv" type="cctv" x="266.109985" y="35.2999992" z="310" />
+      </item>
+    </item>
+    <item num="2" id="HRSG" assets="hrsg.ab" categoryId="HRSGBD" zoomMin="1" view="215,20" fixedDistance="100" viewOrthographic="45" visibleModelLinkButton="true" invisibleLinkBtnLevel="4">
+      <tag id="CCTV_0071" name="CCTV_0071" tagType="cctv" type="cctv" x="335.809998" y="24.0900002" z="262.910004" />
+    </item>
+  </item>
+</models>

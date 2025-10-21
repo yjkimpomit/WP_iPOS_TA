@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<system startOrder="0" />
+
+	<panoramaSwitchMap>
+		<panorama resizable="true" defaultSpotType="Hotspot0">
+			<sphere partW="6" partH="3" mapSize="1024" />
+			<load words="LOADING PANORAMA" partMapSize="1024" partAll="true" />
+			<camera cameraYLimitMax="80" />
+		</panorama>
+		<window startX="0" startY="0" startW="320" startH="180" startDirection="bottom,right" />
+		<map>
+			<level isShowChildList="true" />
+			<picViewer>
+				<tag visible="true" textVisible="true" isFitTagToText="true" isFitCameraToTag="true" textRecoveryWidth="6" isShowName="true" />
+				<zoom noMargine="false" zoomAtSwitch="0.5" scaleMultiple="3" />
+				<color />
+			</picViewer>
+		</map>
+	</panoramaSwitchMap>
+	<unity>
+		<panorama startLevel="" startID="ex001">
+			<sphere segmentW="100" segmentH="50" partW="6" partH="3" />
+			<camera fov="90" eyesDistance="0.7" />
+			<control isEscapeQuit="true" />
+			<!--<spot default="SpotPoint" />-->
+		</panorama>
+		<window>
+			<manager widthOffset="0.1" heightOffset="0.1"/>
+			<animation aniTime="0.15" showScale="1" hideScale="0" />
+			<size minSizeX="100" minSizeY="100" startSizeX="200" startSizeY="200" minimizeWindowAtStart="false" applyStartSize="false" />
+			<cursor cursorRangeOffset="0.5" />
+		</window>
+		<Image>
+			<zoom minZoomValue="1" maxZoomValue="30" wheelSpeed="30" startZoomValue="1" zoomInterpolationDuration="0.15"/>
+		</Image>
+		<map>
+			<map showName="true" />
+			<!--<animation switchDuration="1" switchScale="2" />-->
+			<spot spotEvent = "true"/>
+			<!--<spot spotScale ="1.5" playerScale ="1.5" visibleSpotTitle="false" spotTitleColor="red" />-->
+		</map>
+		<hierarchy showSameLevel="false" />
+    <network operationInterval="3" visibleOperation="true"/>
+	</unity>
+
+	<panoramaVR startLevel="" startID="">
+		<sphere segmentW="100" segmentH="50" partW="10" partH="5" partMapSize="1024" />
+		<camera fov="90" eyesDistance="0.7" />
+		<control isEscapeQuit="true" />
+		<!--<spot default="SpotPoint" />-->
+	</panoramaVR>
+</config>

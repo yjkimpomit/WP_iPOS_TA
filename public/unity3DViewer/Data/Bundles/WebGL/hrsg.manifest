@@ -1,0 +1,43 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.37f1
+CRC: 1205309070
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f302ee27befe94f85cb76850a126dcf1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 16bdc80babc84804ad261395e53bcd76
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 2545b080adbe67fb3082c59e0be19717
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 107e6b605998328429d5ebf227f50ef5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8b16c5715c1b426458b5e8a8705d6551, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: pomit.core.viewer.model.ModelCategory/CategoryInfo
+Assets:
+- Assets/05.Prefabs/I-Pos/Web/HRSG.prefab
+Dependencies: []

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<contentTree>
+	<item num="0" id="WP" type="panoramaSwitchMap" additionConfig="Data/xml/hotspot.xml" >
+		<window>
+			<map start="0" sort="false">
+				<item />
+			</map>
+		</window>
+	</item>
+</contentTree>

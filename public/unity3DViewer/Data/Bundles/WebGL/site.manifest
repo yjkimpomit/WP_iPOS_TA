@@ -1,0 +1,41 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.37f1
+CRC: 574204772
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1b70477139a7db6195f497c5446ea073
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f2592ab3edb84c08b71d7e0774986fbf
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: eb645b98b9bfc3cd278a082b322479de
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8b16c5715c1b426458b5e8a8705d6551, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: pomit.core.viewer.model.ModelCategory/CategoryInfo
+Assets:
+- Assets/05.Prefabs/I-Pos/Web/Site.prefab
+Dependencies: []
