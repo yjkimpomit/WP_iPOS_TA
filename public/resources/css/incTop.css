@@ -117,7 +117,7 @@
 	position: absolute;
 	top: auto;
 	margin-top: .5rem;
-	z-index: 2;
+	z-index: 20;
 
 	width: auto;
 	flex-direction: column;
@@ -454,11 +454,11 @@
 }
 
 .tm.info-box>ul>li.icon01 {
-	background-image: url("/resources/images/icons/gnb-icon02.svg");
+	background-image: url("/resources/images/icons/tm-icon01.svg");
 }
 
 .tm.info-box>ul>li.icon02 {
-	background-image: url("/resources/images/icons/gnb-icon03.svg");
+	background-image: url("/resources/images/icons/tm-icon02.svg");
 	background-position-x: .5rem;
 	padding-left: 3rem;
 }

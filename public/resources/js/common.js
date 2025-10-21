@@ -325,23 +325,45 @@ function openControlGuide() {
     $('.unity-guide').fadeIn(500);
 }
 
-// 글로벌메뉴
-function globalMenu() {
-    var $leftBox = $('.left-box');
-    var $toggleBtn = $('#toggle-button');
+$(document).ready(function () {
+	// 글로벌메뉴
+	function globalMenu() {
+		var $leftBox = $('.left-box');
+		var $toggleBtn = $('#toggle-button');
 
-    $leftBox.toggleClass('expand');
+		$leftBox.toggleClass('expand');
 
-    if ($leftBox.hasClass('expand')) {
-        $toggleBtn.find('span').text('메뉴 닫기');
-    } else {
-        $toggleBtn.find('span').text('메뉴 열기');
-    }
+		if ($leftBox.hasClass('expand')) {
+			$toggleBtn.find('span').text('메뉴 닫기');
+		
+			// expand 시 hover 효과 제거
+			$('#menuList .menu-box').removeClass('active');
+		} else {
+			$toggleBtn.find('span').text('메뉴 열기');
+		}
 
-    //다른 버튼 초기화
-    $('.operation-status').removeClass('visible');
-    $('.btn-status img').attr('src', '/resources/images/icons/icon-power.svg').attr('alt', '기타정보 열기');
-}
+		//다른 버튼 초기화
+		$('.operation-status').removeClass('visible');
+		$('.btn-status img').attr('src', '/resources/images/icons/icon-power.svg').attr('alt', '기타정보 열기');
+	}
+
+	// hover 이벤트 (expand 없을 때만 동작)
+	$('#menuList .menu-item').hover(
+		function () {
+			if (!$('.left-box').hasClass('expand')) {
+				$(this).siblings('.menu-box').addClass('active');
+			}
+		},
+		function () {
+			if (!$('.left-box').hasClass('expand')) {
+				$(this).siblings('.menu-box').removeClass('active');
+			}
+		}
+	);
+
+	// 전역으로 사용 가능하도록 export
+	window.globalMenu = globalMenu;
+});
 
 // 모바일: 헤더 > 운전정보 클릭시 실행
 function showOperationInfo() {
@@ -1015,8 +1037,3 @@ function initPlantSelect() {
 $(document).ready(function () {
 	initPlantSelect();
 });
-
-
-
-
-

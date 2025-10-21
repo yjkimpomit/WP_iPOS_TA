@@ -60,7 +60,7 @@
 	
 	position: absolute;
 	top: calc(48px + .5rem);
-	left: .5rem;
+	left: 3rem;
 	right: .5rem;
 
 	z-index: 4;
@@ -85,7 +85,7 @@
 	display: block;
 	
 	top: 0;
-	left: 48px;
+	left: 3rem;
 	
 	width: 48px;
 	height: 48px;
@@ -119,41 +119,6 @@
 	overflow: hidden;
 }
 
-@media(min-width: 768px) {
-	.op-box {
-		left: .25rem;
-   		top: calc(var(--header-height-md) + 56px);
-	    width: 320px;
-	    height: auto;
-		max-height: calc(100vh - 10rem);
-	    
-	    bottom: inherit;
-	}
-	/* 
-	.op-box.folded {
-        top: inherit;
-        bottom: 10rem;
-        width: 160px;
-	}
-	.op-box.folded .op-box-header h3 {
-	    display: -webkit-box;
-	    -webkit-line-clamp: 1;
-	    -webkit-box-orient: vertical;
-	    overflow: hidden;
-	} */
-}
-
-@media(min-width: 1600px) {
-	.op-box {
-		left: .25rem;
-   		top: calc(var(--header-height) + 116px);
-	    width: 360px;
-	}
-	.op-box.folded {
-		top: calc(8.5rem + 48px + 48px);
-		left: 0;
-	}
-}
 
 /* 모달 헤더 스타일
 .op-box-header {
@@ -321,17 +286,17 @@
 }
 
 /* 일일안전작업현황 */
-.op-box:has([aria-label="안전작업허가서-주요-위험작업"]).folded {
+/* .op-box:has([aria-label="안전작업허가서-주요-위험작업"]).folded {
 	left: auto;
 	right: 48px;
 	background-color: transparent;
-}
+} 
 .op-box:has([aria-label="안전작업허가서-주요-위험작업"]) .op-box-header .btn.maximize {
 	background-color: transparent;
     background-image: url(/resources/images/icons/icon-safety.svg);
     background-size: 32px;
 }
-
+*/
 .op-box:has([aria-label="안전작업허가서-주요-위험작업"]):not(.folded) {
 	display: block;
     width: 240px;
@@ -341,13 +306,39 @@
 .op-box:not(.folded) .table-responsive:has([aria-label="안전작업허가서-주요-위험작업"]) {
 	height: auto;
 }
+
+/* 
 @media(min-width: 1600px) {
 	.op-box:has([aria-label="안전작업허가서-주요-위험작업"]).folded {
 		background-color: var(--black-200);
 		top: calc(8.5rem + 48px);
-		left: 0;
+		left: 4rem;
 		right: auto;
 	}
 }
 
+ */
 
+@media(min-width: 768px) {
+	.op-box {
+		left: .25rem;
+   		top: calc(var(--header-height-md) + 56px);
+	    width: 320px;
+	    height: auto;
+		max-height: calc(100vh - 10rem);
+	    
+	    bottom: inherit;
+	}
+}
+
+@media(min-width: 1600px) {
+	.op-box {
+		left: 4rem;
+   		top: calc(var(--header-height) + 116px);
+	    width: 360px;
+	}
+	.op-box.folded {
+		top: calc(8.5rem + 48px + 48px);
+		left: 4rem;
+	}
+}
