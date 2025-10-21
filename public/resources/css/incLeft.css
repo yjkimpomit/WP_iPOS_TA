@@ -32,10 +32,7 @@
 }
 
 .menu-icon>span {
-	position: absolute;
-	top: -9999em;
-	left: -9999em;
-	text-indent: -9999em;
+	display: none;
 }
 
 @media (min-width: 1600px) {
@@ -43,13 +40,15 @@
 		height: var(--gnb-width);
 	}
 	.left-box:not(.expand) .menu-icon:hover>span {
-		top: auto;
-		left: 3rem;
-		text-indent: inherit;
+        position: absolute;
+        top: auto;
+        left: 3rem;
 
 		display: block;
 		width: auto;
 		padding: 6px 12px;
+
+        font-weight: 500;
 		white-space: nowrap;
 
 		opacity: 1;
@@ -82,8 +81,8 @@
 	padding-left: 3rem;
 }
 .left-box.expand .menu-icon>span {
-	position: inherit;
-	text-indent: inherit;
+	position: relative;
+    display: block;
 	color: var(--text-default-white);
 }
 
@@ -184,6 +183,10 @@ nav [type="button"] {
 	background-repeat: no-repeat;
 }
 
+.left-box.expand .open-icon.close {
+    background-image: url(/resources/images/icons/keyboard_arrow_up-lightgray.svg);
+}
+
 .left-box.expand .menu-text {
 	display: block;
 	position: inherit;
@@ -248,12 +251,17 @@ nav [type="button"] {
 }
 .left-box.expand .menu-box {
 	width: 100%;
+    display: block;
 }
 .left-box.expand .menu-box>strong {
 	display: none;
 }
 .left-box.expand .nav-counter .menu-box {
 	padding: 1rem;
+}
+
+.left-box.expand .menu-box.hide {
+    display: none;
 }
 
 /* depth-2 */
@@ -266,7 +274,7 @@ nav [type="button"] {
 .left-box.expand .menu-link.d2 {
 	width: 100%;
 	height: inherit;
-	font-size: .875rem;
+	font-size: .9375rem;
 	font-weight: 500;
 	min-height: 28px;
 	color: var(--text-default-white);
@@ -287,7 +295,7 @@ nav [type="button"] {
 .left-box.expand .menu-link.d3 {
 	width: 100%;
 	height: inherit;
-	font-size: .8125rem;
+	font-size: .875rem;
 	font-weight: 400;
 	min-height: 24px;
 	color: var(--text-default-white);
@@ -407,19 +415,25 @@ nav [type="button"] {
 		border-bottom: 7px solid transparent;
 		border-right: 7px solid var(--white);
 	}
-	.left-box:not(.expand) .menu-box.active > strong {
+	.left-box:not(.expand) .menu-box > strong {
 		margin-bottom: .5rem;
-		font-size: .875rem;
+		font-size: 1rem;
 	}
 
 	/* 예외처리 */
-	.left-box:not(.expand) .menu-box.active .depth-2 {
+	.left-box:not(.expand) .menu-box .depth-2 {
 		display: block;
-		font-size: .8125rem;
+		font-size: .9375rem;
 		padding: .5rem 0;
 	}
-	.left-box:not(.expand) .menu-box.active .depth-3 {
-		display: none;
+    .left-box:not(.expand) .menu-box .depth-2 .menu-link.d2 {
+        margin-bottom: .25rem;
+    }
+	.left-box:not(.expand) .menu-box .depth-3 {
+        display: block;
+        font-size: .875rem;
+        padding: 0 .5rem .5rem;
+        padding-right: 0;
 	}
 
 	.left-box:not(.expand) .menu-box.active .menu-link {
@@ -486,34 +500,38 @@ nav .d1[data-class*="outbound"] {
 	background-image: url("/resources/images/icons/gnb-outbound.svg");
 }
 
+nav .d1[data-class*="drawing"] {
+	background-image: url("/resources/images/icons/gnb-picture_as_pdf.svg");
+}
+
 /* 하단 아이콘 */
-.left-box.expand ul.depth-1>li:has(.d1[data-class*="operation-info"]),
-.left-box.expand ul.depth-1>li:has(.d1[data-class*="close-tabs"]),
-.left-box.expand ul.depth-1>li:has(.d1[data-class*="minimize-tabs"]),
-.left-box.expand ul.depth-1>li:has(.d1[data-class*="visitors"]) {
+.left-box.expand nav li.operation-control,
+.left-box.expand nav li.tabs-control,
+.left-box.expand nav li.nav-counter {
 	border-bottom: none;
 	min-height: inherit;
 }
 nav .d1[data-class*="operation-info"] {
 	height: 56px;
-	background-color: var(--slate-700);
 	background-image: url("/resources/images/icons/gnb-swap_driving_apps_wheel.svg");
 }
 nav .d1[data-class*="close-tabs"] {
-	height: 40px;
-	background-color: var(--slate-700);
+	height: 48px;
 	background-image: url("/resources/images/icons/gnb-tab_close_all.svg");
 }
 nav .d1[data-class*="minimize-tabs"] {
 	height: 56px;
-	background-color: var(--slate-700);
 	background-image: url("/resources/images/icons/gnb-tab_minimize_all.svg");
 }
 nav .d1[data-class*="visitors"] {
 	background-image: url("/resources/images/icons/gnb-crowdsource.svg");
 }
 
-nav li:has(.d1[data-class*="visitors"]) {
+nav li.operation-control,
+nav li.tabs-control {
+    background-color: var(--slate-700);
+}
+nav li.nav-counter {
 	background-color: var(--slate-800);
 }
 
@@ -561,6 +579,11 @@ nav .d1[data-class*="cctv"].active {
 nav .d1[data-class*="outbound"]:hover,
 nav .d1[data-class*="outbound"].active {
 	background-image: url("/resources/images/icons/gnb-outbound-white.svg");
+}
+
+nav .d1[data-class*="drawing"]:hover,
+nav .d1[data-class*="drawing"].active {
+	background-image: url("/resources/images/icons/gnb-picture_as_pdf-white.svg");
 }
 
 /* 하단 아이콘 */

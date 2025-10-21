@@ -366,6 +366,7 @@
 
     /* box-shadow */
     --box-shadow-1: 0 0px 8px 0 rgba(0, 0, 0, 0.24);
+	--winbox-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.64);
 }
 
 body {

@@ -52,10 +52,10 @@ input[type="number"]::-webkit-outer-spin-button {
 	margin: 0;
 }
 
-/* firefox에서 스핀버튼 제거 */
+/* firefox에서 스핀버튼 제거
 input[type="number"] {
 	-ㅡmoz-appearance: textfield;
-}
+} */
 
 input[type="date"] {
 	background-image: url('/resources/images/icons/icon-calendar.svg');
@@ -139,7 +139,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 	background-color: var(--black-200);
 	overflow: hidden;
 	
-	background-image: url('/resourcs/images/icons/icon-remove-gray.svg');
+	background-image: url('/resources/images/icons/icon-remove-gray.svg');
 	background-size: auto;
 	background-repeat: no-repeat;
 	background-position: center;

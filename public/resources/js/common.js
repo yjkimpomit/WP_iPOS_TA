@@ -52,7 +52,7 @@ function fnOpenPopup(url, target) {
         });
     } else {
         winbox = new WinBox(title, {
-            class: ["no-full"], top: 88, left: 56, border: 1, url: url, onCreate: function (options) {
+            class: ["no-full"], top: 92, left: 60, right: 4, bottom: 4, border: 0, url: url, onCreate: function (options) {
                 options.autoResize = true;
             }
         });
@@ -151,7 +151,7 @@ function fnOpenPopupFullscreen(url, target) {
         });
     } else {
         winbox = new WinBox(title, {
-            class: ["no-full"], top: 0, left: 0, border: 1, url: url, onCreate: function (options) {
+            class: ["no-full"], top: 4, left: 4, right: 4, bottom: 4, border: 1, url: url, onCreate: function (options) {
                 options.autoResize = true;
             }
         });
@@ -209,7 +209,7 @@ function fnOpenPopupFacilityMenu(url, target) {
     } else {
         // pc
         winbox = new WinBox(title, {
-            id: "facilityMenu", class: ["no-full", "no-max"], top: 88, left: 56, border: 1, width: "50%", height: "100%", url: url
+            id: "facilityMenu", class: ["no-full", "no-max"], top: 88, left: 60, border: 1, width: "320", height: "99.4%", url: url
             , onCreate: function (options) {
                 options.autoResize = true;
             }
@@ -248,9 +248,9 @@ function fnOpenPopupFacilityMenu(url, target) {
  * @param target
  */
 function fnOpenPopupModal(url, target) {
-	//$('#menuList').removeClass('show');
-	//$("#toggle-button").attr('aria-expanded', 'false');
-	//$('#toggle-button img').attr('src', '/images/icons/icon-menu.svg').attr('alt', '메뉴 열기');
+    //$('#menuList').removeClass('show');
+    //$("#toggle-button").attr('aria-expanded', 'false');
+    //$('#toggle-button img').attr('src', '/images/icons/icon-menu.svg').attr('alt', '메뉴 열기');
 
     var classString = target.data("class") || "";
     var title = target.data("title");
@@ -314,7 +314,7 @@ function fnOpenPopupModal(url, target) {
     });
 }
 
-// 3D모델 사용가이드 버튼제어	
+// 3D모델 사용가이드 버튼제어
 function closeControlGuide() {
     $('.unity-guide').fadeOut(500);
 }
@@ -325,54 +325,93 @@ function openControlGuide() {
 }
 
 $(document).ready(function () {
-	// 글로벌메뉴
-	function globalMenu() {
-		var $leftBox = $('.left-box');
-		var $toggleBtn = $('#toggle-button');
+    var $leftBox = $('.left-box');
+    var $toggleBtn = $('#toggle-button');
 
-		$leftBox.toggleClass('expand');
+    // 글로벌메뉴
+    function globalMenu() {
 
-		if ($leftBox.hasClass('expand')) {
-			$toggleBtn.find('span').text('메뉴 닫기');
-		
-			// expand 시 hover 효과 제거
-			$('#menuList .menu-box').removeClass('active');
-		} else {
-			$toggleBtn.find('span').text('메뉴 열기');
-		}
+        $leftBox.toggleClass('expand');
 
-		//다른 버튼 초기화
-		$('.operation-status').removeClass('visible');
-		$('.btn-status img').attr('src', '/resources/images/icons/icon-power.svg').attr('alt', '기타정보 열기');
-	}
+        if ($leftBox.hasClass('expand')) {
+            $toggleBtn.find('span').text('메뉴 닫기');
 
-	// hover 이벤트 (expand 없을 때만 동작)
-	$('#menuList .menu-item').hover(
-		function () {
-			if (!$('.left-box').hasClass('expand')) {
-				$(this).siblings('.menu-box').addClass('active');
-			}
-		},
-		function () {
-			if (!$('.left-box').hasClass('expand')) {
-				$(this).siblings('.menu-box').removeClass('active');
-			}
-		}
-	);
+            // expand 시 hover 효과 제거
+            $('#menuList .menu-box').removeClass('active');
+        } else {
+            $toggleBtn.find('span').text('메뉴 열기');
+        }
 
-	// 전역으로 사용 가능하도록 export
-	window.globalMenu = globalMenu;
+        //다른 버튼 초기화
+        $('#menuList .menu-box.hide').removeClass('hide');
+        $('.open-icon').removeClass('close');
+        $('.operation-status').removeClass('visible');
+        $('.btn-status img').attr('src', '/resources/images/icons/icon-power.svg').attr('alt', '기타정보 열기');
+    }
 
-	$('#menuList .menu-link').click(function() {
-		// 메뉴닫기
-		$('.left-box').removeClass('expand');
-		$toggleBtn.find('span').text('메뉴 열기');
-	});
+    // hover 이벤트 (expand 없을 때만 동작)
+    $('#menuList .menu-item').hover(
+        function () {
+            if (!$('.left-box').hasClass('expand')) {
+                $(this).siblings('.menu-box').addClass('active');
+            }
+        },
+        function () {
+            if (!$('.left-box').hasClass('expand')) {
+                var $menuBox = $(this).siblings('.menu-box');
+                setTimeout(function () {
+                    // .menu-item나 .menu-box 둘 다 hover 중이면 유지
+                    if (!$menuBox.is(':hover') && !$(this).is(':hover')) {
+                        $menuBox.removeClass('active');
+                    }
+                }.bind(this), 100);
+            }
+        }
+    );
+
+    // .menu-box에서 벗어나면 active 제거
+    $('#menuList .menu-box').mouseleave(function () {
+        if (!$('.left-box').hasClass('expand')) {
+            $(this).removeClass('active');
+        }
+    });
+
+    // 전역으로 사용 가능하도록 export
+    window.globalMenu = globalMenu;
+
+    $('#menuList .menu-link[onclick]').click(function() {
+        // 메뉴닫기
+        $('.left-box').removeClass('expand');
+        $toggleBtn.find('span').text('메뉴 열기');
+    });
+
+    //메뉴열렸을때, 2뎁스이하 메뉴 토글처리
+    $('#menuList li').each(function() {
+        var $li = $(this);
+        var $menuItem = $li.find('.menu-item:has(.open-icon)');
+        var $menuBox = $li.find('.menu-box');
+        var $icon = $menuItem.find('.open-icon');
+
+        $menuItem.on('click', function() {
+            if ($('.left-box').hasClass('expand')) {
+                if ($menuBox.hasClass('hide')) {
+                    // 닫힌 상태 → 열기
+                    $menuBox.removeClass('hide');
+                    $icon.removeClass('close');
+                } else {
+                    // 열린 상태 → 닫기
+                    $menuBox.addClass('hide');
+                    $icon.addClass('close');
+                }
+            }
+        });
+    });
 });
 
 // 모바일: 헤더 > 운전정보 클릭시 실행
-function showOperationInfo() {
+function operationInfo() {
     $('.left-box').removeClass('expand');
+    $('#toggle-button').find('span').text('메뉴 열기');
     //$('#menuList').removeClass('show');
     //$('#toggle-button img').attr('src', '/resources/images/icons/icon-menu.svg').attr('alt', '메뉴 열기');
 
@@ -380,20 +419,21 @@ function showOperationInfo() {
         // .operation-status에서 'visible' 클래스 제거
         $('.operation-status').removeClass('visible');
         // .btn-status에서 img의 src와 alt 속성 초기화
-        $('.btn-status img').attr('src', '/resources/images/icons/icon-power.svg').attr('alt', '기타정보 열기');
+        $('#operationStatus img').attr('src', '/resources/images/icons/icon-power.svg').attr('alt', '기타정보 열기');
     } else {
         $('.operation-status').addClass('visible');
-        $('.btn-status img').attr('src', '/resources/images/icons/icon-menu-close-brand.svg').attr('alt', '기타정보 닫기');
+        $('#operationStatus img').attr('src', '/resources/images/icons/icon-menu-close-brand.svg').attr('alt', '기타정보 닫기');
     }
 }
 
 // 모바일: 윈도우 리사이징 메뉴와 운전정보 버튼 초기화
 $(window).on('resize', function () {
     $('.btn-status img').attr('src', '/resources/images/icons/icon-power.svg').attr('alt', '기타정보 열기');
-    $('#toggle-button img').attr('src', '/resources/images/icons/icon-menu.svg').attr('alt', '메뉴 열기');
+    //$('#toggle-button img').attr('src', '/resources/images/icons/icon-menu.svg').attr('alt', '메뉴 열기');
     $('.operation-status').removeClass('visible');
-    $('#toggle-button').attr('aria-expanded', 'false');
-    $('#menuList').removeClass('show');
+
+    $('.left-box').removeClass('expand');
+    $('#toggle-button').find('span').text('메뉴 열기');
 });
 
 //날짜 한달 전으로 세팅하는 공통 함수
@@ -446,7 +486,7 @@ function searchWoTreePopup(target) {
     });
 }
 
-//W/O 상세 검색 
+//W/O 상세 검색
 function fnWoDetailSearch() {
     var startVal = "";
     var endVal = "";
@@ -1009,36 +1049,39 @@ $(document).ready(function () {
 
 // 헤더 > 발전소 선택
 function initPlantSelect() {
-	const $plantGroup = $('.plant-group');
-	const $selectBtn = $('.select-plant');
+    const $plantGroup = $('.plant-group');
+    const $selectBtn = $('.select-plant');
 
-	// 1️⃣ 발전소 선택 버튼 클릭 시 (토글 방식)
-	$selectBtn.on('click', function (e) {
-		e.stopPropagation();
-		$plantGroup.toggleClass('active');
-	});
+    // 1️⃣ 발전소 선택 버튼 클릭 시 (토글 방식)
+    $selectBtn.on('click', function (e) {
+        e.stopPropagation();
+        $plantGroup.toggleClass('active');
+    });
 
-	// 2️⃣ 발전소 목록(span) 클릭 시
-	$plantGroup.on('click', 'span', function (e) {
-		e.stopPropagation();
-		const plantName = $(this).text().trim();
-		console.log(`이동: ${plantName} 발전소`);
-		// window.location.href = `/plant/${plantName.toLowerCase()}`;
-	});
+    // 2️⃣ 발전소 목록(span) 클릭 시
+    $plantGroup.on('click', 'span', function (e) {
+        e.stopPropagation();
+        const plantName = $(this).text().trim();
+        console.log(`이동: ${plantName} 발전소`);
+        // window.location.href = `/plant/${plantName.toLowerCase()}`;
+    });
 
-	// 3️⃣ 외부 클릭 시 active 제거
-	$(document).on('click', function (e) {
-		if (
-			!$plantGroup.is(e.target) &&
-			$plantGroup.has(e.target).length === 0 &&
-			!$selectBtn.is(e.target)
-		) {
-			$plantGroup.removeClass('active');
-		}
-	});
+    // 3️⃣ 외부 클릭 시 active 제거
+    $(document).on('click', function (e) {
+        if (
+            !$plantGroup.is(e.target) &&
+            $plantGroup.has(e.target).length === 0 &&
+            !$selectBtn.is(e.target)
+        ) {
+            $plantGroup.removeClass('active');
+        }
+    });
 }
 
 // 페이지 로드 후 실행
 $(document).ready(function () {
-	initPlantSelect();
+    initPlantSelect();
 });
+
+
+

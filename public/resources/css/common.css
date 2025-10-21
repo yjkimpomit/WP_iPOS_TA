@@ -32,6 +32,7 @@
 @import url(/resources/css/table.css);
 @import url(/resources/css/chart-custom.css);
 @import url(/resources/css/op-box.css);
+@import url(/resources/css/winbox-custom.css);
 
 @import url(/resources/css/print.css);
 
@@ -45,6 +46,11 @@ body {
 
 body {
 	background-color: var(--slate-50);
+}
+
+body.main.ta,
+body.main{
+    background-color: white;
 }
 
 @media only screen and (min-width: 768px) {
@@ -695,7 +701,7 @@ input[id="facilityRefList"]+.title03 {
 }
 
 .icon-chevron-right {
-	background-image: url(/images/icons/icon-arrow-right-gray.svg);
+	background-image: url(/resources/images/icons/icon-arrow-right-gray.svg);
 	background-size: 20px;
 	background-repeat: no-repeat;
 	background-position: left center;

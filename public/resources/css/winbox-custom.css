@@ -7,18 +7,69 @@
  * WINBOX 탭UI 커스텀 스타일
  *
  */
-
 .winbox {
-    background-color: var(--bg-default-default);
+	border-radius: 4px;
+	padding: 4px;
+	border: 1px solid var(--border-neutral-tertiary);
+	background: transparent !important;
+	box-shadow: var(--winbox-shadow) !important;
+}
+
+.winbox.no-full.min {
+	height: 48px !important;
+	margin-top: -14px;
 }
 
 .wb-header {
+	height: 48px;
+
     background-color: var(--bg-default-default);
-    background-color: var(--bg-neutral-secondary);
+	border-bottom: 1px solid var(--border-neutral-tertiary);
     color: var(--text-neutral-default);
 }
 .wb-body {
-    top: calc(35px + .5rem);
-    left: .5rem;
-    right: .5rem;
+    top: 48px;
+}
+
+/* wb-header title */
+.wb-drag {
+	display: flex;
+	align-items: center;
+}
+.wb-title {
+	font-size: 1rem;
+	font-weight: 700;
+}
+
+/* tab controller */
+.wb-control {
+	padding-left: .5rem;
+	padding-right: .5rem;
+}
+.wb-all-close {
+	background-image: url(/resources/images/icons/winbox-tab_close_all.svg) !important;
+	background-size: 24px !important;
+}
+.wb-all-min {
+	background-image: url(/resources/images/icons/winbox-tab_minimize_all.svg) !important;
+	background-size: 24px !important;
+}
+/* 최소 */
+.wb-min {
+	background-image: url(/resources/images/icons/winbox-tab-minimize.svg) !important;
+	background-size: 24px !important;
+}
+/* 최소-최대 */
+.wb-max {
+	background-image: url(/resources/images/icons/winbox-tab_inactive.svg) !important;
+	background-size: 24px !important;
+}
+/* 풀화면 */
+.wb-full {
+	background-image: url(/resources/images/icons/winbox-fullscreen.svg) !important;
+	background-size: 24px !important;
+}
+.wb-close {
+	background-image: url(/resources/images/icons/winbox-tab-close.svg) !important;
+	background-size: 24px !important;
 }

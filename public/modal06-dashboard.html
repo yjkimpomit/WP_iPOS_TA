@@ -1,13 +1,20 @@
+<html lang="ko">
+<head>
+	<script src="/resources/js/jquery/jquery-3.6.1.js"></script>
+	<!-- WP stylesheet -->
+	<link rel="stylesheet" href="/resources/css/common.css">
+	<script src="/resources/js/common.js" defer></script>
+</head>
+<body class="main">
 <!-- <div class="modal-header">
 	<h3 class="modal-title" id="modalLabel">대시보드</h3>
 	<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 <div class="modal-body p-0"> -->
 	<div class="dashboard-box panel-box">
-		<div class="contents-panel">
-
+		<div class="panel-right">
 			<!-- 출력현황 -->
-			<div class="status-box">
+			<div class="status-box D-NONE">
 				<h5 class="mb-3">
 					<strong>평택 2복합 출력 현황</strong>
 					<small>평택2복합은 i-POS 시스템을 통해 실시간 전압, 압력 및 효율 데이터를 통해 항상 안정적인 운전 상태를 모니터링하고 있습니다.</small>
@@ -142,190 +149,9 @@
 				</div>
 			</div>
 
-			<!-- High Chart -->
-			<div class="chart-box">
-				<div class="title-box">
-					<h5 class="mb-0">
-						<strong>기기별 성능 현황</strong>
-						<small> CC, GT, ST HRSG의 데이터를 차트로 시각화하여 각 기기의 운영 상태를 비교할 수 있습니다.</small>
-					</h5>
-
-					<div class="slider-controls">
-						<div class="slider-info">
-							<span id="current-slide">1</span> / <span id="total-slides">6</span>
-						</div>
-						<button type="button" id="playPauseButton" class="btn">
-							<span class="material-symbols-rounded">
-							play_arrow
-							</span>
-							<span class="visually-hidden">정지</span>
-						</button>
-						<div class="custom-controls">
-							<button id="prevButton" type="button" class="btn custom-prev">
-								<span class="material-symbols-rounded">
-								chevron_left
-								</span>
-							</button>
-							<button id="nextButton" type="button" class="btn custom-next">
-								<span class="material-symbols-rounded">
-								chevron_right
-								</span>
-							</button>
-						</div>
-					</div>
-				</div>
-
-				<div class="slider-container">
-					<div class="slider">
-						<div>
-							<span class="visually-hidden">CC</span>
-							<div class="chart-item">
-								<div class="chart cc">
-									<figure class="highcharts-figure">
-										<div id="chart-cc"></div>
-									</figure>
-								</div>
-							</div>
-						</div>
-						<div>
-							<span class="visually-hidden">GT1</span>
-							<div class="chart-item">
-								<div class="chart gt">
-									<figure class="highcharts-figure">
-										<div id="chart-gt1"></div>
-									</figure>
-								</div>
-							</div>
-						</div>
-						<div>
-							<span class="visually-hidden">GT2</span>
-							<div class="chart-item">
-								<div class="chart gt">
-									<figure class="highcharts-figure">
-										<div id="chart-gt2"></div>
-									</figure>
-								</div>
-							</div>
-						</div>
-						<div>
-							<span class="visually-hidden">ST</span>
-							<div class="chart-item">
-								<div class="chart st">
-									<figure class="highcharts-figure">
-										<div id="chart-st"></div>
-									</figure>
-								</div>
-							</div>
-						</div>
-						<div>
-							<span class="visually-hidden">HRSG1</span>
-							<div class="chart-item">
-								<div class="chart hrsg">
-									<figure class="highcharts-figure">
-										<div id="chart-hrsg1"></div>
-									</figure>
-								</div>
-							</div>
-						</div>
-						<div>
-							<span class="visually-hidden">HRSG2</span>
-							<div class="chart-item">
-								<div class="chart hrsg">
-									<figure class="highcharts-figure">
-										<div id="chart-hrsg2"></div>
-									</figure>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<h4 class="title02">출입인원 현황(APC)</h4>
-			<!-- 입 > 출보다 큰 경우, div.col-lg 다음 div에 warning 클래스 추가 -->
-			<div class="row g-3 gy-xl-0 apc-box">
-				<div class="col-12 col-sm-6 col-xl-3">
-					<div class="item inlet">
-						<p class="title">WTR-Box Inlet</p>
-						<ul>
-							<li class="in">
-								<strong>6</strong>
-								<span>입</span>
-							</li>
-							<li class="out">
-								<strong>6</strong>
-								<span>출</span>
-							</li>
-						</ul>
-						<div class="total">
-							<strong>0</strong>
-							<span>잔여인원</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 col-xl-3">
-					<div class="item outlet">
-						<p class="title">WTR-Box Outlet</p>
-						<ul>
-							<li class="in">
-								<strong>24</strong>
-								<span>입</span>
-							</li>
-							<li class="out">
-								<strong>16</strong>
-								<span>출</span>
-							</li>
-						</ul>
-						<div class="total">
-							<span class="warning">주의</span>
-							<strong>8</strong>
-							<span>잔여인원</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 col-xl-3">
-					<div class="item debris">
-						<p class="title">Debris Filter Manhole</p>
-						<ul>
-							<li class="in">
-								<strong>0</strong>
-								<span>입</span>
-							</li>
-							<li class="out">
-								<strong>0</strong>
-								<span>출</span>
-							</li>
-						</ul>
-						<div class="total">
-							<strong>0</strong>
-							<span>잔여인원</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 col-xl-3">
-					<div class="item ctcs">
-						<p class="title">CTCS Ball Collector Manhole</p>
-						<ul>
-							<li class="in">
-								<strong>26</strong>
-								<span>입</span>
-							</li>
-							<li class="out">
-								<strong>14</strong>
-								<span>출</span>
-							</li>
-						</ul>
-						<div class="total">
-							<span class="warning">주의</span>
-							<strong>26</strong>
-							<span>잔여인원</span>
-						</div>
-					</div>
-				</div>
-			</div>
 
 		</div>
-		<div class="side-panel right">
+		<div class="panel-right">
 			<h2 class="title02">대기정보</h2>
 			<div>
 				<h3 class="title03">GT1</h3>
@@ -428,3 +254,5 @@
 
 <!-- 하이차트 불러옴 -->
 <!-- <script src="/resources/js/dashboard/high-chart-custom.js"></script> -->
+</body>
+</html>

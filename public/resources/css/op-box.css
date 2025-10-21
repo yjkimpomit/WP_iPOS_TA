@@ -43,8 +43,6 @@
    
    cursor: pointer;
    z-index: 3;
-   
-   display: none;
 }
 
 @media(min-width: 1400px) { 
@@ -64,8 +62,6 @@
 	right: .5rem;
 
 	z-index: 4;
-	
-	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.4);
 	
 	height: calc(100% - 184px);
 	bottom: auto;

@@ -18,13 +18,6 @@
 	<span>메뉴열기</span>
 </button>
 
-<!-- 
-메뉴 스크립트 요청
-닫힌 상태일때, .menu-box > .show 추가
-nav 
-
-
--->
 <nav id="menuList" class="menu-list">
 	<ul class="depth-1">
 		<li>
@@ -46,16 +39,16 @@ nav
 				<strong>일일안전현황</strong>
 				<ul class="depth-2">
 					<li>
-						<button type="button" class="menu-link d2" data-title="일일안전작업현황" id="tab01_safety" data-bs-target="#tab01-pane-safety" aria-controls="tab01-pane-safety"><span>일일안전작업현황</span></a>
+						<button type="button" class="menu-link d2" data-title="일일안전작업현황" id="tab01_safety" data-bs-target="#tab01-pane-safety" aria-controls="tab01-pane-safety"><span>일일안전작업현황</span></button>
 					</li>
 					<li>
-						<button type="button" class="menu-link d2" data-title="경상오더"><span>경상오더</span></a>
+						<button type="button" class="menu-link d2" data-title="경상오더"><span>경상오더</span></button>
 					</li>
 					<li>
-						<button type="button" class="menu-link d2" data-title="공사오더"><span>공사오더</span></a>
+						<button type="button" class="menu-link d2" data-title="공사오더"><span>공사오더</span></button>
 					</li>
 					<li>
-						<button type="button" class="menu-link d2" data-title="공사오더-OH"><span>공사오더(OH)</span></a>
+						<button type="button" class="menu-link d2" data-title="공사오더-OH"><span>공사오더(OH)</span></button>
 					</li>
 				</ul>
 			</div>
@@ -70,10 +63,10 @@ nav
 				<strong>GENi</strong>
 				<ul class="depth-2">
 					<li>
-						<button type="button" onclick="fnOpenPopup('modal01-facility.html', $(this));" class="menu-link d2" data-class="facility folded with-tree" data-title="설비정보"><span>설비정보</span></button>
+						<button type="button" onclick="fnOpenPopupFacilityMenu('modal01-facility.html', $(this));" class="menu-link d2" data-class="facility folded with-tree" data-title="설비정보"><span>설비정보</span></button>
 					</li>
 					<li>
-						<button type="button" onclick="fnOpenPopup('modal02-tm.html', $(this));" class="menu-link d2" data-class="tm" data-title="TM 현황"><span>TM 현황</span></a>
+						<button type="button" onclick="fnOpenPopup('modal02-tm.html', $(this));" class="menu-link d2" data-class="tm" data-title="TM 현황"><span>TM 현황</span></button>
 						<ul class="depth-3">
 							<li>
 								<div class="menu-link d3"><span>작업요청 확정</span></div>
@@ -169,6 +162,14 @@ nav
 				<strong>CCTV</strong>
 			</div>
 		</li>
+        <li>
+            <div class="menu-item">
+                <button type="button" onclick="fnOpenDrawing('', $(this));" class="menu-link d1" data-class="drawing" data-title="도면보기"><span class="menu-text">도면보기</span></button>
+            </div>
+            <div class="menu-box">
+                <strong>도면보기</strong>
+            </div>
+        </li>
 		<li class="full">
 			<div class="menu-item">
 				<button type="button" onclick="fnOpenPopup('modal08-cctv.html', $(this));" class="menu-link d1" data-class="outbound" data-title="WA"><span class="menu-text">WA</span></button>
