@@ -123,12 +123,11 @@
 	}
 }
 
-/* 탭없는 팝업만 별도처리 - APC, CCTV */
-.external-popup .modal-body:has(.container-apc),
+/* 탭없는 팝업만 별도처리 CCTV */
 .external-popup .modal-body:has(.container-cctv) {
 	padding: 0;
 }
-.container-apc,
+
 .container-cctv {
 	padding: 1rem;
 	overflow-x: hidden;
@@ -858,10 +857,9 @@
 }
 
 /* 대시보드 */
-.dashboard-box {
+/* .dashboard-box {
 	display: flex;
 	flex-direction: column;
-    /* height: 100%; */
 }
 .dashboard-box > .contents-panel {
 	padding: 1.5rem;
@@ -924,15 +922,15 @@
 		display: inline-block;
 		letter-spacing: -.0125rem;
 	}
-}
+} */
 
 /* 출력현황 */
-.status-box .table-responsive {
+/* .status-box .table-responsive {
 	border-radius: .5rem;
-}
+} */
 
 /* typo */
-.dashboard-box .title {
+/* .dashboard-box .title {
 	font-size: 14px;
 	font-weight: 700;
 	margin-bottom: .5rem;
@@ -954,7 +952,7 @@
 		font-size: 17px;
 		margin-bottom: 1rem;
 	}
-}
+} */
 
 /* 공통 : chart-box */
 .chart-box {
@@ -980,7 +978,7 @@
 }
 
 /* dashboard-box chart */
-.dashboard-box .device-stats {
+/* .dashboard-box .device-stats {
 	height: 400px;
 	min-width: 320px;	
 }
@@ -1034,7 +1032,7 @@
 		height: 480px;
 	}
 }
-
+ */
 /* label-box */
 .label-box {
 	display: flex;
@@ -1121,12 +1119,12 @@
 }
 
 /* dashboard divice-stats */
-.dashboard-box .divice-stats {
+/* .dashboard-box .divice-stats {
 	margin-bottom: .5rem;
-}
+} */
 
 /* apc-box : dashboard, apc 화면 공통 */
-.apc-box {
+/* .apc-box {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -1200,18 +1198,10 @@
 	font-size: 24px;
 	line-height: 1.32;
 	margin-top: -.25rem;
-}
+} */
 
 /* APC 화면 */
-.container-apc .apc-box .item {
-    display: flex;
-    justify-content: space-between;
-	background-color: var(--bg-neutral-tertiary);
-}
-
-.container-apc .apc-box .item .total {
-	background-color: var(--bg-default-default);
-}
+/*
 @media (min-width: 768px) and (max-width: 991.9998px) {
 	.apc-box .item > div {
     	justify-content: space-between;
@@ -1223,9 +1213,6 @@
 }
 
 @media (min-width: 1600px) {
-	.container-apc .apc-box .item {
-	    flex-direction: row;
-	}
 	.apc-box .item {
 		padding: 1rem;
 		margin-bottom: 0;
@@ -1244,9 +1231,9 @@
 		font-size: 32px;
 	}
 }
-
+*/
 /* 대시보드 경고알림 */
-.apc-box .item:has(.warning) ul li.in > strong {
+/* .apc-box .item:has(.warning) ul li.in > strong {
 	color: var(--text-danger-secondary);
 }
 
@@ -1299,7 +1286,7 @@
 .apc-box .item:has(.warning) .total > strong,
 .apc-box .item:has(.warning) .total > span {
 	color: var(--text-default-white);
-}
+} */
 
 /* 트렌드 팝업 */
 #trendModal .chart-box {

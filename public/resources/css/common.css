@@ -232,7 +232,7 @@ h6,
 	width: 6px;
 	height: 20px;
 	border-radius: 4px;
-	background-color: var(--bg-brand-default);
+	background-color: var(--icon-brand-default);
 
 	position: absolute;
 	left: 0;
@@ -262,7 +262,7 @@ input[id="facilityRefList"]+.title03 {
 	width: 6px;
 	height: 6px;
 	border-radius: 4px;
-	background-color: var(--bg-brand-default);
+	background-color: var(--icon-brand-default);
 	position: absolute;
 	left: 0;
 	top: 2px;
@@ -274,7 +274,7 @@ input[id="facilityRefList"]+.title03 {
 	width: 6px;
 	height: 10px;
 	border-radius: 4px;
-	background-color: var(--bg-brand-secondary);
+	background-color: var(--icon-brand-secondary);
 	position: absolute;
 	left: 0;
 	top: 11px;
@@ -299,7 +299,7 @@ input[id="facilityRefList"]+.title03 {
 	width: 6px;
 	height: 6px;
 	border-radius: 4px;
-	background-color: var(--bg-brand-defaulthover);
+	background-color: var(--icon-brand-default);
 
 	position: absolute;
 	left: 0;
@@ -313,7 +313,7 @@ input[id="facilityRefList"]+.title03 {
 	width: 6px;
 	height: 6px;
 	border-radius: 4px;
-	background-color: var(--bg-brand-default);
+	background-color: var(--icon-brand-secondary);
 
 	position: absolute;
 	left: 0;
@@ -343,7 +343,7 @@ input[id="facilityRefList"]+.title03 {
 	width: 6px;
 	height: 16px;
 	border-radius: 4px;
-	background-color: var(--bg-brand-secondaryhover);
+	background-color: var(--icon-brand-secondary);
 
 	position: absolute;
 	left: 0;
