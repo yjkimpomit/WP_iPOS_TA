@@ -248,10 +248,9 @@ function fnOpenPopupFacilityMenu(url, target) {
  * @param target
  */
 function fnOpenPopupModal(url, target) {
-    $('#toggle-button').text('메뉴 열기');
-    //$('#menuList').removeClass('show');
-    //$("#toggle-button").attr('aria-expanded', 'false');
-    //$('#toggle-button img').attr('src', '/images/icons/icon-menu.svg').attr('alt', '메뉴 열기');
+	//$('#menuList').removeClass('show');
+	//$("#toggle-button").attr('aria-expanded', 'false');
+	//$('#toggle-button img').attr('src', '/images/icons/icon-menu.svg').attr('alt', '메뉴 열기');
 
     var classString = target.data("class") || "";
     var title = target.data("title");
@@ -363,6 +362,12 @@ $(document).ready(function () {
 
 	// 전역으로 사용 가능하도록 export
 	window.globalMenu = globalMenu;
+
+	$('#menuList .menu-link').click(function() {
+		// 메뉴닫기
+		$('.left-box').removeClass('expand');
+		$toggleBtn.find('span').text('메뉴 열기');
+	});
 });
 
 // 모바일: 헤더 > 운전정보 클릭시 실행
