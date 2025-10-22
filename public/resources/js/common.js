@@ -209,7 +209,7 @@ function fnOpenPopupFacilityMenu(url, target) {
     } else {
         // pc
         winbox = new WinBox(title, {
-            id: "facilityMenu", class: ["no-full", "no-max"], top: 88, left: 60, border: 1, width: "320", height: "99.4%", url: url
+            id: "facilityMenu", class: ["no-full", "no-max"], top: 88, left: 60, border: 1, url: url
             , onCreate: function (options) {
                 options.autoResize = true;
             }
@@ -328,7 +328,7 @@ function openControlGuide() {
 
 $(document).ready(function () {
 	// 임시 : 작업중인 화면 우선 띄우기
-	$('#menuList .menu-item [data-class="dashboard"]').trigger('click');
+	$('#menuList .menu-item [data-class="facility"]').trigger('click');
 
 	//
     var $leftBox = $('.left-box');

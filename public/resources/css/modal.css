@@ -126,11 +126,12 @@
 }
 
 /* modal-body 콘텐츠 컨테이너 */
+/* 
 @media(min-width: 1200px) {
 	.facility-box .contents-panel > [class*='container-'] {
 		height: 100%;
 	}
-}
+} */
 
 /* 탭없는 팝업만 별도처리 CCTV */
 .container-cctv {
@@ -434,6 +435,26 @@
 	color: var(--white-800);
 	opacity: .4;	
 	cursor: default;
+}
+
+/* 설비검색 */
+#facilityMenu.winbox {
+	width: 100% !important;
+}
+@media(min-width: 1600px) {
+	#facilityMenu.winbox {
+		max-width: 600px;
+	}
+}
+
+.facility-box {
+	height: 100%;
+}
+.facility-box .tree-search {
+	margin-bottom: 1rem;
+}
+.facility-box .jstree-box {
+	height: calc(100% - 3.5rem);
 }
 
 /* 메뉴에서 클릭한 설비정보 팝업만 예외처리
@@ -989,7 +1010,7 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 	height: 40px;
 }
 
-.dashboard-box > div:last-child {
+.dashboard-box > .dashboard-safety {
 	flex: 1 0 100%;
 	max-width: 100%;
 }

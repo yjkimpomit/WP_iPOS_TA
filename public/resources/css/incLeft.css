@@ -464,7 +464,7 @@ nav .menu-link[onclick]:hover {
 		margin-bottom: .5rem;
 	}
 	.left-box:not(.expand) .menu-box.active:has(.counter-box)::before {
-		top: 60%;
+		top: 76%;
 	}
 	.left-box:not(.expand) .menu-box .menu-item {
 		font-size: .875rem;
@@ -489,8 +489,12 @@ nav .d1[data-class*="daily-safety"] {
 	background-image: url("/resources/images/icons/gnb-shield_person.svg");
 }
 
+nav .d1[data-class*="facility"] {
+	background-image: url("/resources/images/icons/gnb-manage_search.svg");
+}
+
 nav .d1[data-class*="geni"] {
-	background-image: url("/resources/images/icons/gnb-category_search.svg");
+	background-image: url("/resources/images/icons/gnb-category.svg");
 }
 
 nav .d1[data-class*="idms"] {
@@ -563,9 +567,14 @@ nav .d1[data-class*="daily-safety"].active {
 	background-image: url("/resources/images/icons/gnb-shield_person-white.svg");
 }
 
+nav .d1[data-class*="facility"]:hover,
+nav .d1[data-class*="facility"].active {
+	background-image: url("/resources/images/icons/gnb-manage_search-white.svg");
+}
+
 nav .d1[data-class*="geni"]:hover,
 nav .d1[data-class*="geni"].active {
-	background-image: url("/resources/images/icons/gnb-category_search-white.svg");
+	background-image: url("/resources/images/icons/gnb-category-white.svg");
 }
 
 nav .d1[data-class*="idms"]:hover,

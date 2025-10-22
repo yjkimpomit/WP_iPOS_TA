@@ -47,7 +47,6 @@ body.main {
 body.sub {
 	padding: 1rem;
 }
-body.sub:has(.facility-box),
 body.sub:has(.dashboard-box) {
 	padding: 0;
 }
