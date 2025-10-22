@@ -11,7 +11,7 @@
 }
 
 /*#################### external-popup ####################*/
-/* 평택에 사용하던 스타일로 태안에서는 winbox 로 대체하여 사용하고 있지 않는 클래스 */
+/* 20251022 yjkim - 태안에서는 사용하지 않으며 winbox로 대체되었으므로 비활성 */
 /* .external-popup.show {
 	overflow-y: hidden;
 }
@@ -139,7 +139,8 @@
 	overflow-y: auto;
 }
 
-/* jstree 해당되는 박스 높이설정 - 평택에만 사용
+/* 20251022 yjkim - 태안에서는 사용하지 않으며 winbox로 대체되었으므로 비활성 */
+/* jstree 해당되는 박스 높이설정 
 .modal.facility .modal-body > div,
 .modal.tm .modal-body:has(.multiple-tm) > div,
 .modal.tm .modal-body:has(.daily-safety) > div {

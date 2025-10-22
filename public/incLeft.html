@@ -22,7 +22,7 @@
 	<ul class="depth-1">
 		<li>
 			<div class="menu-item">
-				<button type="button" onclick="fnOpenPopup('modal06-dashboard.html', $(this));" class="menu-link d1" data-class="dashboard" data-title="대시보드"><span class="menu-text">대시보드</span></button>
+				<div onclick="fnOpenPopup('modal06-dashboard.html', $(this));" class="menu-link d1" data-class="dashboard" data-title="대시보드"><span class="menu-text">대시보드</span></div>
 			</div>
 			<div class="menu-box">
 				<strong>대시보드</strong>
@@ -30,46 +30,43 @@
 		</li>
 		<li>
 			<div class="menu-item">
-				<button type="button" onclick="fnOpenPopup('modal09-dailySafety.html', $(this));" class="menu-link d1" data-class="daily-safety" data-title="일일안전현황"><span class="menu-text">일일안전현황</span></button>
-				<!-- open-icon 요소 클릭시, menu-box에 active 클래스를 on/off 되어야 합니다. -->
+				<div class="menu-link d1" data-class="daily-safety"><span class="menu-text">일일안전현황</span></div>
 				<span class="open-icon"></span>
 			</div>
-			<!-- left-box가 expand 클래스를 가지지 않을때, 위 요소(menu-item) 마우스 오버시 menu-box에 show가 토글되어야 합니다. -->
 			<div class="menu-box">
 				<strong>일일안전현황</strong>
 				<ul class="depth-2">
 					<li>
-						<button type="button" class="menu-link d2" data-title="일일안전작업현황" id="tab01_safety" data-bs-target="#tab01-pane-safety" aria-controls="tab01-pane-safety"><span>일일안전작업현황</span></button>
+						<div onclick="fnOpenPopup('modal09-dailySafety.html', $(this));" class="menu-link d2" data-title="일일안전현황"><span>일일안전작업현황</span></div>
 					</li>
 					<li>
-						<button type="button" class="menu-link d2" data-title="경상오더"><span>경상오더</span></button>
+						<div class="menu-link d2" data-title="경상오더"><span>경상오더</span></div>
 					</li>
 					<li>
-						<button type="button" class="menu-link d2" data-title="공사오더"><span>공사오더</span></button>
+						<div class="menu-link d2" data-title="공사오더"><span>공사오더</span></div>
 					</li>
 					<li>
-						<button type="button" class="menu-link d2" data-title="공사오더-OH"><span>공사오더(OH)</span></button>
+						<div class="menu-link d2" data-title="공사오더-OH"><span>공사오더(OH)</span></div>
 					</li>
 				</ul>
 			</div>
 		</li>
 		<li>
 			<div class="menu-item">
-				<button type="button" onclick="fnOpenPopup('', $(this));" class="menu-link d1" data-class="geni" data-title="GENi"><span class="menu-text">GENi</span></button>
-				<!-- open-icon 요소 클릭시, menu-box에 active 클래스를 on/off 되어야 합니다. -->
+				<div class="menu-link d1" data-class="geni"><span class="menu-text">GENi</span></div>
 				<span class="open-icon"></span>
 			</div>
 			<div class="menu-box">
 				<strong>GENi</strong>
 				<ul class="depth-2">
 					<li>
-						<button type="button" onclick="fnOpenPopupFacilityMenu('modal01-facility.html', $(this));" class="menu-link d2" data-class="facility folded with-tree" data-title="설비정보"><span>설비정보</span></button>
+						<div onclick="fnOpenPopupFacilityMenu('modal01-facility.html', $(this));" class="menu-link d2" data-title="설비정보"><span>설비정보</span></div>
 					</li>
 					<li>
-						<button type="button" onclick="fnOpenPopup('modal02-tm.html', $(this));" class="menu-link d2" data-class="tm" data-title="TM 현황"><span>TM 현황</span></button>
+						<div class="menu-link d2"><span>TM 현황</span></div>
 						<ul class="depth-3">
 							<li>
-								<div class="menu-link d3"><span>작업요청 확정</span></div>
+								<div class="menu-link d3" onclick="fnOpenPopup('modal02-tm.html', $(this));" data-title="TM 현황"><span>작업요청 확정</span></div>
 							</li>
 							<li>
 								<div class="menu-link d3"><span>다발 TM현황</span></div>
@@ -86,10 +83,10 @@
 						</ul>
 					</li>
 					<li>
-						<button type="button" onclick="fnOpenPopup('modal03-redTag.html', $(this));" class="menu-link d2" data-class="red-tag" data-title="작업현황"><span>작업현황<sub>Red TAG</sub></span></button>
+						<div class="menu-link d2"><span>작업현황<sub>Red TAG</sub></span></div>
 						<ul class="depth-3">
 							<li>
-								<div class="menu-link d3"><span>작업요청 확정</span></div>
+								<div class="menu-link d3" onclick="fnOpenPopup('modal03-redTag.html', $(this));" data-title="작업현황"><span>작업요청 확정</span></div>
 							</li>
 							<li>
 								<div class="menu-link d3"><span>다발 TM현황</span></div>
@@ -97,10 +94,10 @@
 						</ul>
 					</li>
 					<li>
-						<button type="button" onclick="fnOpenPopup('modal04-prevention.html', $(this));" class="menu-link d2" data-class="prevention" data-title="예방점검현황"><span>예방점검현황</span></button>
+						<div class="menu-link d2"><span>예방점검현황</span></div>
 						<ul class="depth-3">
 							<li>
-								<div class="menu-link d3"><span>정비비용 고장경향 분석</span></div>
+								<div class="menu-link d3" onclick="fnOpenPopup('modal04-prevention.html', $(this));" data-title="예방점검현황"><span>정비비용 고장경향 분석</span></div>
 							</li>
 							<li>
 								<div class="menu-link d3"><span>점검 보고서</span></div>
@@ -124,7 +121,7 @@
 		</li>
 		<li>
 			<div class="menu-item">
-				<button type="button" onclick="fnOpenPopup('', $(this));" class="menu-link d1" data-class="idms" data-title="IDMS"><span class="menu-text">IDMS</span></button>
+				<div onclick="fnOpenPopup('', $(this));" class="menu-link d1" data-class="idms" data-title="IDMS"><span class="menu-text">IDMS</span></button>
 			</div>
 			<div class="menu-box">
 				<strong>IDMS</strong>
@@ -132,7 +129,7 @@
 		</li>
 		<li>
 			<div class="menu-item">
-				<button type="button" onclick="fnOpenPopup('', $(this));" class="menu-link d1" data-class="panorama" data-title="파노라마"><span class="menu-text">파노라마</span></button>
+				<div onclick="fnOpenPopup('', $(this));" class="menu-link d1" data-class="panorama" data-title="파노라마"><span class="menu-text">파노라마</span></div>
 			</div>
 			<div class="menu-box">
 				<strong>파노라마</strong>
@@ -140,7 +137,7 @@
 		</li>
 		<li>
 			<div class="menu-item">
-				<button type="button" onclick="fnOpenPopup('', $(this));" class="menu-link d1" data-class="alarm" data-title="조기경보"><span class="menu-text">조기경보</span></button>
+				<div onclick="fnOpenPopup('', $(this));" class="menu-link d1" data-class="alarm" data-title="조기경보"><span class="menu-text">조기경보</span></div>
 			</div>
 			<div class="menu-box">
 				<strong>조기경보</strong>
@@ -148,7 +145,7 @@
 		</li>
 		<li>
 			<div class="menu-item">
-				<button type="button" onclick="fnOpenPopup('', $(this));" class="menu-link d1" data-class="qrcode" data-title="QR CODE"><span class="menu-text">QR CODE</span></button>
+				<div onclick="fnOpenPopup('', $(this));" class="menu-link d1" data-class="qrcode" data-title="QR CODE"><span class="menu-text">QR CODE</span></div>
 			</div>
 			<div class="menu-box">
 				<strong>QR CODE</strong>
@@ -156,7 +153,7 @@
 		</li>
 		<li>
 			<div class="menu-item">
-				<button type="button" onclick="fnOpenPopup('modal08-cctv.html', $(this));" class="menu-link d1" data-class="cctv" data-title="CCTV"><span class="menu-text">CCTV</span></button>
+				<div onclick="fnOpenPopup('modal08-cctv.html', $(this));" class="menu-link d1" data-class="cctv" data-title="CCTV"><span class="menu-text">CCTV</span></div>
 			</div>
 			<div class="menu-box">
 				<strong>CCTV</strong>
@@ -164,7 +161,7 @@
 		</li>
         <li>
             <div class="menu-item">
-                <button type="button" onclick="fnOpenDrawing('', $(this));" class="menu-link d1" data-class="drawing" data-title="도면보기"><span class="menu-text">도면보기</span></button>
+                <div onclick="fnOpenDrawing('', $(this));" class="menu-link d1" data-class="drawing" data-title="도면보기"><span class="menu-text">도면보기</span></div>
             </div>
             <div class="menu-box">
                 <strong>도면보기</strong>
@@ -172,7 +169,7 @@
         </li>
 		<li class="full">
 			<div class="menu-item">
-				<button type="button" onclick="fnOpenPopup('modal08-cctv.html', $(this));" class="menu-link d1" data-class="outbound" data-title="WA"><span class="menu-text">WA</span></button>
+				<div onclick="fnOpenPopup('', $(this));" class="menu-link d1" data-class="outbound" data-title="WA"><span class="menu-text">WA</span></div>
 			</div>
 			<div class="menu-box">
 				<strong>WA</strong>
@@ -181,7 +178,7 @@
 		
 		<li class="operation-control" onclick="maxi_opDataBox('#_OPERATION_GT_');">
 			<div class="menu-item">
-				<button type="button" class="menu-link d1" data-class="operation-info" data-title="운전정보 열기"><span class="menu-text">운전정보 GT</span></button>
+				<div class="menu-link d1" data-class="operation-info" data-title="운전정보 열기"><span class="menu-text">운전정보 GT</span></div>
 			</div>
 			<div class="menu-box">
 				<strong>운전정보 GT</strong>
@@ -189,7 +186,7 @@
 		</li>
 		<li class="operation-control" onclick="maxi_opDataBox('#_OPERATION_ST_');" style="display: none;">
 			<div class="menu-item">
-				<button type="button" class="menu-link d1" data-class="operation-info" data-title="운전정보 열기"><span class="menu-text">운전정보 ST</span></button>
+				<div class="menu-link d1" data-class="operation-info"><span class="menu-text">운전정보 ST</span></div>
 			</div>
 			<div class="menu-box">
 				<strong>운전정보 ST</strong>
@@ -197,7 +194,7 @@
 		</li>
 		<li class="operation-control" onclick="maxi_opDataBox('#_OPERATION_HRSG_');" style="display: none;">
 			<div class="menu-item">
-				<button type="button" class="menu-link d1" data-class="operation-info" data-title="운전정보 열기"><span class="menu-text">운전정보 HRSG</span></button>
+				<div class="menu-link d1" data-class="operation-info"><span class="menu-text">운전정보 HRSG</span></div>
 			</div>
 			<div class="menu-box">
 				<strong>운전정보 HRSG</strong>
@@ -206,7 +203,7 @@
 
 		<li class="tabs-control">
 			<div class="menu-item">
-				<button type="button" onclick="" class="menu-link d1" data-class="close-tabs" data-title="모든 탭 닫기"><span class="menu-text">모든 탭 닫기</span></button>
+				<div onclick="" class="menu-link d1" data-class="close-tabs"><span class="menu-text">모든 탭 닫기</span></div>
 			</div>
 			<div class="menu-box">
 				<strong>모든 탭 닫기</strong>
@@ -214,7 +211,7 @@
 		</li>
 		<li class="tabs-control">
 			<div class="menu-item">
-				<button type="button" onclick="" class="menu-link d1" data-class="minimize-tabs" data-title="모든 탭 최소"><span class="menu-text">모든 탭 최소</span></button>
+				<div onclick="" class="menu-link d1" data-class="minimize-tabs"><span class="menu-text">모든 탭 최소</span></div>
 			</div>
 			<div class="menu-box">
 				<strong>모든 탭 최소</strong>
@@ -222,7 +219,7 @@
 		</li>
 		<li class="nav-counter">
 			<div class="menu-item">
-				<button type="button" onclick="" class="menu-link d1" data-class="visitors" data-title="방문자정보"><span class="visually-hidden">방문자정보</span></button>
+				<div onclick="" class="menu-link d1" data-class="visitors"><span class="visually-hidden">방문자정보</span></div>
 			</div>
 			<div class="menu-box">
 				<div class="counter-title">

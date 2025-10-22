@@ -247,6 +247,7 @@ function fnOpenPopupFacilityMenu(url, target) {
  * @param url
  * @param target
  */
+/* 20251022 yjkim - 태안에서는 사용하지 않으며 winbox로 대체되었으므로 비활성
 function fnOpenPopupModal(url, target) {
     //$('#menuList').removeClass('show');
     //$("#toggle-button").attr('aria-expanded', 'false');
@@ -313,6 +314,7 @@ function fnOpenPopupModal(url, target) {
         });
     });
 }
+*/
 
 // 3D모델 사용가이드 버튼제어
 function closeControlGuide() {
@@ -917,6 +919,7 @@ function closeOtherPopups() {
     });
 }
 
+/* 20251022 yjkim - 태안에서는 사용하지 않으며 winbox로 대체되었으므로 비활성
 //사이드패널 열고 닫기
 let $toggleSides, $modal, $panel; // let으로 선언하여 재할당 가능하게 수정
 
@@ -989,6 +992,7 @@ function initSidePanel(toggleSelectors, modalSelector, panelSelector) {
     $(window).on('resize', handleResize);
     handleResize(); // 초기 실행
 }
+*/
 
 /* cctv nvl download file */
 function downloadCctvView() {
@@ -1052,13 +1056,13 @@ function initPlantSelect() {
     const $plantGroup = $('.plant-group');
     const $selectBtn = $('.select-plant');
 
-    // 1️⃣ 발전소 선택 버튼 클릭 시 (토글 방식)
+    // 발전소 선택 버튼 클릭 시 (토글 방식)
     $selectBtn.on('click', function (e) {
         e.stopPropagation();
         $plantGroup.toggleClass('active');
     });
 
-    // 2️⃣ 발전소 목록(span) 클릭 시
+    // 발전소 목록(span) 클릭 시
     $plantGroup.on('click', 'span', function (e) {
         e.stopPropagation();
         const plantName = $(this).text().trim();
@@ -1066,7 +1070,7 @@ function initPlantSelect() {
         // window.location.href = `/plant/${plantName.toLowerCase()}`;
     });
 
-    // 3️⃣ 외부 클릭 시 active 제거
+    // 외부 클릭 시 active 제거
     $(document).on('click', function (e) {
         if (
             !$plantGroup.is(e.target) &&

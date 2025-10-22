@@ -118,13 +118,16 @@ nav li {
 }
 
 nav .menu-link {
-	cursor: pointer;
 	height: var(--gnb-width);
 	color: var(--text-neutral-default);
 }
 
-nav [type="button"] {
-	background-color: transparent;
+nav .menu-link.d1 {
+    cursor: pointer;
+}
+
+nav .menu-link[onclick]:hover {
+    color: var(--text-brand-tertiary);
 }
 
 .left-box .menu-item {
@@ -322,7 +325,7 @@ nav [type="button"] {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: .5rem 0 1rem;
+	padding: .5rem 0;
 }
 .counter-box [class*='cb-'] {
 	display: flex;
@@ -330,6 +333,7 @@ nav [type="button"] {
 	justify-content: space-between;
 	min-height: 1.5rem;
 	gap: 1rem;
+    margin-top: .5rem;
 }
 .counter-box [class*='cb-'] > strong {
 	font-size: .8125rem;
@@ -353,6 +357,16 @@ nav [type="button"] {
 	background-image: url(/resources/images/icons/arrow_right-white.svg);
 	background-repeat: no-repeat;
 	background-position: right center;
+}
+
+@media (min-width: 1600px) {
+    .left-box:not(.expand) .menu-box.active .counter-title {
+        font-size: 1.125rem;
+    }
+    .left-box:not(.expand) .menu-box.active .counter-box [class*='cb-'] > strong,
+    .left-box:not(.expand) .menu-box.active .counter-box [class*='cb-'] > span {
+        font-size: 1rem;
+    }
 }
 
 .left-box .menu-box .menu-link.d2 > span {
@@ -393,7 +407,7 @@ nav [type="button"] {
 
 		display: block;
 		width: auto;
-		padding: .5rem 1rem;
+		padding: .75rem 1.25rem;
 		white-space: nowrap;
 
 		background-color: var(--bg-default-default);
@@ -416,8 +430,8 @@ nav [type="button"] {
 		border-right: 7px solid var(--white);
 	}
 	.left-box:not(.expand) .menu-box > strong {
-		margin-bottom: .5rem;
-		font-size: 1rem;
+        margin-bottom: .5rem;
+		font-size: 1.125rem;
 	}
 
 	/* 예외처리 */
@@ -435,6 +449,9 @@ nav [type="button"] {
         padding: 0 .5rem .5rem;
         padding-right: 0;
 	}
+    .left-box:not(.expand) .menu-box .depth-3 .menu-link.d3 {
+        margin-bottom: .125rem;
+    }
 
 	.left-box:not(.expand) .menu-box.active .menu-link {
 		height: auto;
@@ -605,12 +622,10 @@ nav .d1[data-class*="visitors"].active {
 }
 
 .left-box.expand nav .d1[data-class*="visitors"],
-.left-box.expand nav .d1[data-class*="visitors"]:hover, 
+.left-box.expand nav .d1[data-class*="visitors"]:hover,
 .left-box.expand nav .d1[data-class*="visitors"].active {
 	background-image: none;
 	padding: 1rem;
 	height: auto;
 }
-
-
 
