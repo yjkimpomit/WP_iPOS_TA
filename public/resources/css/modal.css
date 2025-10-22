@@ -1544,7 +1544,7 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 }
 
 /* APC 장비설정 */
-.apc-setup .title06 {
+/* .apc-setup .title06 {
 	margin-bottom: 1rem;
 }
 .setup-box {
@@ -1556,7 +1556,7 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 }
 .setup-box .form-label {
 	font-weight: 700;
-}
+} */
 
 /* DailySafety Calendar */
 .container-safety .table-responsive:has(.calendar) {
@@ -1680,4 +1680,49 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 .container-safety .days .cell.active::before {
 	background: var(--bg-brand-default);
 }
+
+/* idms */
+.idms-box {
+	height: 100%;
+}
+
+.grid-2x2 {
+	width: 100%;
+	margin: 0 auto;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+
+/* 각 셀 스타일 */
+.grid-2x2 .cell {
+	background: #f3f3f3;
+	border: 1px solid #ddd;
+	box-sizing: border-box;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1rem;
+
+	aspect-ratio: 1 / 1;
+}
+
+/* 1600px 이상일 때만 Grid 적용 (2열 x 2행) */
+@media (min-width: 1600px) {
+	.grid-2x2 {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 50% 50%;
+		grid-auto-rows: 1fr; /* 각 행 동일 비중 */
+		width: 100%;
+	}
+
+	/* grid 환경에서는 aspect-ratio가 가로 기준으로 정사각을 보장 */
+	.grid-2x2 .cell {
+		aspect-ratio: 7 / 3;
+		width: auto; /* 그리드 아이템은 열 크기 따라가게 함 */
+	}
+}
+
 

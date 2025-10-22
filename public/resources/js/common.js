@@ -328,7 +328,7 @@ function openControlGuide() {
 
 $(document).ready(function () {
 	// 임시 : 작업중인 화면 우선 띄우기
-	$('#menuList .menu-item [data-class="facility"]').trigger('click');
+	$('#menuList .menu-item [data-class="idms"]').trigger('click');
 
 	//
     var $leftBox = $('.left-box');
