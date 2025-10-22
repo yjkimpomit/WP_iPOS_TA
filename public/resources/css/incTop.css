@@ -62,6 +62,10 @@
 	gap: .5rem;
 }
 
+.logo .bi .system {
+	font-weight: 700;
+}
+
 .logo .bi>* {
 	font-size: 1rem;
 	flex: 1 0 auto;
@@ -116,7 +120,7 @@
 	position: absolute;
 	top: auto;
 	margin-top: .5rem;
-	z-index: 20;
+	z-index: 99998;
 
 	width: auto;
 	flex-direction: column;

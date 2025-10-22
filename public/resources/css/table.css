@@ -7,6 +7,92 @@
  * 내용 : 테이블 단위 개별 스타일 설정 - 높이, 텍스트 정렬 등
  * 
  */
+ 
+/* table-responsive */
+.table-responsive {
+	border: none;
+}
+
+/* table */
+.table {
+	margin-bottom: 0;
+}
+
+.table th {
+	font-weight: 500;
+	position: relative;
+}
+
+.table th,
+.table td {
+	vertical-align: middle;
+	white-space: nowrap;
+	text-align: center;
+	padding: .5rem .75rem;
+	border-right: solid 1px var(--border-neutral-secondary);
+	border-bottom: solid 1px var(--border-neutral-secondary);
+	border-bottom-width: 1px;
+
+	color: var(--text-neutral-default);
+}
+
+.table tr>*:last-child {
+	border-right: none;
+}
+
+.table td button {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.table tbody th [class*='material-'][disabled],
+.table tbody td [class*='material-'][disabled] {
+	opacity: .32;
+	color: var(--text-disabled-default);
+}
+
+/* .view-table */
+
+/* 2024.12.27 yjkim - facility/mainPano.do?iegTagno=13008810 스타일 수정
+
+.view-table th,
+.view-table td {
+	vertical-align: top;
+}
+*/
+
+.view-table td {
+	white-space: normal;
+	word-break: keep-all;
+}
+
+.view-table tbody td {
+	text-align: left;
+}
+
+/* 반응형테이블 고정 헤더 & 칼럼 */
+/* thead, tbody th 스크롤시 고정 */
+.table thead {
+	position: sticky;
+	top: 0;
+	z-index: 2;
+	background-color: var(--slate-100);
+}
+
+.table thead th {
+	background-color: var(--white-400);
+	border-bottom: solid 1px var(--border-neutral-secondary);
+}
+
+.table thead tr:first-child th {
+	border-top: 2px solid var(--slate-200);
+}
+
+.table tbody th {
+	font-weight: 400;
+	background-color: var(--bg-neutral-tertiary);
+}
+
 .table.table-sm th,
 .table.table-sm td {
 	padding-top: .25rem;
@@ -87,8 +173,7 @@
 	/* TM 현황에 10개씩 불러오는 테이블 기준
 	min-height: 240px; */
 	overflow-y: auto;
-	margin-bottom: 1rem;
-	
+	margin-bottom: 1rem;	
 	background-color: var(--bg-neutral-tertiary);
 }
 
@@ -105,15 +190,6 @@
 */
 
 /* 공통 */
-
-/* 반응형테이블 고정 헤더 & 칼럼 */
-/* thead, tbody th 스크롤시 고정 */
-.table thead {
-	position: sticky;
-	top: 0;
-	z-index: 2;
-	background-color: var(--bg-neutral-secondary);
-}
 
 /* tbody의 첫 번째 칼럼 배경색 설정
 .table.sticky thead th {

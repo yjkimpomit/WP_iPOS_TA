@@ -50,12 +50,12 @@ function fnOpenPopup(url, target) {
                 options.autoResize = true;
             }
         });
-    } else {
-        winbox = new WinBox(title, {
-            class: ["no-full"], top: 92, left: 60, right: 4, bottom: 4, border: 0, url: url, onCreate: function (options) {
-                options.autoResize = true;
-            }
-        });
+	} else {
+		winbox = new WinBox(title, {
+			class: ["no-full"], top: 92, left: 60, right: 4, bottom: 4, border: 0, url: url, onCreate: function (options) {
+				options.autoResize = true;
+			}
+		});
     }
 
     /* 모든 창 닫기 처리 */
@@ -327,6 +327,10 @@ function openControlGuide() {
 }
 
 $(document).ready(function () {
+	// 임시 : 작업중인 화면 우선 띄우기
+	$('#menuList .menu-item [data-class="dashboard"]').trigger('click');
+
+	//
     var $leftBox = $('.left-box');
     var $toggleBtn = $('#toggle-button');
 

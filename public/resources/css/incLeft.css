@@ -4,7 +4,7 @@
 .left-box {
 	position: absolute;
 	top: 0;
-	z-index: 200;
+	z-index: 99998;
 	transition: top .5s ease-in-out;
 }
 @media (min-width: 1600px) {
@@ -403,7 +403,7 @@ nav .menu-link[onclick]:hover {
 		position: absolute;
 		top: .5rem;
 		left: 3rem;
-		z-index: 2;
+		z-index: 99999;
 
 		display: block;
 		width: auto;
