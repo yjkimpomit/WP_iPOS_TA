@@ -54,7 +54,7 @@
 	<script>
 		/* <%-- 999/0 : mobile --%> */
 		//var checkMobile = "${sessionScope.loginInfo.iui_isadmin}";
-		var checkMobile = 0;
+		var checkMobile = 999;
 	</script>
 	<!-- 
 	<link rel="stylesheet" href="/unity3DViewer/TemplateData/style.css">
@@ -402,16 +402,6 @@
 			dataType: 'html'
 		}).done(function(html) {
 			$('#incLeft').append(html);
-		});
-
-		//
-		$.ajax({
-			method: 'GET',
-			url: 'incRight.html',
-			async: false,
-			dataType: 'html'
-		}).done(function(html) {
-			$('#incRight').append(html);
 		});
 
 		//

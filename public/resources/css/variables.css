@@ -370,6 +370,17 @@
     /* box-shadow */
     --box-shadow-1: 0 0px 8px 0 rgba(0, 0, 0, 0.24);
 	--winbox-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.64);
+
+	/* BS override style */
+	--bs-link-color: var(--slate-800);
+	--bs-link-hover-color: var(--blue-600);
+	--bs-secondary-color: var(--slate-500);	
+	--bs-emphasis-color: var(--blue-800);
+
+	--bs-nav-underline-link-active-color: var(--text-brand-default);
+	/* --bs-nav-link-color: var(--text-neutral-default);
+	--bs-nav-link-hover-color: var(--text-brand-default);
+	--bs-nav-underline-link-active-color: var(--text-brand-default); */
 }
 
 body {

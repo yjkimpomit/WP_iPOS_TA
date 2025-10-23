@@ -68,7 +68,7 @@
 
 	<!-- 제목영역 -->
 	<div class="title-box">
-		<h3 class="title02">Gas Turbine</h3>
+		<!-- <h3 class="title02">Gas Turbine</h3> -->
 		<button type="button" class="btn btn-primary move-to-3D" id="moveTo3D" onclick="modelLoadToUnity('12298270');">
 			<span class="material-symbols-rounded">
 				view_in_ar
@@ -136,8 +136,8 @@ $(document).ready(function() {
 		// 설비정보팝업 > 3D모델 이동 버튼 클릭시 콘텐츠 제거 후, 모달창 초기화
 		$("#moveTo3D").click(function() {
 			// 모달이 닫힐 때 초기화 작업 수행
-			$("#externalPopup #modalTitle").empty();
-			$("#externalPopup #modalBodyContent").empty();
+			//$("#externalPopup #modalTitle").empty();
+			//$("#externalPopup #modalBodyContent").empty();
 			
 			$("#externalPopup").bPopup().close();
 			$("#externalPopup.facility.show").removeClass().addClass('modal fade');
