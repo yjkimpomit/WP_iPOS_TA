@@ -404,16 +404,23 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	margin-bottom: .5rem;
 }
 .search-input-box .form-select {
 	min-height: 40px;
 	width: 80px;
 	margin-right: 4px;
 }
+
 .search-input-box .form-control {
+	min-height: 40px;
+	width: calc(100% - 48px);
+}
+.search-input-box:has(.form-select) .form-control {
 	min-height: 40px;
 	width: calc(100% - 40px - 8px - 4px - 80px);
 }
+
 .search-input-box .btn {
 	display: inline-flex;
 	align-items: center;
@@ -1916,11 +1923,15 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 }
 
 /* 조기경보 */
-.container-alarm {
-
+.container-alarm,
+.panel-box.alarm {
+	height: 100%;
 }
 .panel-box.alarm > * {
 	flex: 1;
+}
+.jstree-box:has(.ztree) {
+	height: calc(100% - 3rem);
 }
 
 /* jstree > ztree로 변경 */
