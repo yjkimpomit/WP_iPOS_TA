@@ -207,6 +207,9 @@ function openControlGuide() {
 }
 
 $(document).ready(function () {
+	// 임시 - 작업중 화면 자동오픈
+	$('#menuList .menu-item [data-class="alarm"]').trigger('click');
+
     var $leftBox = $('.left-box');
     var $toggleBtn = $('#toggle-button');
 

@@ -1919,24 +1919,30 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 .ztree * {
     font-size: .875rem;
 }
+.ztree li a:hover {
+    text-decoration: none;
+}
+.ztree li span.button.switch {
+    height: 24px;
+}
 
 /* 3D 모델 연결되는 아이콘 */
 .ztree .menu-item {
-
+    display: inline-flex;
+    align-items: center;
 }
-.ztree .menu-item[data-3d-target-no]::after {
-    content: '';
-    position: relative;
-    left: auto;
-    width: 24px;
-    height: 24px;
-    background-image: url(/resources/images/icons/icon-view_in_ar-blue.svg);
+.ztree .icon-3d {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(/resources/images/icons/icon-view_in_ar-gray.svg);
     background-position: center;
     background-size: 18px;
     background-repeat: no-repeat;
 }
-
-
+.ztree .icon-3d:hover {
+    background-image: url(/resources/images/icons/icon-view_in_ar-navy.svg);
+}
 
 
 

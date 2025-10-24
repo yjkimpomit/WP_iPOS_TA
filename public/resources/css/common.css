@@ -48,7 +48,8 @@ body.sub {
 	padding: 1rem;
 }
 body.sub:has(.dashboard-box),
-body.sub:has(.idms-box) {
+body.sub:has(.idms-box),
+body.sub:has(.container-alarm) {
 	padding: 0;
 }
 
