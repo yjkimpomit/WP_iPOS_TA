@@ -1915,6 +1915,14 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 	height: 100%;
 }
 
+/* 조기경보 */
+.container-alarm {
+
+}
+.panel-box.alarm > * {
+	flex: 1;
+}
+
 /* jstree > ztree로 변경 */
 .ztree * {
     font-size: .875rem;

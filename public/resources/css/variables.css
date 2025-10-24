@@ -381,6 +381,8 @@
 	/* --bs-nav-link-color: var(--text-neutral-default);
 	--bs-nav-link-hover-color: var(--text-brand-default);
 	--bs-nav-underline-link-active-color: var(--text-brand-default); */
+
+	--bs-nav-pills-link-active-bg: var(--bg-brand-default);
 }
 
 body {
