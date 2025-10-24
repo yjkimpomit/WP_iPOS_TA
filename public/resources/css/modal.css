@@ -1456,6 +1456,7 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
     align-items: center;
 }
 
+/* 예방점검현황 */
 .container-prevention [aria-labelledby="costFailureTrendsTab"] .chart-box {
 	background-color: transparent;
 	margin-bottom: 0;
@@ -1557,6 +1558,11 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 .setup-box .form-label {
 	font-weight: 700;
 } */
+
+/* 일일안전작업현황 */
+.container-safety {
+    height: 100%;
+}
 
 /* DailySafety Calendar */
 .container-safety .table-responsive:has(.calendar) {
@@ -1908,6 +1914,29 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 	width: 100%;
 	height: 100%;
 }
+
+/* jstree > ztree로 변경 */
+.ztree * {
+    font-size: .875rem;
+}
+
+/* 3D 모델 연결되는 아이콘 */
+.ztree .menu-item {
+
+}
+.ztree .menu-item[data-3d-target-no]::after {
+    content: '';
+    position: relative;
+    left: auto;
+    width: 24px;
+    height: 24px;
+    background-image: url(/resources/images/icons/icon-view_in_ar-blue.svg);
+    background-position: center;
+    background-size: 18px;
+    background-repeat: no-repeat;
+}
+
+
 
 
 

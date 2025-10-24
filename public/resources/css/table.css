@@ -490,7 +490,7 @@
 
 /* LOG - 방문자정보 */
 .table-responsive:has(.table[aria-label="방문자정보"]) {
-	height: 580px;
+	height: 480px;
 }
 
 /* dailySafety */

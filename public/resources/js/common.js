@@ -18,7 +18,7 @@ function getWinboxGroupOptions() {
 function fnOpenPopup(url, target) {
     var title = target.data("title");
     var base = getWinboxGroupOptions();
-    var winbox = new WinBox(title, Object.assign({}, base, {
+    targetWinbox = new WinBox(title, Object.assign({}, base, {
         groupId: "winMain-group", class: ["no-full"], url: url, onCreate: function (options) {
             options.autoResize = true;
         }
@@ -26,15 +26,14 @@ function fnOpenPopup(url, target) {
 
     /* 브라우저를 조절할때 처리 */
     window.addEventListener("resize", () => {
-        if (!winbox || !winbox.g) return;
-        if (!winbox.min) {
-            winbox.restore();
-            winbox.maximize();
+        if (!targetWinbox || !targetWinbox.g) return;
+        if (!targetWinbox.min) {
+            targetWinbox.restore();
+            targetWinbox.maximize();
         }
     });
 
-    winbox.maximize();
-    targetWinbox = winbox;
+    targetWinbox.maximize();
 }
 
 /**
@@ -45,7 +44,7 @@ function fnOpenPopup(url, target) {
 function fnOpenPopupFullscreen(url, target) {
     var title = target.data("title");
     var base = getWinboxGroupOptions();
-    var winbox = new WinBox(title, Object.assign({}, base, {
+    targetWinbox = new WinBox(title, Object.assign({}, base, {
         groupId: "winMain-group", class: ["no-full"], url: url, onCreate: function (options) {
             options.autoResize = true;
         }
@@ -53,15 +52,14 @@ function fnOpenPopupFullscreen(url, target) {
 
     /* 브라우저를 조절할때 처리 */
     window.addEventListener("resize", () => {
-        if (!winbox || !winbox.g) return;
-        if (!winbox.min) {
-            winbox.restore();
-            winbox.maximize();
+        if (!targetWinbox || !targetWinbox.g) return;
+        if (!targetWinbox.min) {
+            targetWinbox.restore();
+            targetWinbox.maximize();
         }
     });
 
-    winbox.maximize();
-    targetWinbox = winbox;
+    targetWinbox.maximize();
 }
 
 /**
@@ -72,18 +70,17 @@ function fnOpenPopupFullscreen(url, target) {
 function fnOpenPopupFacilityMenu(url, target) {
     var title = target.data("title");
     var base = getWinboxGroupOptions();
-    var winbox;
 
     if (checkMobile === "999") {
         // mobile
-        winbox = new WinBox(title, Object.assign({}, base, {
+        targetWinbox = new WinBox(title, Object.assign({}, base, {
             groupId: "winMain-group", class: ["no-full", "no-max"], url: url, onCreate: function (options) {
                 options.autoResize = true;
             }
         }));
     } else {
         // pc
-        winbox = new WinBox(title, Object.assign({}, base, {
+        targetWinbox = new WinBox(title, Object.assign({}, base, {
             groupId: "winMain-group", class: ["no-full", "no-max"], width: "30%", height: "100%", url: url, onCreate: function (options) {
                 options.autoResize = true;
             }
@@ -92,13 +89,11 @@ function fnOpenPopupFacilityMenu(url, target) {
 
     /* 브라우저를 조절할때 처리 */
     window.addEventListener("resize", () => {
-        if (!winbox || !winbox.g) return;
-        if (!winbox.min) {
-            winbox.restore();
+        if (!targetWinbox || !targetWinbox.g) return;
+        if (!targetWinbox.min) {
+            targetWinbox.restore();
         }
     });
-
-    targetWinbox = winbox;
 }
 
 /**
@@ -212,9 +207,6 @@ function openControlGuide() {
 }
 
 $(document).ready(function () {
-	// 임시 - 작업중 화면 자동오픈
-	$('#menuList .menu-item [data-class="idms"]').trigger('click');
-
     var $leftBox = $('.left-box');
     var $toggleBtn = $('#toggle-button');
 
@@ -241,19 +233,19 @@ $(document).ready(function () {
 
     // hover 이벤트 (expand 없을 때만 동작)
     $('#menuList .menu-item').hover(function () {
-            if (!$('.left-box').hasClass('expand')) {
-                $(this).siblings('.menu-box').addClass('active');
-            }
+        if (!$('.left-box').hasClass('expand')) {
+            $(this).siblings('.menu-box').addClass('active');
+        }
     }, function () {
-            if (!$('.left-box').hasClass('expand')) {
-                var $menuBox = $(this).siblings('.menu-box');
-                setTimeout(function () {
-                    // .menu-item나 .menu-box 둘 다 hover 중이면 유지
-                    if (!$menuBox.is(':hover') && !$(this).is(':hover')) {
-                        $menuBox.removeClass('active');
-                    }
-                }.bind(this), 100);
-            }
+        if (!$('.left-box').hasClass('expand')) {
+            var $menuBox = $(this).siblings('.menu-box');
+            setTimeout(function () {
+                // .menu-item나 .menu-box 둘 다 hover 중이면 유지
+                if (!$menuBox.is(':hover') && !$(this).is(':hover')) {
+                    $menuBox.removeClass('active');
+                }
+            }.bind(this), 100);
+        }
     });
 
     // .menu-box에서 벗어나면 active 제거
@@ -488,8 +480,6 @@ function searchFacilityTypeTreePopup(target) {
         modalClose: false, opacity: 0.2, speed: 450, closeClass: "close", onOpen: function () {
             $("#searchFacilityTypeTreePopup").addClass('show');
         }, onClose: function () {
-            $("#facilityType1").jstree("close_all");
-            $("#facilityType1").jstree("deselect_all");
             $("#searchFacilityTypeTreePopup").removeClass('show');
         }
     });
@@ -501,8 +491,6 @@ function searchFacilityLocTreePopup(target) {
         modalClose: false, opacity: 0.2, speed: 450, closeClass: "close", onOpen: function () {
             $("#searchFacilityLocTreePopup").addClass('show');
         }, onClose: function () {
-            $("#facilityLoc1").jstree("close_all");
-            $("#facilityLoc1").jstree("deselect_all");
             $("#searchFacilityLocTreePopup").removeClass('show');
         }
     });
@@ -685,25 +673,6 @@ function searchFacilityPopup(target) {
 
         }, onClose: function () {
             $("#searchFacilityPopup").removeClass('show');
-            $("#facilityMasterList").html('');
-            //검색 form 초기화
-            document.getElementById('form_search_result1').reset();
-
-            //기능위치 트리 닫기
-            $('#facilityMaster1').jstree("deselect_all");
-            $('#facilityMaster1').jstree("close_all");
-            //계통 트리 닫기
-            $('#facilityMaster2').jstree("deselect_all");
-            $('#facilityMaster2').jstree("close_all");
-            //종류 트리 닫기
-            $('#facilityMaster3').jstree("deselect_all");
-            $('#facilityMaster3').jstree("close_all");
-
-            //tab 초기화
-            $('#pills-tab2 li button').removeClass('active');
-            $('#pills-tab2 li button').first().addClass('active');
-            $('#pills-tabContent2 div').removeClass('active');
-            $('#pills-tabContent2 div').first().addClass('active show');
         }
     });
 }
@@ -912,20 +881,6 @@ $(document).ready(function () {
 
     checkTouchDevice();
     window.addEventListener('resize', checkTouchDevice);
-
-    setTimeout(function () {
-        $('.left-box').fadeIn(500);
-
-        // 2025.04.29 yjkim - 사용가이드 자동사라짐
-        $('.unity-guide').fadeIn(500, function () {
-            setTimeout(function () {
-                $('.unity-guide').fadeOut(500);
-                $('.unity-guide .unity-guide-footer').hide();
-            }, 5000); // 페이드인 완료후 8초뒤 페이드아웃
-        });
-
-        $('.header .btn-status').fadeIn(500).css('display', 'flex');
-    }, 500);
 });
 
 // 헤더 > 발전소 선택
