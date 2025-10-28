@@ -229,7 +229,10 @@
 
 .page-move .btn,
 .page-move+.btn-box > .btn {
-	line-height: 1.125rem;
+	height: 32px;
+	--bs-btn-line-height: 1;
+	--bs-btn-padding-y: 0;
+	margin: 0;
 }
 
 .page-move+.btn-box > .btn {

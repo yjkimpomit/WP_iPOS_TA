@@ -487,12 +487,78 @@ input[id="facilityRefList"]+.title03 {
 /*#################### BS override ####################*/
 .nav {
 	--bs-nav-link-padding-x: .75rem;
-	--bs-nav-link-padding-y: .25rem;
+	--bs-nav-link-padding-y: .375rem;
 }
 .nav-underline {
 	padding: .5rem .5rem 0;
 	background-color: var(--bg-neutral-tertiary);
 	border-bottom: 1px solid var(--border-neutral-tertiary);
+}
+
+
+/*#################### Button Color Overrides ####################*/
+.btn-primary {
+	--bs-btn-color: var(--white);
+	--bs-btn-hover-color: var(--white);
+	--bs-btn-active-color: var(--white);
+	--bs-btn-disabled-color: var(--white);
+
+	--bs-btn-bg: var(--blue-500);
+	--bs-btn-border-color: var(--blue-500);
+
+	--bs-btn-hover-bg: var(--blue-600);
+	--bs-btn-hover-border-color: var(--blue-600);
+	--bs-btn-active-bg: var(--blue-600);
+	--bs-btn-active-border-color: var(--blue-600);
+	
+	--bs-btn-disabled-bg: var(--blue-500);
+	--bs-btn-disabled-border-color: var(--blue-500);
+}
+.btn-outline-primary {
+	--bs-btn-color: var(--blue-500);
+	--bs-btn-border-color: var(--blue-500);
+
+	--bs-btn-hover-color: var(--white);
+	--bs-btn-hover-bg: var(--blue-500);
+	--bs-btn-hover-border-color: var(--blue-500);
+
+	--bs-btn-active-color: var(--white);
+	--bs-btn-active-bg: var(--blue-500);
+	--bs-btn-active-border-color: var(--blue-500);
+
+	--bs-btn-disabled-color: var(--blue-500);
+	--bs-btn-disabled-border-color: var(--blue-500);
+	
+}
+.btn-secondary {
+	--bs-btn-color: var(--slate-800);
+	--bs-btn-hover-color: var(--slate-800);
+	--bs-btn-active-color: var(--slate-800);
+	--bs-btn-disabled-color: var(--slate-800);
+
+	--bs-btn-bg: var(--slate-100);
+	--bs-btn-border-color: var(--slate-200);
+
+	--bs-btn-hover-bg: var(--slate-200);
+	--bs-btn-hover-border-color: var(--slate-200);
+	--bs-btn-active-bg: var(--slate-200);
+	--bs-btn-active-border-color: var(--slate-200);
+	
+	--bs-btn-disabled-bg: var(--slate-100);
+	--bs-btn-disabled-border-color: var(--slate-200);	
+}
+.btn-outline-secondary {
+	--bs-btn-color: var(--slate-800);
+	--bs-btn-hover-color: var(--slate-800);
+	--bs-btn-active-color: var(--slate-800);
+	--bs-btn-disabled-color: var(--slate-800);
+
+	--bs-btn-border-color: var(--slate-200);
+	--bs-btn-hover-bg: var(--slate-100);
+	--bs-btn-hover-border-color: var(--slate-200);
+	--bs-btn-active-bg: var(--slate-100);
+	--bs-btn-active-border-color: var(--slate-200);
+	--bs-btn-disabled-border-color: var(--slate-200);	
 }
 
 /*#################### Buttons ####################*/
@@ -760,6 +826,14 @@ input[id="facilityRefList"]+.title03 {
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
 	background-color: var(--bg-brand-default);
 }
+.nav-pills .nav-item {
+	border-right: solid 1px var(--border-neutral-secondary);
+}
+
+.nav-pills .nav-item.active,
+.nav-pills .nav-item:last-child {
+	border-right: none;
+}
 .nav-pills {
 	border: solid 1px var(--border-neutral-secondary);
 	border-radius: var(--bs-border-radius);
@@ -787,9 +861,18 @@ input[id="facilityRefList"]+.title03 {
 }
 
 /* nav-sm */
-.nav-sm .nav-link {
+.nav-pills.nav-sm .nav-link {
 	font-size: .875rem;
-	padding: .5rem;
+	padding: .375rem .75rem;
+}
+
+/* nav-tabs */
+.nav-tabs {
+	margin-bottom: .5rem;
+}
+.nav-tabs.nav-sm .nav-link {
+	font-size: .875rem;
+	padding: .25rem .75rem;
 }
 
 /* 알림박스 - 작은크기 추가 */

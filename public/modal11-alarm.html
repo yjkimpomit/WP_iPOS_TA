@@ -70,49 +70,33 @@
 	<div class="panel-box alarm">
 		<div class="side-panel left">
 
-			<ul class="nav nav-pills nav-sm nav-justified" id="alarm-tab" role="tablist">
+			<ul class="nav nav-pills nav-justified" id="plant-tab" role="tablist">
 				<li class="nav-item" role="presentation">
-					<button class="nav-link active" id="plant9-tab" data-bs-toggle="pill" data-bs-target="#plant9-tab-pane" type="button" role="tab" aria-selected="true">9호기</button>
+					<button class="nav-link active" type="button">9호기</button>
 				</li>
 				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="plant10-tab" data-bs-toggle="pill" data-bs-target="#plant10-tab-pane" type="button" role="tab" aria-selected="false">10호기</button>
+					<button class="nav-link" type="button">10호기</button>
 				</li>
 				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="plantAll-tab" data-bs-toggle="pill" data-bs-target="#plantAll-tab-pane" type="button" role="tab" aria-selected="false">9, 10호기</button>
+					<button class="nav-link" type="button">9, 10호기</button>
+				</li>
+			</ul>
+
+			<ul class="nav nav-tabs nav-sm" id="alarm-tab" role="tablist">
+				<li class="nav-item" role="presentation">
+					<button class="nav-link active" id="ipas-tab" data-bs-toggle="pill" data-bs-target="#ipas-tab-pane" type="button" role="tab" aria-selected="true">IPAS</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="apr-tab" data-bs-toggle="pill" data-bs-target="#apr-tab-pane" type="button" role="tab" aria-selected="false">APR</button>
 				</li>
 			</ul>
 			
 			<div class="tab-content" id="alarm-tabContent">
-				<div class="tab-pane fade show active" id="plant9-tab-pane" role="tabpanel" aria-labelledby="plant9-tab" tabindex="0">
-					<!-- 검색영역 -->	
-					<div class="tree-search">
-						<div class="search-input-box">
-							<label for="search-input" class="visually-hidden">설비명 입력</label>
-							<input class="form-control" list="datalistOptions" id="search-input" placeholder="설비명 입력">
-							<button type="button" class="btn btn-primary" title="설비 검색">
-								<img src="/resources/images/icons/icon-search-white.svg" alt="검색">
-							</button>
-						</div>
-					</div>
-					<!-- 트리메뉴 -->
-					<div class="jstree-box">
-						<div id="treeDemo1" class="ztree"></div>
-						<!-- <div id="facTree"></div> -->
-					</div>
+				<div class="tab-pane fade show active" id="ipas-tab-pane" role="tabpanel" aria-labelledby="ipas-tab" tabindex="0">
+					<!-- 리스트 영역 -->
 				</div>
-				<div class="tab-pane fade" id="plant10-tab-pane" role="tabpanel" aria-labelledby="plant10-tab" tabindex="0">
-					<!-- 트리메뉴 -->
-					<div class="jstree-box">
-						<div id="treeDemo2" class="ztree"></div>
-						<!-- <div id="facTree"></div> -->
-					</div>
-				</div>
-				<div class="tab-pane fade" id="plantAll-tab-pane" role="tabpanel" aria-labelledby="plantAll-tab" tabindex="0">
-					<!-- 트리메뉴 -->
-					<div class="jstree-box">
-						<div id="treeDemo3" class="ztree"></div>
-						<!-- <div id="facTree"></div> -->
-					</div>
+				<div class="tab-pane fade" id="apr-tab-pane" role="tabpanel" aria-labelledby="apr-tab" tabindex="0">
+					<!-- 리스트 영역 -->
 				</div>
 			</div>
 		</div>
@@ -140,7 +124,7 @@
 							</div>
 						</div>
 					
-						<div class="col-md-auto col-lg col-xxl-1 mb-3">
+						<div class="col-md-auto col-lg-1 col-xxl-1 mb-3">
 							<button type="button" class="btn btn-primary">
 								<span class="material-symbols-rounded">
 									search
@@ -176,20 +160,14 @@
 				</div>
 			</div>
 
+			<div class="alarm-list">
+				<!-- 조회결과 영역 -->
+			</div>
+
 		</div>
 	</div>
 
 </div>
-
-<!-- ztree -->
-<script src="/resources/js/ztree-demo.js"></script>
-<script>
-$(document).ready(function() {
-	$.fn.zTree.init($("#treeDemo1"), setting, zNodes);
-	$.fn.zTree.init($("#treeDemo2"), setting, zNodes);
-	$.fn.zTree.init($("#treeDemo3"), setting, zNodes);
-});
-</script>
 
 </body>
 </html>
