@@ -401,7 +401,7 @@ nav .menu-link[onclick]:hover {
 	}	
 	.left-box:not(.expand) .menu-box.active {
 		position: absolute;
-		top: .5rem;
+		top: 0;
 		left: 3rem;
 		z-index: 99999;
 

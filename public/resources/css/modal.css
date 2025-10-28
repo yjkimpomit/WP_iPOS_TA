@@ -135,7 +135,6 @@
 
 /* 탭없는 팝업만 별도처리 CCTV */
 .container-cctv {
-	padding: 1rem;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
@@ -360,6 +359,7 @@
 		/* 높이 꽉 차게 */
 		display: flex;
 		align-items: stretch;
+        height: 100%;
 	}
 	.side-panel {
 		flex: 1 0 var(--wp-side-panel-width);
@@ -377,16 +377,16 @@
 
 .contents-panel {
 	vertical-align: top;
-	padding: 1rem;	
+	padding: .5rem;
 }
 
 @media (min-width: 1400px) {
 	.contents-panel {
-		padding: 1rem;
+		padding: 0 1rem;
 		overflow-x: hidden;
 		overflow-y: auto;
 	}
-/* 20251022 winbox로 대체하여 비활성
+    /* 20251022 winbox로 대체하여 비활성
 	.modal.folded .contents-panel {
 		display: none;
 	}
@@ -461,185 +461,21 @@
 }
 
 .facility-box {
-	height: 100%;
+    padding: .5rem;
+	height: 100vh;
 }
 .facility-box .tree-search {
-	margin-bottom: 1rem;
+	margin-bottom: .5rem;
 }
 .facility-box .jstree-box {
-	height: calc(100% - 3.5rem);
+    min-width: 320px;
+	height: calc(100% - 4rem);
 }
 
-/* 메뉴에서 클릭한 설비정보 팝업만 예외처리
-.modal.facility.with-tree.unfolded {
-    width: 100vw;
-    max-width: none;
-    margin: 0;
+/* 설비정보 */
+.container-facility {
+    padding: .5rem;
 }
-.modal.facility.with-tree .modal-content {
-	border: 0;
-	height: 100%;
-}
-.modal.facility.with-tree .modal-body {
-	padding: 0;
-}
-
-@media (min-width: 768px) {
-	.modal.facility.with-tree.folded {
-		width: auto;
-	}	
-}
-@media (min-width: 1600px) {
-	.modal.facility.with-tree.folded .modal-dialog-scrollable .modal-body {
-		overflow-y: hidden;
-        padding: 0;
-	}
-}
- */
-/* end */
-
-/* 패널 열고 닫기 toggle menu */
-/* 20251022 winbox로 대체하여 비활성
-.modal.facility .side-panel .panel-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-bottom: 1rem;
-}
-
-.modal.facility .toggle-side {
-	display: none;
-}
-.modal.facility .toggle-side.show {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	width: 40px;
-	height: 40px;
-
-	background-color: var(--bg-brand-default);
-	border: solid 1px var(--bg-brand-default);
-	color: var(--icon-default-white);
-} */
-
-/* panel - open/close */
-/* 20251022 winbox로 대체하여 비활성
-.modal.facility .toggle-side.show.icon-panel-close,
-.modal.facility .toggle-side.show.icon-panel-open {
-	transform: rotate(90deg);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 24px;
-}
-.modal.facility .toggle-side.show.icon-panel-close {
-	background-image: url('/resources/images/icons/icon-right_panel_close.svg');
-}
-.modal.facility .toggle-side.show.icon-panel-open {
-	background-image: url('/resources/images/icons/icon-right_panel_open.svg');
-}
-
-@media(min-width: 1400px) {	
-	.modal.facility .toggle-side.show.icon-panel-close,
-	.modal.facility .toggle-side.show.icon-panel-open {
-		transform: rotate(0deg);
-	}
-}
-
-.modal.facility .toggle-side.show > span {
-	font-variation-settings:
-	'FILL' 0,
-	'wght' 200,
-	'GRAD' 0,
-	'opsz' 40;
-} */
-
-/* 세로형에서 아이콘 회전 */
-/* 20251022 winbox로 대체하여 비활성
-.modal.facility .toggle-side.show {
-    transform: rotate(90deg);
-}
-
-@media (min-width: 1400px) {
-	.modal.facility .toggle-side.show {
-	    transform: rotate(0deg);
-	}
-}
-
-.modal.facility .contents-panel {
-	display: none;
-}
-.modal.facility .contents-panel.show {
-	display: block;
-}
-
-.modal.facility.folded .modal-dialog {
-	margin-left: 0;
-	margin-right: 0;
-	transition: width 0.3s ease-in-out;
-}
-@media (min-width: 768px) {
-	.modal.facility.folded .modal-dialog {
-		width: var(--wp-side-panel-width);
-		margin-right: 1rem;
-	}
-}
-
-.modal.facility.unfolded .modal-dialog {
-	transition: max-width 0.3s ease-in-out;
-	margin-left: 0;
-}
-
-.modal.facility.folded .facility-box > .side-panel.left {
-	border-right: none;
-	height: 100%;
-} 
-/*
-
-/* 20251021 yjkim winbox 이후 설비팝업 */
-/*
-.facility-box,
-.facility-box .side-panel {
-    height: 100%;
-}
-.facility-box .side-panel .jstree-box {
-    height: calc(100% - 64px);
-}
-*/
-
-@media (min-width: 1400px) {
-	/* 20251022 winbox로 대체하여 비활성
-	.modal.facility.unfolded .modal-body > .facility-box {
-		display: flex;
-		position: relative;
-	} 
-	
-	.facility-box > .side-panel.left {
-		border-right: solid 1px var(--border-neutral-secondary);
-	}*/
-}
-
-/* modal facility scrollY */
-/* 20251022 winbox로 대체하여 비활성
-@media (min-width: 1400px) {
-	.modal.facility .contents-panel.show {
-		overflow: hidden;
-	}
-	.modal.facility.unfolded .dual-page {
-	    height: 100%;
-	    overflow: hidden;	
-	}
-	.modal.facility.unfolded .tab-box {
-		height: calc(100% - 54px);
-	}
-	.modal.facility.unfolded .tab-content {
-	    height: calc(100% - 42px);
-	}
-	.modal.facility.unfolded .tab-content>.active {
-	    overflow-y: auto;
-	    height: 100%;
-	}
-} */
 
 /* info-message */
 .info-message {
@@ -857,10 +693,6 @@
 } */
 
 /* TM 현황 */
-/* 20251022 winbox로 대체하여 비활성
-.modal.tm .contents-panel {
-	padding: 1rem 0 0;	
-} */
 
 .chart-box:has(.tui-chart-box) {
 	display: flex;
@@ -1550,11 +1382,8 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 	align-items: center;
 	justify-content: flex-end;
 
-	margin: 1rem -.25rem;
-}
-
-.btn-box .btn {
-	margin: .25rem;
+	margin: 1rem 0;
+    gap: .25rem;
 }
 
 /* APC 장비설정 */
@@ -1572,12 +1401,7 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 	font-weight: 700;
 } */
 
-/* 일일안전작업현황 */
-.container-safety {
-    height: 100%;
-}
-
-/* DailySafety Calendar */
+    /* DailySafety Calendar */
 .container-safety .table-responsive:has(.calendar) {
 	border: none;
 	background-color: transparent;
@@ -1715,10 +1539,6 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 	padding: .5rem;
 }
 
-.idms-container.ic-01 {
-
-}
-
 .idms-container .nav-link {
 	min-width: 5rem;
 }
@@ -1807,10 +1627,6 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 	position: relative;
 }
 
-.grid-2x2 .cell .nav-underline + .tab-content > .tab-pane#facility-tab01-pane {
-	padding: .5rem;
-}
-
 .cell-control {
 	position: absolute;
 	top: 8px;
@@ -1820,6 +1636,7 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 	align-items: center;
 	justify-content: flex-end;
 	gap: .5rem;
+    z-index: 2;
 }
 .cell-control .icon {
 	width: 28px;
@@ -1937,6 +1754,7 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 	flex: 1;
 }
 .jstree-box:has(.ztree) {
+    min-height: 240px;
 	height: calc(100% - 3rem);
 }
 

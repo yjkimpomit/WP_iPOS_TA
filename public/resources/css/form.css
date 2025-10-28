@@ -234,11 +234,6 @@
 	--bs-btn-padding-y: 0;
 	margin: 0;
 }
-
-.page-move+.btn-box > .btn {
-	margin-left: .25rem;
-}
-
 .title-box > div:has(.btn-box) {
 	flex-wrap: wrap;
 }

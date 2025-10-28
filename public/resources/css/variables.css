@@ -383,6 +383,8 @@
 	--bs-nav-underline-link-active-color: var(--text-brand-default); */
 
 	--bs-nav-pills-link-active-bg: var(--bg-brand-default);
+
+    --bs-primary-rgb: var(--text-brand-tertiary);
 }
 
 body {
