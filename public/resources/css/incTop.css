@@ -26,7 +26,7 @@
 }
 
 .header .btn-status {
-	display: none;
+	display: flex;
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -303,7 +303,7 @@
 	}
 
 	.header>.inner-box:last-child>.btn-status {
-		display: none !important;
+		display: none;
 	}
 
 	.header>.inner-box:last-child>.operation-status {

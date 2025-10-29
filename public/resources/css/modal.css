@@ -436,12 +436,6 @@
 	margin-left: .25rem;
 	width: 40px;
 	height: 40px;
-    background-color: var(--bg-neutral-default);
-    border: solid 1px var(--bg-neutral-defaulthover);
-}
-.search-input-box .btn:hover {
-    background-color: var(--bg-brand-default);
-    border: solid 1px var(--bg-brand-defaulthover);
 }
 
 .btn.disabled,
@@ -469,7 +463,7 @@
 }
 .facility-box .jstree-box {
     min-width: 320px;
-	height: calc(100% - 4rem);
+	height: calc(100% - 40px - .5rem);
 }
 
 /* 설비정보 */
@@ -550,8 +544,10 @@
 	border-radius: var(--bs-border-radius);
 
 	display: flex;
-	height: 240px;
+	min-height: 240px;
+	height: calc(100% - 3rem);
 }
+
 /* 
 .modal.folded .jstree-box {
 	height: calc(100% - 40px - 1rem);
@@ -1526,7 +1522,9 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 
 /* idms */
 .idms-box {
-	height: 100%;
+    padding: .5rem;
+	height: 100vh;
+    overflow-y: scroll;
 }
 
 .idms-container {
@@ -1535,17 +1533,25 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 	font-size: 1rem;
 }
 
+.idms-container .nav.nav-underline {
+    padding: 0 .25rem;
+    --bs-nav-link-padding-y: 4px;
+    height: 32px;
+}
+
 .idms-container .tab-content {
 	padding: .5rem;
 }
 
 .idms-container .nav-link {
-	min-width: 5rem;
+	min-width: 4rem;
+    font-size: .875rem;
 }
 
 /* idms 그리드 - 공통사용 가능 */
 .grid-2x2 {
 	width: 100%;
+    height: auto;
 	margin: 0 auto;
 	box-sizing: border-box;
 	display: flex;
@@ -1555,32 +1561,36 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 /* 각 셀 스타일 */
 .grid-2x2 .cell {
 	width: 100%;
+    height: 50vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	aspect-ratio: 1 / 1;
 }
 .grid-2x2 .cell:not(:last-child) {
-	border-bottom: 1px solid var(--border-neutral-secondary);
+	border-bottom: 1px solid var(--border-neutral-default);
 }
 
 /* 1600px 이상일 때만 Grid 적용 (2열 x 2행) */
 @media (min-width: 1200px) {
+    .idms-box {
+        padding: 0;
+    }
 	.grid-2x2 {
+        height: 100%;
 		display: grid;
 		grid-template-columns: 50% 50%;
 		grid-template-rows: 50% 50%;
-		width: 100%;
-		height: 100%;
 	}
 
 	.grid-2x2 .cell {
 		aspect-ratio: inherit;
 		width: auto; /* 그리드 아이템은 열 크기 따라가게 함 */
+        height: 100%;
 	}
 
 	.grid-2x2 .cell:nth-child(odd) {
-		border-right: 1px solid var(--border-neutral-secondary);
+		border-right: 1px solid var(--border-neutral-default);
 	}
 	.grid-2x2 .cell:nth-child(3),
 	.grid-2x2 .cell:nth-child(4) {
@@ -1617,7 +1627,7 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 
 .grid-2x2 .cell .nav-underline + .tab-content {
 	padding: 0;
-	height: calc(100% - 44px);
+	height: calc(100% - 32px);
 }
 
 .grid-2x2 .cell .nav-underline + .tab-content > .tab-pane {
@@ -1629,8 +1639,8 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 
 .cell-control {
 	position: absolute;
-	top: 8px;
-	right: 12px;
+	top: 4px;
+	right: 4px;
 
 	display: flex;
 	align-items: center;
@@ -1639,8 +1649,8 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
     z-index: 2;
 }
 .cell-control .icon {
-	width: 28px;
-	height: 28px;
+	width: 24px;
+	height: 24px;
 	border-radius: .25rem;
 	
 	display: inline-flex;
@@ -1649,7 +1659,7 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-color: transparent;
-	background-size: 24px;
+	background-size: 20px;
 }
 
 .cell-control .icon:hover,
@@ -1746,16 +1756,11 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 }
 
 /* 조기경보 */
-.container-alarm,
 .panel-box.alarm {
 	height: 100%;
 }
 .panel-box.alarm > * {
 	flex: 1;
-}
-.jstree-box:has(.ztree) {
-    min-height: 240px;
-	height: calc(100% - 3rem);
 }
 
 /* jstree > ztree로 변경 */

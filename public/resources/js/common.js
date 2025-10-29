@@ -113,13 +113,42 @@ function fnWinPopAllClose() {
 function fnWinPopMinimize() {
     if (!targetWinbox || !targetWinbox.g) return;
 
+    if ($(".winbox:not(.min)").length > 0) {
     if (confirm("모든 창을 최소화하겠습니까?")) {
         $(".winbox:not(.min) .wb-min").trigger('click');
     }
 }
+}
 
 function fnWinOpenLogVisit(target) {
     fnOpenPopup("/log/index.do", target);
+}
+
+/**
+ * 페이지의 탭메뉴에 대한 기능 설정
+ * tab trigger event
+ * @param target
+ */
+function fnSetCommonBootstrapTab(target) {
+    try {
+        if (window.bootstrap && typeof window.bootstrap.Tab === 'function') {
+            var bsTab = new bootstrap.Tab(this);
+            bsTab.show();
+        } else {
+            // Bootstrap이 없더라도 최소한 ARIA/클래스 정리
+            var $this = $(this);
+            $('.nav-link').removeClass('active').attr('aria-selected', false);
+            $this.addClass('active').attr('aria-selected', true);
+            var target = $this.attr('data-bs-target');
+            // 탭 패널 show 처리
+            if (target) {
+                $('.tab-pane').removeClass('show active');
+                $(target).addClass('show active');
+            }
+        }
+    } catch (e) {
+        console.log(e);
+    }
 }
 
 /**
@@ -884,6 +913,20 @@ $(document).ready(function () {
 
     checkTouchDevice();
     window.addEventListener('resize', checkTouchDevice);
+    /*
+    setTimeout(function () {
+        $('.left-box').fadeIn(500);
+
+        // 2025.04.29 yjkim - 사용가이드 자동사라짐
+        $('.unity-guide').fadeIn(500, function () {
+            setTimeout(function () {
+                $('.unity-guide').fadeOut(500);
+                $('.unity-guide .unity-guide-footer').hide();
+            }, 5000); // 페이드인 완료후 8초뒤 페이드아웃
+        });
+
+        $('.header .btn-status').fadeIn(500).css('display', 'flex');
+    }, 500);*/
 });
 
 // 헤더 > 발전소 선택
@@ -905,10 +948,10 @@ function initPlantSelect() {
         console.log(`이동: ${plantName} 발전소 ## ` + plantCode);
 
         /* 이동 */
-        /*const $form = $('<form>', {method: 'POST', action: '/index.do'})
+        const $form = $('<form>', {method: 'POST', action: '/index.do'})
             .append($('<input>', {type: 'hidden', name: 'eqOrgNo', value: plantCode}));
 
-        $form.appendTo('body').submit();*/
+        $form.appendTo('body').submit();
     });
 
     // 외부 클릭 시 active 제거
@@ -918,6 +961,71 @@ function initPlantSelect() {
         }
     });
 }
+
+/* 3D Model/운전정보 데이터 연계 박스 start */
+/* let operationInfoInterval = null;
+
+function open_opDataBox(targetId, id) {
+    if (operationInfoInterval != null) {
+        clearInterval(operationInfoInterval);
+        operationInfoInterval = null;
+    }
+
+    operationInfoInterval = setInterval(() => {
+        fnOperationLoadInterval(targetId, id);
+    }, 60000);
+
+    $(targetId).show();
+
+    if ($(targetId).hasClass('folded')) {
+        $(targetId).find('.btn.minimize').hide();
+        $(targetId).find('.btn.maximize').show();
+    } else {
+        $(targetId).find('.btn.maximize').hide();
+        $(targetId).find('.btn.minimize').show();
+    }
+}
+
+function close_opDataBox(targetId) {
+    clearInterval(operationInfoInterval);
+    operationInfoInterval = null;
+
+    $(targetId).hide();
+
+    if ($(targetId).hasClass('folded')) {
+        $(targetId).find('.btn.minimize').hide();
+        $(targetId).find('.btn.maximize').show();
+    } else {
+        $(targetId).find('.btn.maximize').hide();
+        $(targetId).find('.btn.minimize').show();
+    }
+}
+
+function mini_opDataBox(targetId) {
+    $(targetId).addClass('folded');
+    $(targetId).find('.btn.minimize').hide();
+    $(targetId).find('.btn.maximize').show();
+}
+
+function maxi_opDataBox(targetId) {
+    $(targetId).removeClass('folded');
+    $(targetId).find('.btn.maximize').hide();
+    $(targetId).find('.btn.minimize').show();
+}
+
+function fnOpDataBoxToggle(targetId) {
+    console.log("########## fnOpDataBoxToggle ####")
+    if ($(targetId).hasClass('folded')) {
+        $(targetId).removeClass('folded');
+        $(targetId).find('.btn.maximize').hide();
+        $(targetId).find('.btn.minimize').show();
+    } else {
+        $(targetId).addClass('folded');
+        $(targetId).find('.btn.minimize').hide();
+        $(targetId).find('.btn.maximize').show();
+    }
+} */
+/* 3D Model/운전정보 데이터 연계 박스 End */
 
 // 페이지 로드 후 실행
 $(document).ready(function () {

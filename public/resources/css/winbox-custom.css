@@ -16,19 +16,17 @@
 }
 
 .winbox.no-full.min {
-	height: 48px !important;
-	margin-top: -14px;
+	height: 36px !important;
 }
 
 .wb-header {
-	height: 48px;
-
+	height: 36px;
     background-color: var(--bg-default-default);
 	border-bottom: 1px solid var(--border-neutral-tertiary);
     color: var(--text-neutral-default);
 }
 .wb-body {
-    top: 48px;
+    top: 36px;
 }
 
 /* wb-header title */
@@ -43,33 +41,39 @@
 
 /* tab controller */
 .wb-control {
+    display: flex;
+    align-items: center;
 	padding-left: .5rem;
 	padding-right: .5rem;
 }
+.wb-control * {
+    height: 20px;
+    background-position: center;
+}
 .wb-all-close {
 	background-image: url(/resources/images/icons/winbox-tab_close_all.svg) !important;
-	background-size: 24px !important;
+	background-size: 20px !important;
 }
 .wb-all-min {
 	background-image: url(/resources/images/icons/winbox-tab_minimize_all.svg) !important;
-	background-size: 24px !important;
+	background-size: 20px !important;
 }
 /* 최소 */
 .wb-min {
 	background-image: url(/resources/images/icons/winbox-tab-minimize.svg) !important;
-	background-size: 24px !important;
+	background-size: 20px !important;
 }
 /* 최소-최대 */
 .wb-max {
 	background-image: url(/resources/images/icons/winbox-tab_inactive.svg) !important;
-	background-size: 24px !important;
+	background-size: 20px !important;
 }
 /* 풀화면 */
 .wb-full {
 	background-image: url(/resources/images/icons/winbox-fullscreen.svg) !important;
-	background-size: 24px !important;
+	background-size: 20px !important;
 }
 .wb-close {
 	background-image: url(/resources/images/icons/winbox-tab-close.svg) !important;
-	background-size: 24px !important;
+	background-size: 20px !important;
 }
