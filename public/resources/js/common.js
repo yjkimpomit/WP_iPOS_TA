@@ -1034,3 +1034,31 @@ $(document).ready(function () {
 
 
 
+// 특정 테이블을 대상으로 지정한 수만큼 행을 복제하는 함수
+function duplicateRow(tableSelector, numCopies = 10) {
+	const table = document.querySelector(tableSelector); // 지정된 선택자로 테이블을 참조
+
+	if (table) {
+		const tbody = table.querySelector('tbody');
+		const duplicateRow = tbody ? tbody.querySelector('tr') : null;
+
+		if (duplicateRow) {
+			// 지정된 횟수만큼 복사하여 해당 tbody에 추가합니다.
+			for (let i = 0; i < numCopies; i++) {
+				const clonedRow = duplicateRow.cloneNode(true);
+				tbody.appendChild(clonedRow);
+			}
+			console.log(numCopies + '개의 duplicate 행이 복제되었습니다.');
+		} else {
+			console.warn("복제할 요소가 없습니다.");
+		}
+	} else {
+		console.warn("지정한 테이블을 찾을 수 없습니다.");
+	}
+}
+
+/* 활용예
+$(document).ready(function () {
+	duplicateRow(('.table[aria-label="점검종류-결과"]'), 20);
+});
+*/
