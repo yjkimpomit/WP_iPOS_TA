@@ -1568,7 +1568,7 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 	aspect-ratio: 1 / 1;
 }
 .grid-2x2 .cell:not(:last-child) {
-	border-bottom: 1px solid var(--border-neutral-default);
+	border-bottom: 4px solid var(--border-neutral-default);
 }
 
 /* 1600px 이상일 때만 Grid 적용 (2열 x 2행) */
@@ -1590,7 +1590,7 @@ div.table-responsive:has(>[aria-label="9호기-출력현황"]) {
 	}
 
 	.grid-2x2 .cell:nth-child(odd) {
-		border-right: 1px solid var(--border-neutral-default);
+		border-right: 4px solid var(--border-neutral-default);
 	}
 	.grid-2x2 .cell:nth-child(3),
 	.grid-2x2 .cell:nth-child(4) {
